@@ -1,0 +1,48 @@
+grammar org.xtext.EntityDsl with org.eclipse.xtext.common.Terminals
+
+generate entityDsl "http://www.xtext.org/EntityDsl"
+
+Domainmodel :
+	'database:'applicationName=ID
+    (elements+=Entity)*;
+
+Entity:
+    'entity' name=ID  '{'
+        (attributes+=Attribute)*
+    '}';    
+    
+Attribute:
+      name=ID ':' '['inputType= WinFormControlType ','labelText=Label']' ;
+
+Label:
+	text=ID;
+     
+WinFormControlType:
+	controlType = TextBox | ComboBox | CheckBox | RadioButtonGroup;
+
+RadioButtonGroup:
+	name = 'RadioButtonGroup' '('(buttons+=RadioButton)* ')''[''required=' required=Boolean ']'
+;
+
+RadioButton:
+	text=ID
+;
+
+CheckBox:
+	name = 'CheckBox' 
+;
+
+TextBox:
+	name = 'TextBox' '[' 'required=' required=Boolean ('min=' minTextLength=INT)? ('max='maxTextLength=INT)? ']'
+;
+
+
+Boolean:
+	value = ('true' | 'false')
+;
+
+ComboBox:
+	name = 'ComboBox' '('(items+=ComboBoxItem)* ')' '[' 'required=' required=Boolean']';
+
+ComboBoxItem:
+	text=ID;
