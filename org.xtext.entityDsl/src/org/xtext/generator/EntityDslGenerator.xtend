@@ -641,7 +641,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	 this.groupBox«entity.name»«attribute.name» = new System.Windows.Forms.GroupBox();
 		        	  this.groupBox«entity.name»«attribute.name».SuspendLayout();
 		        	 «FOR rb : rbg.buttons»		        	
-		        	 this.radioButton«entity.name»«attribute.name»«rb.text» = new System.Windows.Forms.RadioButton();
+		        	 this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")» = new System.Windows.Forms.RadioButton();
 		        	 «ENDFOR»		        	 
 		        	 «ENDFOR» 
 		        	    	   	 	  	
@@ -771,7 +771,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		        «FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
 		        private System.Windows.Forms.GroupBox groupBox«entity.name»«attribute.name»;
 		        «FOR rb : rbg.buttons»		        
-		        private System.Windows.Forms.RadioButton radioButton«entity.name»«attribute.name»«rb.text»;
+		        private System.Windows.Forms.RadioButton radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")»;
 		        «ENDFOR»
 		        «ENDFOR»			         
 		        «ENDFOR»
@@ -866,7 +866,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		//
 				             		            		        	
 		«FOR rb : rbg.buttons»		           
-		this.groupBox«entity.name»«attribute.name».Controls.Add(this.radioButton«entity.name»«attribute.name»«rb.text»); 
+		this.groupBox«entity.name»«attribute.name».Controls.Add(this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")»); 
 		«ENDFOR»		        	 
 		this.groupBox«entity.name»«attribute.name».Location = new System.Drawing.Point(140, «winFormControlYCoord»);
 		this.groupBox«entity.name»«attribute.name».Name = "groupBox«entity.name»«attribute.name»";
@@ -887,13 +887,13 @@ class EntityDslGenerator extends AbstractGenerator {
 		// 
 		«FOR k : 0..< rbg.buttons.size()»
 		«var rb = rbg.buttons.get(k)»
-		this.radioButton«entity.name»«attribute.name»«rb.text».AutoSize = true;
-		this.radioButton«entity.name»«attribute.name»«rb.text».Location = new System.Drawing.Point(20, «15+k*25»);
-		this.radioButton«entity.name»«attribute.name»«rb.text».Name = "radioButton«entity.name»«attribute.name»«rb.text»";
-		this.radioButton«entity.name»«attribute.name»«rb.text».Size = new System.Drawing.Size(100, 17);
-		this.radioButton«entity.name»«attribute.name»«rb.text».TabStop = true;
-		this.radioButton«entity.name»«attribute.name»«rb.text».Text = "«rb.text»";
-		this.radioButton«entity.name»«attribute.name»«rb.text».UseVisualStyleBackColor = true;
+		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».AutoSize = true;
+		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».Location = new System.Drawing.Point(20, «15+k*25»);
+		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».Name = "radioButton«entity.name»«attribute.name»«rb.text»";
+		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».Size = new System.Drawing.Size(100, 17);
+		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».TabStop = true;
+		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».Text = "«rb.text»";
+		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».UseVisualStyleBackColor = true;
 				            		           
 		«ENDFOR»
 				                   	          	            
