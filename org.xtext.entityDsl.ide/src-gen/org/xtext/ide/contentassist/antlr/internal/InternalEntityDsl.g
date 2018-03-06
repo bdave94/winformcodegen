@@ -1648,9 +1648,9 @@ rule__Label__TextAssignment
 	}
 :
 	(
-		{ before(grammarAccess.getLabelAccess().getTextIDTerminalRuleCall_0()); }
-		RULE_ID
-		{ after(grammarAccess.getLabelAccess().getTextIDTerminalRuleCall_0()); }
+		{ before(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_0()); }
 	)
 ;
 finally {
@@ -1727,9 +1727,9 @@ rule__RadioButton__TextAssignment
 	}
 :
 	(
-		{ before(grammarAccess.getRadioButtonAccess().getTextIDTerminalRuleCall_0()); }
-		RULE_ID
-		{ after(grammarAccess.getRadioButtonAccess().getTextIDTerminalRuleCall_0()); }
+		{ before(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0()); }
 	)
 ;
 finally {
@@ -1889,9 +1889,9 @@ rule__ComboBoxItem__TextAssignment
 	}
 :
 	(
-		{ before(grammarAccess.getComboBoxItemAccess().getTextIDTerminalRuleCall_0()); }
-		RULE_ID
-		{ after(grammarAccess.getComboBoxItemAccess().getTextIDTerminalRuleCall_0()); }
+		{ before(grammarAccess.getComboBoxItemAccess().getTextSTRINGTerminalRuleCall_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getComboBoxItemAccess().getTextSTRINGTerminalRuleCall_0()); }
 	)
 ;
 finally {

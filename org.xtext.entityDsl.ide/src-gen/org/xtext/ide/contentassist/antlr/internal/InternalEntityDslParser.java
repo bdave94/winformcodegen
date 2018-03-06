@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalEntityDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'database:'", "'entity'", "'{'", "'}'", "':'", "'['", "','", "']'", "'('", "')'", "'required='", "'min='", "'max='", "'RadioButtonGroup'", "'CheckBox'", "'TextBox'", "'ComboBox'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'database:'", "'entity'", "'{'", "'}'", "':'", "'['", "','", "']'", "'('", "')'", "'required='", "'min='", "'max='", "'RadioButtonGroup'", "'CheckBox'", "'TextBox'", "'ComboBox'"
     };
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -42,7 +42,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -2215,7 +2215,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:734:1: ( rule__Attribute__Group__4__Impl rule__Attribute__Group__5 )
             // InternalEntityDsl.g:735:2: rule__Attribute__Group__4__Impl rule__Attribute__Group__5
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_13);
             rule__Attribute__Group__4__Impl();
 
             state._fsp--;
@@ -2290,7 +2290,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:761:1: ( rule__Attribute__Group__5__Impl rule__Attribute__Group__6 )
             // InternalEntityDsl.g:762:2: rule__Attribute__Group__5__Impl rule__Attribute__Group__6
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__Attribute__Group__5__Impl();
 
             state._fsp--;
@@ -2445,7 +2445,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:815:1: ( rule__RadioButtonGroup__Group__0__Impl rule__RadioButtonGroup__Group__1 )
             // InternalEntityDsl.g:816:2: rule__RadioButtonGroup__Group__0__Impl rule__RadioButtonGroup__Group__1
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__RadioButtonGroup__Group__0__Impl();
 
             state._fsp--;
@@ -2530,7 +2530,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:842:1: ( rule__RadioButtonGroup__Group__1__Impl rule__RadioButtonGroup__Group__2 )
             // InternalEntityDsl.g:843:2: rule__RadioButtonGroup__Group__1__Impl rule__RadioButtonGroup__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__RadioButtonGroup__Group__1__Impl();
 
             state._fsp--;
@@ -2605,7 +2605,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:869:1: ( rule__RadioButtonGroup__Group__2__Impl rule__RadioButtonGroup__Group__3 )
             // InternalEntityDsl.g:870:2: rule__RadioButtonGroup__Group__2__Impl rule__RadioButtonGroup__Group__3
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__RadioButtonGroup__Group__2__Impl();
 
             state._fsp--;
@@ -2653,7 +2653,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==RULE_ID) ) {
+                if ( (LA5_0==RULE_STRING) ) {
                     alt5=1;
                 }
 
@@ -2662,7 +2662,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             	case 1 :
             	    // InternalEntityDsl.g:884:3: rule__RadioButtonGroup__ButtonsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_8);
+            	    pushFollow(FOLLOW_17);
             	    rule__RadioButtonGroup__ButtonsAssignment_2();
 
             	    state._fsp--;
@@ -2783,7 +2783,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:923:1: ( rule__RadioButtonGroup__Group__4__Impl rule__RadioButtonGroup__Group__5 )
             // InternalEntityDsl.g:924:2: rule__RadioButtonGroup__Group__4__Impl rule__RadioButtonGroup__Group__5
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__RadioButtonGroup__Group__4__Impl();
 
             state._fsp--;
@@ -2858,7 +2858,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:950:1: ( rule__RadioButtonGroup__Group__5__Impl rule__RadioButtonGroup__Group__6 )
             // InternalEntityDsl.g:951:2: rule__RadioButtonGroup__Group__5__Impl rule__RadioButtonGroup__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__RadioButtonGroup__Group__5__Impl();
 
             state._fsp--;
@@ -2933,7 +2933,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:977:1: ( rule__RadioButtonGroup__Group__6__Impl rule__RadioButtonGroup__Group__7 )
             // InternalEntityDsl.g:978:2: rule__RadioButtonGroup__Group__6__Impl rule__RadioButtonGroup__Group__7
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__RadioButtonGroup__Group__6__Impl();
 
             state._fsp--;
@@ -3173,7 +3173,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1058:1: ( rule__TextBox__Group__1__Impl rule__TextBox__Group__2 )
             // InternalEntityDsl.g:1059:2: rule__TextBox__Group__1__Impl rule__TextBox__Group__2
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__TextBox__Group__1__Impl();
 
             state._fsp--;
@@ -3248,7 +3248,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1085:1: ( rule__TextBox__Group__2__Impl rule__TextBox__Group__3 )
             // InternalEntityDsl.g:1086:2: rule__TextBox__Group__2__Impl rule__TextBox__Group__3
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__TextBox__Group__2__Impl();
 
             state._fsp--;
@@ -3323,7 +3323,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1112:1: ( rule__TextBox__Group__3__Impl rule__TextBox__Group__4 )
             // InternalEntityDsl.g:1113:2: rule__TextBox__Group__3__Impl rule__TextBox__Group__4
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_20);
             rule__TextBox__Group__3__Impl();
 
             state._fsp--;
@@ -3408,7 +3408,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1139:1: ( rule__TextBox__Group__4__Impl rule__TextBox__Group__5 )
             // InternalEntityDsl.g:1140:2: rule__TextBox__Group__4__Impl rule__TextBox__Group__5
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_20);
             rule__TextBox__Group__4__Impl();
 
             state._fsp--;
@@ -3504,7 +3504,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1166:1: ( rule__TextBox__Group__5__Impl rule__TextBox__Group__6 )
             // InternalEntityDsl.g:1167:2: rule__TextBox__Group__5__Impl rule__TextBox__Group__6
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_20);
             rule__TextBox__Group__5__Impl();
 
             state._fsp--;
@@ -3670,7 +3670,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1220:1: ( rule__TextBox__Group_4__0__Impl rule__TextBox__Group_4__1 )
             // InternalEntityDsl.g:1221:2: rule__TextBox__Group_4__0__Impl rule__TextBox__Group_4__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_21);
             rule__TextBox__Group_4__0__Impl();
 
             state._fsp--;
@@ -3825,7 +3825,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1274:1: ( rule__TextBox__Group_5__0__Impl rule__TextBox__Group_5__1 )
             // InternalEntityDsl.g:1275:2: rule__TextBox__Group_5__0__Impl rule__TextBox__Group_5__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_21);
             rule__TextBox__Group_5__0__Impl();
 
             state._fsp--;
@@ -3980,7 +3980,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1328:1: ( rule__ComboBox__Group__0__Impl rule__ComboBox__Group__1 )
             // InternalEntityDsl.g:1329:2: rule__ComboBox__Group__0__Impl rule__ComboBox__Group__1
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__ComboBox__Group__0__Impl();
 
             state._fsp--;
@@ -4065,7 +4065,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1355:1: ( rule__ComboBox__Group__1__Impl rule__ComboBox__Group__2 )
             // InternalEntityDsl.g:1356:2: rule__ComboBox__Group__1__Impl rule__ComboBox__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__ComboBox__Group__1__Impl();
 
             state._fsp--;
@@ -4140,7 +4140,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1382:1: ( rule__ComboBox__Group__2__Impl rule__ComboBox__Group__3 )
             // InternalEntityDsl.g:1383:2: rule__ComboBox__Group__2__Impl rule__ComboBox__Group__3
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__ComboBox__Group__2__Impl();
 
             state._fsp--;
@@ -4188,7 +4188,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_ID) ) {
+                if ( (LA8_0==RULE_STRING) ) {
                     alt8=1;
                 }
 
@@ -4197,7 +4197,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             	case 1 :
             	    // InternalEntityDsl.g:1397:3: rule__ComboBox__ItemsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_8);
+            	    pushFollow(FOLLOW_17);
             	    rule__ComboBox__ItemsAssignment_2();
 
             	    state._fsp--;
@@ -4318,7 +4318,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1436:1: ( rule__ComboBox__Group__4__Impl rule__ComboBox__Group__5 )
             // InternalEntityDsl.g:1437:2: rule__ComboBox__Group__4__Impl rule__ComboBox__Group__5
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__ComboBox__Group__4__Impl();
 
             state._fsp--;
@@ -4393,7 +4393,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1463:1: ( rule__ComboBox__Group__5__Impl rule__ComboBox__Group__6 )
             // InternalEntityDsl.g:1464:2: rule__ComboBox__Group__5__Impl rule__ComboBox__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__ComboBox__Group__5__Impl();
 
             state._fsp--;
@@ -4468,7 +4468,7 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
             // InternalEntityDsl.g:1490:1: ( rule__ComboBox__Group__6__Impl rule__ComboBox__Group__7 )
             // InternalEntityDsl.g:1491:2: rule__ComboBox__Group__6__Impl rule__ComboBox__Group__7
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__ComboBox__Group__6__Impl();
 
             state._fsp--;
@@ -4889,21 +4889,21 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Label__TextAssignment"
-    // InternalEntityDsl.g:1645:1: rule__Label__TextAssignment : ( RULE_ID ) ;
+    // InternalEntityDsl.g:1645:1: rule__Label__TextAssignment : ( RULE_STRING ) ;
     public final void rule__Label__TextAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntityDsl.g:1649:1: ( ( RULE_ID ) )
-            // InternalEntityDsl.g:1650:2: ( RULE_ID )
+            // InternalEntityDsl.g:1649:1: ( ( RULE_STRING ) )
+            // InternalEntityDsl.g:1650:2: ( RULE_STRING )
             {
-            // InternalEntityDsl.g:1650:2: ( RULE_ID )
-            // InternalEntityDsl.g:1651:3: RULE_ID
+            // InternalEntityDsl.g:1650:2: ( RULE_STRING )
+            // InternalEntityDsl.g:1651:3: RULE_STRING
             {
-             before(grammarAccess.getLabelAccess().getTextIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getLabelAccess().getTextIDTerminalRuleCall_0()); 
+             before(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_0()); 
 
             }
 
@@ -5094,21 +5094,21 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__RadioButton__TextAssignment"
-    // InternalEntityDsl.g:1724:1: rule__RadioButton__TextAssignment : ( RULE_ID ) ;
+    // InternalEntityDsl.g:1724:1: rule__RadioButton__TextAssignment : ( RULE_STRING ) ;
     public final void rule__RadioButton__TextAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntityDsl.g:1728:1: ( ( RULE_ID ) )
-            // InternalEntityDsl.g:1729:2: ( RULE_ID )
+            // InternalEntityDsl.g:1728:1: ( ( RULE_STRING ) )
+            // InternalEntityDsl.g:1729:2: ( RULE_STRING )
             {
-            // InternalEntityDsl.g:1729:2: ( RULE_ID )
-            // InternalEntityDsl.g:1730:3: RULE_ID
+            // InternalEntityDsl.g:1729:2: ( RULE_STRING )
+            // InternalEntityDsl.g:1730:3: RULE_STRING
             {
-             before(grammarAccess.getRadioButtonAccess().getTextIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getRadioButtonAccess().getTextIDTerminalRuleCall_0()); 
+             before(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0()); 
 
             }
 
@@ -5510,21 +5510,21 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__ComboBoxItem__TextAssignment"
-    // InternalEntityDsl.g:1886:1: rule__ComboBoxItem__TextAssignment : ( RULE_ID ) ;
+    // InternalEntityDsl.g:1886:1: rule__ComboBoxItem__TextAssignment : ( RULE_STRING ) ;
     public final void rule__ComboBoxItem__TextAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntityDsl.g:1890:1: ( ( RULE_ID ) )
-            // InternalEntityDsl.g:1891:2: ( RULE_ID )
+            // InternalEntityDsl.g:1890:1: ( ( RULE_STRING ) )
+            // InternalEntityDsl.g:1891:2: ( RULE_STRING )
             {
-            // InternalEntityDsl.g:1891:2: ( RULE_ID )
-            // InternalEntityDsl.g:1892:3: RULE_ID
+            // InternalEntityDsl.g:1891:2: ( RULE_STRING )
+            // InternalEntityDsl.g:1892:3: RULE_STRING
             {
-             before(grammarAccess.getComboBoxItemAccess().getTextIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComboBoxItemAccess().getTextIDTerminalRuleCall_0()); 
+             before(grammarAccess.getComboBoxItemAccess().getTextSTRINGTerminalRuleCall_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getComboBoxItemAccess().getTextSTRINGTerminalRuleCall_0()); 
 
             }
 
@@ -5562,12 +5562,14 @@ public class InternalEntityDslParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000003C000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400010L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000003100000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400020L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000003100000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000040L});
 
 }

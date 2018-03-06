@@ -15,7 +15,7 @@ Attribute:
       name=ID ':' '['inputType= WinFormControlType ','labelText=Label']' ;
 
 Label:
-	text=ID;
+	text= STRING;
      
 WinFormControlType:
 	controlType = TextBox | ComboBox | CheckBox | RadioButtonGroup;
@@ -25,7 +25,7 @@ RadioButtonGroup:
 ;
 
 RadioButton:
-	text=ID
+	text=  STRING
 ;
 
 CheckBox:
@@ -45,4 +45,4 @@ ComboBox:
 	name = 'ComboBox' '('(items+=ComboBoxItem)* ')' '[' 'required=' required=Boolean']';
 
 ComboBoxItem:
-	text=ID;
+	text=STRING;

@@ -296,9 +296,9 @@ ruleLabel returns [EObject current=null]
 }:
 	(
 		(
-			lv_text_0_0=RULE_ID
+			lv_text_0_0=RULE_STRING
 			{
-				newLeafNode(lv_text_0_0, grammarAccess.getLabelAccess().getTextIDTerminalRuleCall_0());
+				newLeafNode(lv_text_0_0, grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -308,7 +308,7 @@ ruleLabel returns [EObject current=null]
 					$current,
 					"text",
 					lv_text_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"org.eclipse.xtext.common.Terminals.STRING");
 			}
 		)
 	)
@@ -487,9 +487,9 @@ ruleRadioButton returns [EObject current=null]
 }:
 	(
 		(
-			lv_text_0_0=RULE_ID
+			lv_text_0_0=RULE_STRING
 			{
-				newLeafNode(lv_text_0_0, grammarAccess.getRadioButtonAccess().getTextIDTerminalRuleCall_0());
+				newLeafNode(lv_text_0_0, grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -499,7 +499,7 @@ ruleRadioButton returns [EObject current=null]
 					$current,
 					"text",
 					lv_text_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"org.eclipse.xtext.common.Terminals.STRING");
 			}
 		)
 	)
@@ -800,9 +800,9 @@ ruleComboBoxItem returns [EObject current=null]
 }:
 	(
 		(
-			lv_text_0_0=RULE_ID
+			lv_text_0_0=RULE_STRING
 			{
-				newLeafNode(lv_text_0_0, grammarAccess.getComboBoxItemAccess().getTextIDTerminalRuleCall_0());
+				newLeafNode(lv_text_0_0, grammarAccess.getComboBoxItemAccess().getTextSTRINGTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -812,7 +812,7 @@ ruleComboBoxItem returns [EObject current=null]
 					$current,
 					"text",
 					lv_text_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"org.eclipse.xtext.common.Terminals.STRING");
 			}
 		)
 	)

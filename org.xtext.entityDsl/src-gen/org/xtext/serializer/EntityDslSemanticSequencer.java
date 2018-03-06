@@ -143,7 +143,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ComboBoxItem returns ComboBoxItem
 	 *
 	 * Constraint:
-	 *     text=ID
+	 *     text=STRING
 	 */
 	protected void sequence_ComboBoxItem(ISerializationContext context, ComboBoxItem semanticObject) {
 		if (errorAcceptor != null) {
@@ -151,7 +151,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.COMBO_BOX_ITEM__TEXT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComboBoxItemAccess().getTextIDTerminalRuleCall_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getComboBoxItemAccess().getTextSTRINGTerminalRuleCall_0(), semanticObject.getText());
 		feeder.finish();
 	}
 	
@@ -198,7 +198,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Label returns Label
 	 *
 	 * Constraint:
-	 *     text=ID
+	 *     text=STRING
 	 */
 	protected void sequence_Label(ISerializationContext context, Label semanticObject) {
 		if (errorAcceptor != null) {
@@ -206,7 +206,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.LABEL__TEXT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLabelAccess().getTextIDTerminalRuleCall_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_0(), semanticObject.getText());
 		feeder.finish();
 	}
 	
@@ -229,7 +229,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     RadioButton returns RadioButton
 	 *
 	 * Constraint:
-	 *     text=ID
+	 *     text=STRING
 	 */
 	protected void sequence_RadioButton(ISerializationContext context, RadioButton semanticObject) {
 		if (errorAcceptor != null) {
@@ -237,7 +237,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.RADIO_BUTTON__TEXT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRadioButtonAccess().getTextIDTerminalRuleCall_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0(), semanticObject.getText());
 		feeder.finish();
 	}
 	

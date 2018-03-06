@@ -21,9 +21,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalEntityDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'database:'", "'entity'", "'{'", "'}'", "':'", "'['", "','", "']'", "'RadioButtonGroup'", "'('", "')'", "'required='", "'CheckBox'", "'TextBox'", "'min='", "'max='", "'true'", "'false'", "'ComboBox'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'database:'", "'entity'", "'{'", "'}'", "':'", "'['", "','", "']'", "'RadioButtonGroup'", "'('", "')'", "'required='", "'CheckBox'", "'TextBox'", "'min='", "'max='", "'true'", "'false'", "'ComboBox'"
     };
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -41,7 +41,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -540,7 +540,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_3); 
+            otherlv_4=(Token)match(input,17,FOLLOW_11); 
 
             			newLeafNode(otherlv_4, grammarAccess.getAttributeAccess().getCommaKeyword_4());
             		
@@ -553,7 +553,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getAttributeAccess().getLabelTextLabelParserRuleCall_5_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             lv_labelText_5_0=ruleLabel();
 
             state._fsp--;
@@ -638,7 +638,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLabel"
-    // InternalEntityDsl.g:290:1: ruleLabel returns [EObject current=null] : ( (lv_text_0_0= RULE_ID ) ) ;
+    // InternalEntityDsl.g:290:1: ruleLabel returns [EObject current=null] : ( (lv_text_0_0= RULE_STRING ) ) ;
     public final EObject ruleLabel() throws RecognitionException {
         EObject current = null;
 
@@ -648,18 +648,18 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEntityDsl.g:296:2: ( ( (lv_text_0_0= RULE_ID ) ) )
-            // InternalEntityDsl.g:297:2: ( (lv_text_0_0= RULE_ID ) )
+            // InternalEntityDsl.g:296:2: ( ( (lv_text_0_0= RULE_STRING ) ) )
+            // InternalEntityDsl.g:297:2: ( (lv_text_0_0= RULE_STRING ) )
             {
-            // InternalEntityDsl.g:297:2: ( (lv_text_0_0= RULE_ID ) )
-            // InternalEntityDsl.g:298:3: (lv_text_0_0= RULE_ID )
+            // InternalEntityDsl.g:297:2: ( (lv_text_0_0= RULE_STRING ) )
+            // InternalEntityDsl.g:298:3: (lv_text_0_0= RULE_STRING )
             {
-            // InternalEntityDsl.g:298:3: (lv_text_0_0= RULE_ID )
-            // InternalEntityDsl.g:299:4: lv_text_0_0= RULE_ID
+            // InternalEntityDsl.g:298:3: (lv_text_0_0= RULE_STRING )
+            // InternalEntityDsl.g:299:4: lv_text_0_0= RULE_STRING
             {
-            lv_text_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_text_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-            				newLeafNode(lv_text_0_0, grammarAccess.getLabelAccess().getTextIDTerminalRuleCall_0());
+            				newLeafNode(lv_text_0_0, grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_0());
             			
 
             				if (current==null) {
@@ -669,7 +669,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
             					current,
             					"text",
             					lv_text_0_0,
-            					"org.eclipse.xtext.common.Terminals.ID");
+            					"org.eclipse.xtext.common.Terminals.STRING");
             			
 
             }
@@ -965,7 +965,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
             // InternalEntityDsl.g:399:4: (lv_name_0_0= 'RadioButtonGroup' )
             // InternalEntityDsl.g:400:5: lv_name_0_0= 'RadioButtonGroup'
             {
-            lv_name_0_0=(Token)match(input,19,FOLLOW_12); 
+            lv_name_0_0=(Token)match(input,19,FOLLOW_13); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getRadioButtonGroupAccess().getNameRadioButtonGroupKeyword_0_0());
             				
@@ -981,7 +981,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,20,FOLLOW_13); 
+            otherlv_1=(Token)match(input,20,FOLLOW_14); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRadioButtonGroupAccess().getLeftParenthesisKeyword_1());
             		
@@ -991,7 +991,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==RULE_ID) ) {
+                if ( (LA4_0==RULE_STRING) ) {
                     alt4=1;
                 }
 
@@ -1006,7 +1006,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getRadioButtonGroupAccess().getButtonsRadioButtonParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_14);
             	    lv_buttons_2_0=ruleRadioButton();
 
             	    state._fsp--;
@@ -1038,11 +1038,11 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getRadioButtonGroupAccess().getRightParenthesisKeyword_3());
             		
-            otherlv_4=(Token)match(input,16,FOLLOW_14); 
+            otherlv_4=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_4, grammarAccess.getRadioButtonGroupAccess().getLeftSquareBracketKeyword_4());
             		
-            otherlv_5=(Token)match(input,22,FOLLOW_15); 
+            otherlv_5=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_5, grammarAccess.getRadioButtonGroupAccess().getRequiredKeyword_5());
             		
@@ -1055,7 +1055,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getRadioButtonGroupAccess().getRequiredBooleanParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             lv_required_6_0=ruleBoolean();
 
             state._fsp--;
@@ -1140,7 +1140,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRadioButton"
-    // InternalEntityDsl.g:481:1: ruleRadioButton returns [EObject current=null] : ( (lv_text_0_0= RULE_ID ) ) ;
+    // InternalEntityDsl.g:481:1: ruleRadioButton returns [EObject current=null] : ( (lv_text_0_0= RULE_STRING ) ) ;
     public final EObject ruleRadioButton() throws RecognitionException {
         EObject current = null;
 
@@ -1150,18 +1150,18 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEntityDsl.g:487:2: ( ( (lv_text_0_0= RULE_ID ) ) )
-            // InternalEntityDsl.g:488:2: ( (lv_text_0_0= RULE_ID ) )
+            // InternalEntityDsl.g:487:2: ( ( (lv_text_0_0= RULE_STRING ) ) )
+            // InternalEntityDsl.g:488:2: ( (lv_text_0_0= RULE_STRING ) )
             {
-            // InternalEntityDsl.g:488:2: ( (lv_text_0_0= RULE_ID ) )
-            // InternalEntityDsl.g:489:3: (lv_text_0_0= RULE_ID )
+            // InternalEntityDsl.g:488:2: ( (lv_text_0_0= RULE_STRING ) )
+            // InternalEntityDsl.g:489:3: (lv_text_0_0= RULE_STRING )
             {
-            // InternalEntityDsl.g:489:3: (lv_text_0_0= RULE_ID )
-            // InternalEntityDsl.g:490:4: lv_text_0_0= RULE_ID
+            // InternalEntityDsl.g:489:3: (lv_text_0_0= RULE_STRING )
+            // InternalEntityDsl.g:490:4: lv_text_0_0= RULE_STRING
             {
-            lv_text_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_text_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-            				newLeafNode(lv_text_0_0, grammarAccess.getRadioButtonAccess().getTextIDTerminalRuleCall_0());
+            				newLeafNode(lv_text_0_0, grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0());
             			
 
             				if (current==null) {
@@ -1171,7 +1171,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
             					current,
             					"text",
             					lv_text_0_0,
-            					"org.eclipse.xtext.common.Terminals.ID");
+            					"org.eclipse.xtext.common.Terminals.STRING");
             			
 
             }
@@ -1373,11 +1373,11 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FOLLOW_14); 
+            otherlv_1=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTextBoxAccess().getLeftSquareBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,22,FOLLOW_15); 
+            otherlv_2=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_2, grammarAccess.getTextBoxAccess().getRequiredKeyword_2());
             		
@@ -1390,7 +1390,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getTextBoxAccess().getRequiredBooleanParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             lv_required_3_0=ruleBoolean();
 
             state._fsp--;
@@ -1423,7 +1423,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalEntityDsl.g:597:4: otherlv_4= 'min=' ( (lv_minTextLength_5_0= RULE_INT ) )
                     {
-                    otherlv_4=(Token)match(input,25,FOLLOW_17); 
+                    otherlv_4=(Token)match(input,25,FOLLOW_18); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getTextBoxAccess().getMinKeyword_4_0());
                     			
@@ -1433,7 +1433,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
                     // InternalEntityDsl.g:602:5: (lv_minTextLength_5_0= RULE_INT )
                     // InternalEntityDsl.g:603:6: lv_minTextLength_5_0= RULE_INT
                     {
-                    lv_minTextLength_5_0=(Token)match(input,RULE_INT,FOLLOW_18); 
+                    lv_minTextLength_5_0=(Token)match(input,RULE_INT,FOLLOW_19); 
 
                     						newLeafNode(lv_minTextLength_5_0, grammarAccess.getTextBoxAccess().getMinTextLengthINTTerminalRuleCall_4_1_0());
                     					
@@ -1470,7 +1470,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalEntityDsl.g:621:4: otherlv_6= 'max=' ( (lv_maxTextLength_7_0= RULE_INT ) )
                     {
-                    otherlv_6=(Token)match(input,26,FOLLOW_17); 
+                    otherlv_6=(Token)match(input,26,FOLLOW_18); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getTextBoxAccess().getMaxKeyword_5_0());
                     			
@@ -1480,7 +1480,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
                     // InternalEntityDsl.g:626:5: (lv_maxTextLength_7_0= RULE_INT )
                     // InternalEntityDsl.g:627:6: lv_maxTextLength_7_0= RULE_INT
                     {
-                    lv_maxTextLength_7_0=(Token)match(input,RULE_INT,FOLLOW_11); 
+                    lv_maxTextLength_7_0=(Token)match(input,RULE_INT,FOLLOW_12); 
 
                     						newLeafNode(lv_maxTextLength_7_0, grammarAccess.getTextBoxAccess().getMaxTextLengthINTTerminalRuleCall_5_1_0());
                     					
@@ -1734,7 +1734,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
             // InternalEntityDsl.g:712:4: (lv_name_0_0= 'ComboBox' )
             // InternalEntityDsl.g:713:5: lv_name_0_0= 'ComboBox'
             {
-            lv_name_0_0=(Token)match(input,29,FOLLOW_12); 
+            lv_name_0_0=(Token)match(input,29,FOLLOW_13); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getComboBoxAccess().getNameComboBoxKeyword_0_0());
             				
@@ -1750,7 +1750,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,20,FOLLOW_13); 
+            otherlv_1=(Token)match(input,20,FOLLOW_14); 
 
             			newLeafNode(otherlv_1, grammarAccess.getComboBoxAccess().getLeftParenthesisKeyword_1());
             		
@@ -1760,7 +1760,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_ID) ) {
+                if ( (LA8_0==RULE_STRING) ) {
                     alt8=1;
                 }
 
@@ -1775,7 +1775,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getComboBoxAccess().getItemsComboBoxItemParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_14);
             	    lv_items_2_0=ruleComboBoxItem();
 
             	    state._fsp--;
@@ -1807,11 +1807,11 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getComboBoxAccess().getRightParenthesisKeyword_3());
             		
-            otherlv_4=(Token)match(input,16,FOLLOW_14); 
+            otherlv_4=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_4, grammarAccess.getComboBoxAccess().getLeftSquareBracketKeyword_4());
             		
-            otherlv_5=(Token)match(input,22,FOLLOW_15); 
+            otherlv_5=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_5, grammarAccess.getComboBoxAccess().getRequiredKeyword_5());
             		
@@ -1824,7 +1824,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getComboBoxAccess().getRequiredBooleanParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             lv_required_6_0=ruleBoolean();
 
             state._fsp--;
@@ -1909,7 +1909,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComboBoxItem"
-    // InternalEntityDsl.g:794:1: ruleComboBoxItem returns [EObject current=null] : ( (lv_text_0_0= RULE_ID ) ) ;
+    // InternalEntityDsl.g:794:1: ruleComboBoxItem returns [EObject current=null] : ( (lv_text_0_0= RULE_STRING ) ) ;
     public final EObject ruleComboBoxItem() throws RecognitionException {
         EObject current = null;
 
@@ -1919,18 +1919,18 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEntityDsl.g:800:2: ( ( (lv_text_0_0= RULE_ID ) ) )
-            // InternalEntityDsl.g:801:2: ( (lv_text_0_0= RULE_ID ) )
+            // InternalEntityDsl.g:800:2: ( ( (lv_text_0_0= RULE_STRING ) ) )
+            // InternalEntityDsl.g:801:2: ( (lv_text_0_0= RULE_STRING ) )
             {
-            // InternalEntityDsl.g:801:2: ( (lv_text_0_0= RULE_ID ) )
-            // InternalEntityDsl.g:802:3: (lv_text_0_0= RULE_ID )
+            // InternalEntityDsl.g:801:2: ( (lv_text_0_0= RULE_STRING ) )
+            // InternalEntityDsl.g:802:3: (lv_text_0_0= RULE_STRING )
             {
-            // InternalEntityDsl.g:802:3: (lv_text_0_0= RULE_ID )
-            // InternalEntityDsl.g:803:4: lv_text_0_0= RULE_ID
+            // InternalEntityDsl.g:802:3: (lv_text_0_0= RULE_STRING )
+            // InternalEntityDsl.g:803:4: lv_text_0_0= RULE_STRING
             {
-            lv_text_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_text_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-            				newLeafNode(lv_text_0_0, grammarAccess.getComboBoxItemAccess().getTextIDTerminalRuleCall_0());
+            				newLeafNode(lv_text_0_0, grammarAccess.getComboBoxItemAccess().getTextSTRINGTerminalRuleCall_0());
             			
 
             				if (current==null) {
@@ -1940,7 +1940,7 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
             					current,
             					"text",
             					lv_text_0_0,
-            					"org.eclipse.xtext.common.Terminals.ID");
+            					"org.eclipse.xtext.common.Terminals.STRING");
             			
 
             }
@@ -1981,13 +1981,14 @@ public class InternalEntityDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000021880000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000018000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000006040000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004040000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200020L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000018000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000006040000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004040000L});
 
 }

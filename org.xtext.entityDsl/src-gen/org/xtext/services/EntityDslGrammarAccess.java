@@ -149,17 +149,17 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class LabelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.Label");
 		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cTextIDTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
+		private final RuleCall cTextSTRINGTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
 		
 		//Label:
-		//	text=ID;
+		//	text=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//text=ID
+		//text=STRING
 		public Assignment getTextAssignment() { return cTextAssignment; }
 		
-		//ID
-		public RuleCall getTextIDTerminalRuleCall_0() { return cTextIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_0() { return cTextSTRINGTerminalRuleCall_0; }
 	}
 	public class WinFormControlTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.WinFormControlType");
@@ -250,17 +250,17 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class RadioButtonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.RadioButton");
 		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cTextIDTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
+		private final RuleCall cTextSTRINGTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
 		
 		//RadioButton:
-		//	text=ID;
+		//	text=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//text=ID
+		//text=STRING
 		public Assignment getTextAssignment() { return cTextAssignment; }
 		
-		//ID
-		public RuleCall getTextIDTerminalRuleCall_0() { return cTextIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_0() { return cTextSTRINGTerminalRuleCall_0; }
 	}
 	public class CheckBoxElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.CheckBox");
@@ -429,17 +429,17 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ComboBoxItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.ComboBoxItem");
 		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cTextIDTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
+		private final RuleCall cTextSTRINGTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
 		
 		//ComboBoxItem:
-		//	text=ID;
+		//	text=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//text=ID
+		//text=STRING
 		public Assignment getTextAssignment() { return cTextAssignment; }
 		
-		//ID
-		public RuleCall getTextIDTerminalRuleCall_0() { return cTextIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_0() { return cTextSTRINGTerminalRuleCall_0; }
 	}
 	
 	
@@ -540,7 +540,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Label:
-	//	text=ID;
+	//	text=STRING;
 	public LabelElements getLabelAccess() {
 		return pLabel;
 	}
@@ -570,7 +570,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RadioButton:
-	//	text=ID;
+	//	text=STRING;
 	public RadioButtonElements getRadioButtonAccess() {
 		return pRadioButton;
 	}
@@ -620,7 +620,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ComboBoxItem:
-	//	text=ID;
+	//	text=STRING;
 	public ComboBoxItemElements getComboBoxItemAccess() {
 		return pComboBoxItem;
 	}
