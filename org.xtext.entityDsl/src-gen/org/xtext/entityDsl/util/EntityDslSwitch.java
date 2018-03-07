@@ -8,18 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.xtext.entityDsl.Attribute;
-import org.xtext.entityDsl.CheckBox;
-import org.xtext.entityDsl.ComboBox;
-import org.xtext.entityDsl.ComboBoxItem;
-import org.xtext.entityDsl.Domainmodel;
-import org.xtext.entityDsl.Entity;
-import org.xtext.entityDsl.EntityDslPackage;
-import org.xtext.entityDsl.Label;
-import org.xtext.entityDsl.RadioButton;
-import org.xtext.entityDsl.RadioButtonGroup;
-import org.xtext.entityDsl.TextBox;
-import org.xtext.entityDsl.WinFormControlType;
+import org.xtext.entityDsl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,6 +89,12 @@ public class EntityDslSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case EntityDslPackage.DATA_TYPE: {
+				DataType dataType = (DataType)theEObject;
+				T result = caseDataType(dataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case EntityDslPackage.LABEL: {
 				Label label = (Label)theEObject;
 				T result = caseLabel(label);
@@ -135,12 +130,6 @@ public class EntityDslSwitch<T> extends Switch<T>
 			case EntityDslPackage.TEXT_BOX: {
 				TextBox textBox = (TextBox)theEObject;
 				T result = caseTextBox(textBox);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EntityDslPackage.BOOLEAN: {
-				org.xtext.entityDsl.Boolean boolean_ = (org.xtext.entityDsl.Boolean)theEObject;
-				T result = caseBoolean(boolean_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -205,6 +194,22 @@ public class EntityDslSwitch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseAttribute(Attribute object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseDataType(DataType object)
   {
 		return null;
 	}
@@ -301,22 +306,6 @@ public class EntityDslSwitch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseTextBox(TextBox object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Boolean</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Boolean</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseBoolean(org.xtext.entityDsl.Boolean object)
   {
 		return null;
 	}

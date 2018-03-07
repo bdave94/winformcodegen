@@ -18,6 +18,7 @@ import org.xtext.entityDsl.Attribute;
 import org.xtext.entityDsl.CheckBox;
 import org.xtext.entityDsl.ComboBox;
 import org.xtext.entityDsl.ComboBoxItem;
+import org.xtext.entityDsl.DataType;
 import org.xtext.entityDsl.Domainmodel;
 import org.xtext.entityDsl.Entity;
 import org.xtext.entityDsl.EntityDslPackage;
@@ -45,9 +46,6 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case EntityDslPackage.ATTRIBUTE:
 				sequence_Attribute(context, (Attribute) semanticObject); 
 				return; 
-			case EntityDslPackage.BOOLEAN:
-				sequence_Boolean(context, (org.xtext.entityDsl.Boolean) semanticObject); 
-				return; 
 			case EntityDslPackage.CHECK_BOX:
 				sequence_CheckBox(context, (CheckBox) semanticObject); 
 				return; 
@@ -56,6 +54,9 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case EntityDslPackage.COMBO_BOX_ITEM:
 				sequence_ComboBoxItem(context, (ComboBoxItem) semanticObject); 
+				return; 
+			case EntityDslPackage.DATA_TYPE:
+				sequence_DataType(context, (DataType) semanticObject); 
 				return; 
 			case EntityDslPackage.DOMAINMODEL:
 				sequence_Domainmodel(context, (Domainmodel) semanticObject); 
@@ -88,33 +89,9 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     (name=ID inputType=WinFormControlType labelText=Label)
+	 *     (required='*'? name=ID inputType=WinFormControlType labelText=Label)
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, EntityDslPackage.Literals.ATTRIBUTE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.ATTRIBUTE__NAME));
-			if (transientValues.isValueTransient(semanticObject, EntityDslPackage.Literals.ATTRIBUTE__INPUT_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.ATTRIBUTE__INPUT_TYPE));
-			if (transientValues.isValueTransient(semanticObject, EntityDslPackage.Literals.ATTRIBUTE__LABEL_TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.ATTRIBUTE__LABEL_TEXT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAttributeAccess().getInputTypeWinFormControlTypeParserRuleCall_3_0(), semanticObject.getInputType());
-		feeder.accept(grammarAccess.getAttributeAccess().getLabelTextLabelParserRuleCall_5_0(), semanticObject.getLabelText());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Boolean returns Boolean
-	 *
-	 * Constraint:
-	 *     (value='true' | value='false')
-	 */
-	protected void sequence_Boolean(ISerializationContext context, org.xtext.entityDsl.Boolean semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -162,9 +139,21 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ComboBox returns ComboBox
 	 *
 	 * Constraint:
-	 *     (name='ComboBox' items+=ComboBoxItem* required=Boolean)
+	 *     (name='ComboBox' items+=ComboBoxItem* dataType=DataType)
 	 */
 	protected void sequence_ComboBox(ISerializationContext context, ComboBox semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns DataType
+	 *
+	 * Constraint:
+	 *     (type='string' | type='int' | type='double')
+	 */
+	protected void sequence_DataType(ISerializationContext context, DataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -217,7 +206,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     RadioButtonGroup returns RadioButtonGroup
 	 *
 	 * Constraint:
-	 *     (name='RadioButtonGroup' buttons+=RadioButton* required=Boolean)
+	 *     (name='RadioButtonGroup' buttons+=RadioButton* dataType=DataType)
 	 */
 	protected void sequence_RadioButtonGroup(ISerializationContext context, RadioButtonGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -247,7 +236,7 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     TextBox returns TextBox
 	 *
 	 * Constraint:
-	 *     (name='TextBox' required=Boolean minTextLength=INT? maxTextLength=INT?)
+	 *     (name='TextBox' dataType=DataType minTextLength=INT? maxTextLength=INT?)
 	 */
 	protected void sequence_TextBox(ISerializationContext context, TextBox semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

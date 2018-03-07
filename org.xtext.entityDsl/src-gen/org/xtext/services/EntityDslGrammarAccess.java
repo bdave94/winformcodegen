@@ -98,53 +98,88 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.Attribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cInputTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInputTypeWinFormControlTypeParserRuleCall_3_0 = (RuleCall)cInputTypeAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cLabelTextAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cLabelTextLabelParserRuleCall_5_0 = (RuleCall)cLabelTextAssignment_5.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cRequiredAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cRequiredAsteriskKeyword_0_0 = (Keyword)cRequiredAssignment_0.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cInputTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cInputTypeWinFormControlTypeParserRuleCall_4_0 = (RuleCall)cInputTypeAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cLabelTextAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cLabelTextLabelParserRuleCall_6_0 = (RuleCall)cLabelTextAssignment_6.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Attribute:
-		//	name=ID ':' '[' inputType=WinFormControlType ',' labelText=Label ']';
+		//	required='*'? name=ID ':' '[' inputType=WinFormControlType ',' labelText=Label ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' '[' inputType=WinFormControlType ',' labelText=Label ']'
+		//required='*'? name=ID ':' '[' inputType=WinFormControlType ',' labelText=Label ']'
 		public Group getGroup() { return cGroup; }
 		
+		//required='*'?
+		public Assignment getRequiredAssignment_0() { return cRequiredAssignment_0; }
+		
+		//'*'
+		public Keyword getRequiredAsteriskKeyword_0_0() { return cRequiredAsteriskKeyword_0_0; }
+		
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
+		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
 		
 		//inputType=WinFormControlType
-		public Assignment getInputTypeAssignment_3() { return cInputTypeAssignment_3; }
+		public Assignment getInputTypeAssignment_4() { return cInputTypeAssignment_4; }
 		
 		//WinFormControlType
-		public RuleCall getInputTypeWinFormControlTypeParserRuleCall_3_0() { return cInputTypeWinFormControlTypeParserRuleCall_3_0; }
+		public RuleCall getInputTypeWinFormControlTypeParserRuleCall_4_0() { return cInputTypeWinFormControlTypeParserRuleCall_4_0; }
 		
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
 		//labelText=Label
-		public Assignment getLabelTextAssignment_5() { return cLabelTextAssignment_5; }
+		public Assignment getLabelTextAssignment_6() { return cLabelTextAssignment_6; }
 		
 		//Label
-		public RuleCall getLabelTextLabelParserRuleCall_5_0() { return cLabelTextLabelParserRuleCall_5_0; }
+		public RuleCall getLabelTextLabelParserRuleCall_6_0() { return cLabelTextLabelParserRuleCall_6_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
+		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
+	}
+	public class DataTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.DataType");
+		private final Assignment cTypeAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypeAlternatives_0 = (Alternatives)cTypeAssignment.eContents().get(0);
+		private final Keyword cTypeStringKeyword_0_0 = (Keyword)cTypeAlternatives_0.eContents().get(0);
+		private final Keyword cTypeIntKeyword_0_1 = (Keyword)cTypeAlternatives_0.eContents().get(1);
+		private final Keyword cTypeDoubleKeyword_0_2 = (Keyword)cTypeAlternatives_0.eContents().get(2);
+		
+		//DataType:
+		//	type=('string' | 'int' | 'double');
+		@Override public ParserRule getRule() { return rule; }
+		
+		//type=('string' | 'int' | 'double')
+		public Assignment getTypeAssignment() { return cTypeAssignment; }
+		
+		//('string' | 'int' | 'double')
+		public Alternatives getTypeAlternatives_0() { return cTypeAlternatives_0; }
+		
+		//'string'
+		public Keyword getTypeStringKeyword_0_0() { return cTypeStringKeyword_0_0; }
+		
+		//'int'
+		public Keyword getTypeIntKeyword_0_1() { return cTypeIntKeyword_0_1; }
+		
+		//'double'
+		public Keyword getTypeDoubleKeyword_0_2() { return cTypeDoubleKeyword_0_2; }
 	}
 	public class LabelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.Label");
@@ -202,16 +237,15 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cButtonsRadioButtonParserRuleCall_2_0 = (RuleCall)cButtonsAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cRequiredKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRequiredAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRequiredBooleanParserRuleCall_6_0 = (RuleCall)cRequiredAssignment_6.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cDataTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDataTypeDataTypeParserRuleCall_5_0 = (RuleCall)cDataTypeAssignment_5.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//RadioButtonGroup:
-		//	name='RadioButtonGroup' '(' buttons+=RadioButton* ')' '[' 'required=' required=Boolean ']';
+		//	name='RadioButtonGroup' '(' buttons+=RadioButton* ')' '[' dataType=DataType ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name='RadioButtonGroup' '(' buttons+=RadioButton* ')' '[' 'required=' required=Boolean ']'
+		//name='RadioButtonGroup' '(' buttons+=RadioButton* ')' '[' dataType=DataType ']'
 		public Group getGroup() { return cGroup; }
 		
 		//name='RadioButtonGroup'
@@ -235,17 +269,14 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
 		
-		//'required='
-		public Keyword getRequiredKeyword_5() { return cRequiredKeyword_5; }
+		//dataType=DataType
+		public Assignment getDataTypeAssignment_5() { return cDataTypeAssignment_5; }
 		
-		//required=Boolean
-		public Assignment getRequiredAssignment_6() { return cRequiredAssignment_6; }
-		
-		//Boolean
-		public RuleCall getRequiredBooleanParserRuleCall_6_0() { return cRequiredBooleanParserRuleCall_6_0; }
+		//DataType
+		public RuleCall getDataTypeDataTypeParserRuleCall_5_0() { return cDataTypeDataTypeParserRuleCall_5_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
+		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
 	}
 	public class RadioButtonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.RadioButton");
@@ -283,24 +314,22 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Keyword cNameTextBoxKeyword_0_0 = (Keyword)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cRequiredKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRequiredAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cRequiredBooleanParserRuleCall_3_0 = (RuleCall)cRequiredAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cMinKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cMinTextLengthAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cMinTextLengthINTTerminalRuleCall_4_1_0 = (RuleCall)cMinTextLengthAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMaxKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cMaxTextLengthAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cMaxTextLengthINTTerminalRuleCall_5_1_0 = (RuleCall)cMaxTextLengthAssignment_5_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cDataTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDataTypeDataTypeParserRuleCall_2_0 = (RuleCall)cDataTypeAssignment_2.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cMinTextLengthAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMinTextLengthINTTerminalRuleCall_4_0 = (RuleCall)cMinTextLengthAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cMaxTextLengthAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMaxTextLengthINTTerminalRuleCall_6_0 = (RuleCall)cMaxTextLengthAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//TextBox:
-		//	name='TextBox' '[' 'required=' required=Boolean ('min=' minTextLength=INT)? ('max=' maxTextLength=INT)? ']';
+		//	name='TextBox' '[' dataType=DataType '(' minTextLength=INT? ',' maxTextLength=INT? ')' ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name='TextBox' '[' 'required=' required=Boolean ('min=' minTextLength=INT)? ('max=' maxTextLength=INT)? ']'
+		//name='TextBox' '[' dataType=DataType '(' minTextLength=INT? ',' maxTextLength=INT? ')' ']'
 		public Group getGroup() { return cGroup; }
 		
 		//name='TextBox'
@@ -312,64 +341,35 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//'required='
-		public Keyword getRequiredKeyword_2() { return cRequiredKeyword_2; }
+		//dataType=DataType
+		public Assignment getDataTypeAssignment_2() { return cDataTypeAssignment_2; }
 		
-		//required=Boolean
-		public Assignment getRequiredAssignment_3() { return cRequiredAssignment_3; }
+		//DataType
+		public RuleCall getDataTypeDataTypeParserRuleCall_2_0() { return cDataTypeDataTypeParserRuleCall_2_0; }
 		
-		//Boolean
-		public RuleCall getRequiredBooleanParserRuleCall_3_0() { return cRequiredBooleanParserRuleCall_3_0; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
 		
-		//('min=' minTextLength=INT)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'min='
-		public Keyword getMinKeyword_4_0() { return cMinKeyword_4_0; }
-		
-		//minTextLength=INT
-		public Assignment getMinTextLengthAssignment_4_1() { return cMinTextLengthAssignment_4_1; }
+		//minTextLength=INT?
+		public Assignment getMinTextLengthAssignment_4() { return cMinTextLengthAssignment_4; }
 		
 		//INT
-		public RuleCall getMinTextLengthINTTerminalRuleCall_4_1_0() { return cMinTextLengthINTTerminalRuleCall_4_1_0; }
+		public RuleCall getMinTextLengthINTTerminalRuleCall_4_0() { return cMinTextLengthINTTerminalRuleCall_4_0; }
 		
-		//('max=' maxTextLength=INT)?
-		public Group getGroup_5() { return cGroup_5; }
+		//','
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//'max='
-		public Keyword getMaxKeyword_5_0() { return cMaxKeyword_5_0; }
-		
-		//maxTextLength=INT
-		public Assignment getMaxTextLengthAssignment_5_1() { return cMaxTextLengthAssignment_5_1; }
+		//maxTextLength=INT?
+		public Assignment getMaxTextLengthAssignment_6() { return cMaxTextLengthAssignment_6; }
 		
 		//INT
-		public RuleCall getMaxTextLengthINTTerminalRuleCall_5_1_0() { return cMaxTextLengthINTTerminalRuleCall_5_1_0; }
+		public RuleCall getMaxTextLengthINTTerminalRuleCall_6_0() { return cMaxTextLengthINTTerminalRuleCall_6_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
-	}
-	public class BooleanElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.Boolean");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
-		private final Keyword cValueTrueKeyword_0_0 = (Keyword)cValueAlternatives_0.eContents().get(0);
-		private final Keyword cValueFalseKeyword_0_1 = (Keyword)cValueAlternatives_0.eContents().get(1);
-		
-		//Boolean:
-		//	value=('true' | 'false');
-		@Override public ParserRule getRule() { return rule; }
-		
-		//value=('true' | 'false')
-		public Assignment getValueAssignment() { return cValueAssignment; }
-		
-		//('true' | 'false')
-		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
-		
-		//'true'
-		public Keyword getValueTrueKeyword_0_0() { return cValueTrueKeyword_0_0; }
-		
-		//'false'
-		public Keyword getValueFalseKeyword_0_1() { return cValueFalseKeyword_0_1; }
+		public Keyword getRightSquareBracketKeyword_8() { return cRightSquareBracketKeyword_8; }
 	}
 	public class ComboBoxElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.ComboBox");
@@ -381,16 +381,15 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cItemsComboBoxItemParserRuleCall_2_0 = (RuleCall)cItemsAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cRequiredKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRequiredAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRequiredBooleanParserRuleCall_6_0 = (RuleCall)cRequiredAssignment_6.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cDataTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDataTypeDataTypeParserRuleCall_5_0 = (RuleCall)cDataTypeAssignment_5.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ComboBox:
-		//	name='ComboBox' '(' items+=ComboBoxItem* ')' '[' 'required=' required=Boolean ']';
+		//	name='ComboBox' '(' items+=ComboBoxItem* ')' '[' dataType=DataType ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name='ComboBox' '(' items+=ComboBoxItem* ')' '[' 'required=' required=Boolean ']'
+		//name='ComboBox' '(' items+=ComboBoxItem* ')' '[' dataType=DataType ']'
 		public Group getGroup() { return cGroup; }
 		
 		//name='ComboBox'
@@ -414,17 +413,14 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
 		
-		//'required='
-		public Keyword getRequiredKeyword_5() { return cRequiredKeyword_5; }
+		//dataType=DataType
+		public Assignment getDataTypeAssignment_5() { return cDataTypeAssignment_5; }
 		
-		//required=Boolean
-		public Assignment getRequiredAssignment_6() { return cRequiredAssignment_6; }
-		
-		//Boolean
-		public RuleCall getRequiredBooleanParserRuleCall_6_0() { return cRequiredBooleanParserRuleCall_6_0; }
+		//DataType
+		public RuleCall getDataTypeDataTypeParserRuleCall_5_0() { return cDataTypeDataTypeParserRuleCall_5_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
+		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
 	}
 	public class ComboBoxItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.ComboBoxItem");
@@ -446,13 +442,13 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final DomainmodelElements pDomainmodel;
 	private final EntityElements pEntity;
 	private final AttributeElements pAttribute;
+	private final DataTypeElements pDataType;
 	private final LabelElements pLabel;
 	private final WinFormControlTypeElements pWinFormControlType;
 	private final RadioButtonGroupElements pRadioButtonGroup;
 	private final RadioButtonElements pRadioButton;
 	private final CheckBoxElements pCheckBox;
 	private final TextBoxElements pTextBox;
-	private final BooleanElements pBoolean;
 	private final ComboBoxElements pComboBox;
 	private final ComboBoxItemElements pComboBoxItem;
 	
@@ -468,13 +464,13 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDomainmodel = new DomainmodelElements();
 		this.pEntity = new EntityElements();
 		this.pAttribute = new AttributeElements();
+		this.pDataType = new DataTypeElements();
 		this.pLabel = new LabelElements();
 		this.pWinFormControlType = new WinFormControlTypeElements();
 		this.pRadioButtonGroup = new RadioButtonGroupElements();
 		this.pRadioButton = new RadioButtonElements();
 		this.pCheckBox = new CheckBoxElements();
 		this.pTextBox = new TextBoxElements();
-		this.pBoolean = new BooleanElements();
 		this.pComboBox = new ComboBoxElements();
 		this.pComboBoxItem = new ComboBoxItemElements();
 	}
@@ -530,13 +526,23 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Attribute:
-	//	name=ID ':' '[' inputType=WinFormControlType ',' labelText=Label ']';
+	//	required='*'? name=ID ':' '[' inputType=WinFormControlType ',' labelText=Label ']';
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
 	
 	public ParserRule getAttributeRule() {
 		return getAttributeAccess().getRule();
+	}
+	
+	//DataType:
+	//	type=('string' | 'int' | 'double');
+	public DataTypeElements getDataTypeAccess() {
+		return pDataType;
+	}
+	
+	public ParserRule getDataTypeRule() {
+		return getDataTypeAccess().getRule();
 	}
 	
 	//Label:
@@ -560,7 +566,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RadioButtonGroup:
-	//	name='RadioButtonGroup' '(' buttons+=RadioButton* ')' '[' 'required=' required=Boolean ']';
+	//	name='RadioButtonGroup' '(' buttons+=RadioButton* ')' '[' dataType=DataType ']';
 	public RadioButtonGroupElements getRadioButtonGroupAccess() {
 		return pRadioButtonGroup;
 	}
@@ -590,7 +596,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TextBox:
-	//	name='TextBox' '[' 'required=' required=Boolean ('min=' minTextLength=INT)? ('max=' maxTextLength=INT)? ']';
+	//	name='TextBox' '[' dataType=DataType '(' minTextLength=INT? ',' maxTextLength=INT? ')' ']';
 	public TextBoxElements getTextBoxAccess() {
 		return pTextBox;
 	}
@@ -599,18 +605,8 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getTextBoxAccess().getRule();
 	}
 	
-	//Boolean:
-	//	value=('true' | 'false');
-	public BooleanElements getBooleanAccess() {
-		return pBoolean;
-	}
-	
-	public ParserRule getBooleanRule() {
-		return getBooleanAccess().getRule();
-	}
-	
 	//ComboBox:
-	//	name='ComboBox' '(' items+=ComboBoxItem* ')' '[' 'required=' required=Boolean ']';
+	//	name='ComboBox' '(' items+=ComboBoxItem* ')' '[' dataType=DataType ']';
 	public ComboBoxElements getComboBoxAccess() {
 		return pComboBox;
 	}

@@ -15,9 +15,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//Entity/attributes"/>
     </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Attribute/required"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Attribute/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//Attribute/inputType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//Attribute/labelText"/>
+    </genClasses>
+    <genClasses ecoreClass="EntityDsl.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//DataType/type"/>
     </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//Label">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Label/text"/>
@@ -28,7 +32,7 @@
     </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//RadioButtonGroup">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//RadioButtonGroup/buttons"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//RadioButtonGroup/required"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//RadioButtonGroup/dataType"/>
     </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//RadioButton">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//RadioButton/text"/>
@@ -36,16 +40,13 @@
     <genClasses ecoreClass="EntityDsl.ecore#//CheckBox"/>
     <genClasses ecoreClass="EntityDsl.ecore#//TextBox">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TextBox/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//TextBox/required"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//TextBox/dataType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TextBox/minTextLength"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TextBox/maxTextLength"/>
     </genClasses>
-    <genClasses ecoreClass="EntityDsl.ecore#//Boolean">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Boolean/value"/>
-    </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//ComboBox">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//ComboBox/items"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//ComboBox/required"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//ComboBox/dataType"/>
     </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//ComboBoxItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//ComboBoxItem/text"/>

@@ -206,9 +206,23 @@ ruleAttribute returns [EObject current=null]
 	(
 		(
 			(
-				lv_name_0_0=RULE_ID
+				lv_required_0_0='*'
 				{
-					newLeafNode(lv_name_0_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0_0());
+					newLeafNode(lv_required_0_0, grammarAccess.getAttributeAccess().getRequiredAsteriskKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAttributeRule());
+					}
+					setWithLastConsumed($current, "required", lv_required_0_0, "*");
+				}
+			)
+		)?
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -217,25 +231,25 @@ ruleAttribute returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_0_0,
+						lv_name_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_1=':'
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getColonKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getAttributeAccess().getColonKeyword_2());
 		}
-		otherlv_2='['
+		otherlv_3='['
 		{
-			newLeafNode(otherlv_2, grammarAccess.getAttributeAccess().getLeftSquareBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getLeftSquareBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttributeAccess().getInputTypeWinFormControlTypeParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAttributeAccess().getInputTypeWinFormControlTypeParserRuleCall_4_0());
 				}
-				lv_inputType_3_0=ruleWinFormControlType
+				lv_inputType_4_0=ruleWinFormControlType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAttributeRule());
@@ -243,22 +257,22 @@ ruleAttribute returns [EObject current=null]
 					set(
 						$current,
 						"inputType",
-						lv_inputType_3_0,
+						lv_inputType_4_0,
 						"org.xtext.EntityDsl.WinFormControlType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=','
+		otherlv_5=','
 		{
-			newLeafNode(otherlv_4, grammarAccess.getAttributeAccess().getCommaKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getAttributeAccess().getCommaKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttributeAccess().getLabelTextLabelParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getAttributeAccess().getLabelTextLabelParserRuleCall_6_0());
 				}
-				lv_labelText_5_0=ruleLabel
+				lv_labelText_6_0=ruleLabel
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAttributeRule());
@@ -266,16 +280,71 @@ ruleAttribute returns [EObject current=null]
 					set(
 						$current,
 						"labelText",
-						lv_labelText_5_0,
+						lv_labelText_6_0,
 						"org.xtext.EntityDsl.Label");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_6=']'
+		otherlv_7=']'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_7());
 		}
+	)
+;
+
+// Entry rule entryRuleDataType
+entryRuleDataType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDataTypeRule()); }
+	iv_ruleDataType=ruleDataType
+	{ $current=$iv_ruleDataType.current; }
+	EOF;
+
+// Rule DataType
+ruleDataType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_type_0_1='string'
+				{
+					newLeafNode(lv_type_0_1, grammarAccess.getDataTypeAccess().getTypeStringKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDataTypeRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_1, null);
+				}
+				    |
+				lv_type_0_2='int'
+				{
+					newLeafNode(lv_type_0_2, grammarAccess.getDataTypeAccess().getTypeIntKeyword_0_1());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDataTypeRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_2, null);
+				}
+				    |
+				lv_type_0_3='double'
+				{
+					newLeafNode(lv_type_0_3, grammarAccess.getDataTypeAccess().getTypeDoubleKeyword_0_2());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDataTypeRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_3, null);
+				}
+			)
+		)
 	)
 ;
 
@@ -440,32 +509,28 @@ ruleRadioButtonGroup returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getRadioButtonGroupAccess().getLeftSquareBracketKeyword_4());
 		}
-		otherlv_5='required='
-		{
-			newLeafNode(otherlv_5, grammarAccess.getRadioButtonGroupAccess().getRequiredKeyword_5());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRadioButtonGroupAccess().getRequiredBooleanParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getRadioButtonGroupAccess().getDataTypeDataTypeParserRuleCall_5_0());
 				}
-				lv_required_6_0=ruleBoolean
+				lv_dataType_5_0=ruleDataType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRadioButtonGroupRule());
 					}
 					set(
 						$current,
-						"required",
-						lv_required_6_0,
-						"org.xtext.EntityDsl.Boolean");
+						"dataType",
+						lv_dataType_5_0,
+						"org.xtext.EntityDsl.DataType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7=']'
+		otherlv_6=']'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getRadioButtonGroupAccess().getRightSquareBracketKeyword_7());
+			newLeafNode(otherlv_6, grammarAccess.getRadioButtonGroupAccess().getRightSquareBracketKeyword_6());
 		}
 	)
 ;
@@ -570,125 +635,77 @@ ruleTextBox returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getTextBoxAccess().getLeftSquareBracketKeyword_1());
 		}
-		otherlv_2='required='
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTextBoxAccess().getRequiredKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTextBoxAccess().getRequiredBooleanParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getTextBoxAccess().getDataTypeDataTypeParserRuleCall_2_0());
 				}
-				lv_required_3_0=ruleBoolean
+				lv_dataType_2_0=ruleDataType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTextBoxRule());
 					}
 					set(
 						$current,
-						"required",
-						lv_required_3_0,
-						"org.xtext.EntityDsl.Boolean");
+						"dataType",
+						lv_dataType_2_0,
+						"org.xtext.EntityDsl.DataType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_3='('
+		{
+			newLeafNode(otherlv_3, grammarAccess.getTextBoxAccess().getLeftParenthesisKeyword_3());
+		}
 		(
-			otherlv_4='min='
-			{
-				newLeafNode(otherlv_4, grammarAccess.getTextBoxAccess().getMinKeyword_4_0());
-			}
 			(
-				(
-					lv_minTextLength_5_0=RULE_INT
-					{
-						newLeafNode(lv_minTextLength_5_0, grammarAccess.getTextBoxAccess().getMinTextLengthINTTerminalRuleCall_4_1_0());
+				lv_minTextLength_4_0=RULE_INT
+				{
+					newLeafNode(lv_minTextLength_4_0, grammarAccess.getTextBoxAccess().getMinTextLengthINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTextBoxRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTextBoxRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"minTextLength",
-							lv_minTextLength_5_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"minTextLength",
+						lv_minTextLength_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
 			)
 		)?
+		otherlv_5=','
+		{
+			newLeafNode(otherlv_5, grammarAccess.getTextBoxAccess().getCommaKeyword_5());
+		}
 		(
-			otherlv_6='max='
-			{
-				newLeafNode(otherlv_6, grammarAccess.getTextBoxAccess().getMaxKeyword_5_0());
-			}
 			(
-				(
-					lv_maxTextLength_7_0=RULE_INT
-					{
-						newLeafNode(lv_maxTextLength_7_0, grammarAccess.getTextBoxAccess().getMaxTextLengthINTTerminalRuleCall_5_1_0());
+				lv_maxTextLength_6_0=RULE_INT
+				{
+					newLeafNode(lv_maxTextLength_6_0, grammarAccess.getTextBoxAccess().getMaxTextLengthINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTextBoxRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTextBoxRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"maxTextLength",
-							lv_maxTextLength_7_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"maxTextLength",
+						lv_maxTextLength_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
 			)
 		)?
+		otherlv_7=')'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getTextBoxAccess().getRightParenthesisKeyword_7());
+		}
 		otherlv_8=']'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getTextBoxAccess().getRightSquareBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getTextBoxAccess().getRightSquareBracketKeyword_8());
 		}
-	)
-;
-
-// Entry rule entryRuleBoolean
-entryRuleBoolean returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBooleanRule()); }
-	iv_ruleBoolean=ruleBoolean
-	{ $current=$iv_ruleBoolean.current; }
-	EOF;
-
-// Rule Boolean
-ruleBoolean returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_value_0_1='true'
-				{
-					newLeafNode(lv_value_0_1, grammarAccess.getBooleanAccess().getValueTrueKeyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBooleanRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_1, null);
-				}
-				    |
-				lv_value_0_2='false'
-				{
-					newLeafNode(lv_value_0_2, grammarAccess.getBooleanAccess().getValueFalseKeyword_0_1());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBooleanRule());
-					}
-					setWithLastConsumed($current, "value", lv_value_0_2, null);
-				}
-			)
-		)
 	)
 ;
 
@@ -753,32 +770,28 @@ ruleComboBox returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getComboBoxAccess().getLeftSquareBracketKeyword_4());
 		}
-		otherlv_5='required='
-		{
-			newLeafNode(otherlv_5, grammarAccess.getComboBoxAccess().getRequiredKeyword_5());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getComboBoxAccess().getRequiredBooleanParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getComboBoxAccess().getDataTypeDataTypeParserRuleCall_5_0());
 				}
-				lv_required_6_0=ruleBoolean
+				lv_dataType_5_0=ruleDataType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getComboBoxRule());
 					}
 					set(
 						$current,
-						"required",
-						lv_required_6_0,
-						"org.xtext.EntityDsl.Boolean");
+						"dataType",
+						lv_dataType_5_0,
+						"org.xtext.EntityDsl.DataType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7=']'
+		otherlv_6=']'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getComboBoxAccess().getRightSquareBracketKeyword_7());
+			newLeafNode(otherlv_6, grammarAccess.getComboBoxAccess().getRightSquareBracketKeyword_6());
 		}
 	)
 ;

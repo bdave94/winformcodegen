@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.entityDsl.Attribute#getRequired <em>Required</em>}</li>
  *   <li>{@link org.xtext.entityDsl.Attribute#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.entityDsl.Attribute#getInputType <em>Input Type</em>}</li>
  *   <li>{@link org.xtext.entityDsl.Attribute#getLabelText <em>Label Text</em>}</li>
@@ -25,6 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Attribute extends EObject
 {
+  /**
+	 * Returns the value of the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Required</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required</em>' attribute.
+	 * @see #setRequired(String)
+	 * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_Required()
+	 * @model
+	 * @generated
+	 */
+  String getRequired();
+
+  /**
+	 * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getRequired <em>Required</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Required</em>' attribute.
+	 * @see #getRequired()
+	 * @generated
+	 */
+  void setRequired(String value);
+
   /**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

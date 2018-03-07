@@ -142,13 +142,22 @@ public interface EntityDslPackage extends EPackage
   int ATTRIBUTE = 2;
 
   /**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int ATTRIBUTE__REQUIRED = 0;
+
+  /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int ATTRIBUTE__NAME = 0;
+  int ATTRIBUTE__NAME = 1;
 
   /**
 	 * The feature id for the '<em><b>Input Type</b></em>' containment reference.
@@ -157,7 +166,7 @@ public interface EntityDslPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int ATTRIBUTE__INPUT_TYPE = 1;
+  int ATTRIBUTE__INPUT_TYPE = 2;
 
   /**
 	 * The feature id for the '<em><b>Label Text</b></em>' containment reference.
@@ -166,7 +175,7 @@ public interface EntityDslPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int ATTRIBUTE__LABEL_TEXT = 2;
+  int ATTRIBUTE__LABEL_TEXT = 3;
 
   /**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -175,7 +184,35 @@ public interface EntityDslPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int ATTRIBUTE_FEATURE_COUNT = 3;
+  int ATTRIBUTE_FEATURE_COUNT = 4;
+
+  /**
+	 * The meta object id for the '{@link org.xtext.entityDsl.impl.DataTypeImpl <em>Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.entityDsl.impl.DataTypeImpl
+	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDataType()
+	 * @generated
+	 */
+  int DATA_TYPE = 3;
+
+  /**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DATA_TYPE__TYPE = 0;
+
+  /**
+	 * The number of structural features of the '<em>Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int DATA_TYPE_FEATURE_COUNT = 1;
 
   /**
 	 * The meta object id for the '{@link org.xtext.entityDsl.impl.LabelImpl <em>Label</em>}' class.
@@ -185,7 +222,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getLabel()
 	 * @generated
 	 */
-  int LABEL = 3;
+  int LABEL = 4;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -213,7 +250,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getWinFormControlType()
 	 * @generated
 	 */
-  int WIN_FORM_CONTROL_TYPE = 4;
+  int WIN_FORM_CONTROL_TYPE = 5;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -250,7 +287,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButtonGroup()
 	 * @generated
 	 */
-  int RADIO_BUTTON_GROUP = 5;
+  int RADIO_BUTTON_GROUP = 6;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -280,13 +317,13 @@ public interface EntityDslPackage extends EPackage
   int RADIO_BUTTON_GROUP__BUTTONS = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Required</b></em>' containment reference.
+	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int RADIO_BUTTON_GROUP__REQUIRED = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
+  int RADIO_BUTTON_GROUP__DATA_TYPE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
 
   /**
 	 * The number of structural features of the '<em>Radio Button Group</em>' class.
@@ -305,7 +342,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButton()
 	 * @generated
 	 */
-  int RADIO_BUTTON = 6;
+  int RADIO_BUTTON = 7;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -333,7 +370,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getCheckBox()
 	 * @generated
 	 */
-  int CHECK_BOX = 7;
+  int CHECK_BOX = 8;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -370,7 +407,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTextBox()
 	 * @generated
 	 */
-  int TEXT_BOX = 8;
+  int TEXT_BOX = 9;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -382,13 +419,13 @@ public interface EntityDslPackage extends EPackage
   int TEXT_BOX__NAME = 0;
 
   /**
-	 * The feature id for the '<em><b>Required</b></em>' containment reference.
+	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int TEXT_BOX__REQUIRED = 1;
+  int TEXT_BOX__DATA_TYPE = 1;
 
   /**
 	 * The feature id for the '<em><b>Min Text Length</b></em>' attribute.
@@ -416,34 +453,6 @@ public interface EntityDslPackage extends EPackage
 	 * @ordered
 	 */
   int TEXT_BOX_FEATURE_COUNT = 4;
-
-  /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.BooleanImpl <em>Boolean</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.BooleanImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getBoolean()
-	 * @generated
-	 */
-  int BOOLEAN = 9;
-
-  /**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int BOOLEAN__VALUE = 0;
-
-  /**
-	 * The number of structural features of the '<em>Boolean</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int BOOLEAN_FEATURE_COUNT = 1;
 
   /**
 	 * The meta object id for the '{@link org.xtext.entityDsl.impl.ComboBoxImpl <em>Combo Box</em>}' class.
@@ -483,13 +492,13 @@ public interface EntityDslPackage extends EPackage
   int COMBO_BOX__ITEMS = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Required</b></em>' containment reference.
+	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int COMBO_BOX__REQUIRED = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
+  int COMBO_BOX__DATA_TYPE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
 
   /**
 	 * The number of structural features of the '<em>Combo Box</em>' class.
@@ -604,6 +613,17 @@ public interface EntityDslPackage extends EPackage
   EClass getAttribute();
 
   /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Attribute#getRequired <em>Required</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required</em>'.
+	 * @see org.xtext.entityDsl.Attribute#getRequired()
+	 * @see #getAttribute()
+	 * @generated
+	 */
+  EAttribute getAttribute_Required();
+
+  /**
 	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Attribute#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -635,6 +655,27 @@ public interface EntityDslPackage extends EPackage
 	 * @generated
 	 */
   EReference getAttribute_LabelText();
+
+  /**
+	 * Returns the meta object for class '{@link org.xtext.entityDsl.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Type</em>'.
+	 * @see org.xtext.entityDsl.DataType
+	 * @generated
+	 */
+  EClass getDataType();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.DataType#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see org.xtext.entityDsl.DataType#getType()
+	 * @see #getDataType()
+	 * @generated
+	 */
+  EAttribute getDataType_Type();
 
   /**
 	 * Returns the meta object for class '{@link org.xtext.entityDsl.Label <em>Label</em>}'.
@@ -711,15 +752,15 @@ public interface EntityDslPackage extends EPackage
   EReference getRadioButtonGroup_Buttons();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.RadioButtonGroup#getRequired <em>Required</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.RadioButtonGroup#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Required</em>'.
-	 * @see org.xtext.entityDsl.RadioButtonGroup#getRequired()
+	 * @return the meta object for the containment reference '<em>Data Type</em>'.
+	 * @see org.xtext.entityDsl.RadioButtonGroup#getDataType()
 	 * @see #getRadioButtonGroup()
 	 * @generated
 	 */
-  EReference getRadioButtonGroup_Required();
+  EReference getRadioButtonGroup_DataType();
 
   /**
 	 * Returns the meta object for class '{@link org.xtext.entityDsl.RadioButton <em>Radio Button</em>}'.
@@ -774,15 +815,15 @@ public interface EntityDslPackage extends EPackage
   EAttribute getTextBox_Name();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.TextBox#getRequired <em>Required</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.TextBox#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Required</em>'.
-	 * @see org.xtext.entityDsl.TextBox#getRequired()
+	 * @return the meta object for the containment reference '<em>Data Type</em>'.
+	 * @see org.xtext.entityDsl.TextBox#getDataType()
 	 * @see #getTextBox()
 	 * @generated
 	 */
-  EReference getTextBox_Required();
+  EReference getTextBox_DataType();
 
   /**
 	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TextBox#getMinTextLength <em>Min Text Length</em>}'.
@@ -807,27 +848,6 @@ public interface EntityDslPackage extends EPackage
   EAttribute getTextBox_MaxTextLength();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.Boolean <em>Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Boolean</em>'.
-	 * @see org.xtext.entityDsl.Boolean
-	 * @generated
-	 */
-  EClass getBoolean();
-
-  /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Boolean#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.xtext.entityDsl.Boolean#getValue()
-	 * @see #getBoolean()
-	 * @generated
-	 */
-  EAttribute getBoolean_Value();
-
-  /**
 	 * Returns the meta object for class '{@link org.xtext.entityDsl.ComboBox <em>Combo Box</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -849,15 +869,15 @@ public interface EntityDslPackage extends EPackage
   EReference getComboBox_Items();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.ComboBox#getRequired <em>Required</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.ComboBox#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Required</em>'.
-	 * @see org.xtext.entityDsl.ComboBox#getRequired()
+	 * @return the meta object for the containment reference '<em>Data Type</em>'.
+	 * @see org.xtext.entityDsl.ComboBox#getDataType()
 	 * @see #getComboBox()
 	 * @generated
 	 */
-  EReference getComboBox_Required();
+  EReference getComboBox_DataType();
 
   /**
 	 * Returns the meta object for class '{@link org.xtext.entityDsl.ComboBoxItem <em>Combo Box Item</em>}'.
@@ -966,6 +986,14 @@ public interface EntityDslPackage extends EPackage
     EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
     /**
+		 * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute ATTRIBUTE__REQUIRED = eINSTANCE.getAttribute_Required();
+
+    /**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -988,6 +1016,24 @@ public interface EntityDslPackage extends EPackage
 		 * @generated
 		 */
     EReference ATTRIBUTE__LABEL_TEXT = eINSTANCE.getAttribute_LabelText();
+
+    /**
+		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.DataTypeImpl <em>Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.entityDsl.impl.DataTypeImpl
+		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDataType()
+		 * @generated
+		 */
+    EClass DATA_TYPE = eINSTANCE.getDataType();
+
+    /**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute DATA_TYPE__TYPE = eINSTANCE.getDataType_Type();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.LabelImpl <em>Label</em>}' class.
@@ -1052,12 +1098,12 @@ public interface EntityDslPackage extends EPackage
     EReference RADIO_BUTTON_GROUP__BUTTONS = eINSTANCE.getRadioButtonGroup_Buttons();
 
     /**
-		 * The meta object literal for the '<em><b>Required</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated
 		 */
-    EReference RADIO_BUTTON_GROUP__REQUIRED = eINSTANCE.getRadioButtonGroup_Required();
+    EReference RADIO_BUTTON_GROUP__DATA_TYPE = eINSTANCE.getRadioButtonGroup_DataType();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.RadioButtonImpl <em>Radio Button</em>}' class.
@@ -1106,12 +1152,12 @@ public interface EntityDslPackage extends EPackage
     EAttribute TEXT_BOX__NAME = eINSTANCE.getTextBox_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Required</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated
 		 */
-    EReference TEXT_BOX__REQUIRED = eINSTANCE.getTextBox_Required();
+    EReference TEXT_BOX__DATA_TYPE = eINSTANCE.getTextBox_DataType();
 
     /**
 		 * The meta object literal for the '<em><b>Min Text Length</b></em>' attribute feature.
@@ -1128,24 +1174,6 @@ public interface EntityDslPackage extends EPackage
 		 * @generated
 		 */
     EAttribute TEXT_BOX__MAX_TEXT_LENGTH = eINSTANCE.getTextBox_MaxTextLength();
-
-    /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.BooleanImpl <em>Boolean</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.BooleanImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getBoolean()
-		 * @generated
-		 */
-    EClass BOOLEAN = eINSTANCE.getBoolean();
-
-    /**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EAttribute BOOLEAN__VALUE = eINSTANCE.getBoolean_Value();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.ComboBoxImpl <em>Combo Box</em>}' class.
@@ -1166,12 +1194,12 @@ public interface EntityDslPackage extends EPackage
     EReference COMBO_BOX__ITEMS = eINSTANCE.getComboBox_Items();
 
     /**
-		 * The meta object literal for the '<em><b>Required</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated
 		 */
-    EReference COMBO_BOX__REQUIRED = eINSTANCE.getComboBox_Required();
+    EReference COMBO_BOX__DATA_TYPE = eINSTANCE.getComboBox_DataType();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.ComboBoxItemImpl <em>Combo Box Item</em>}' class.

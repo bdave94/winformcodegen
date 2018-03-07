@@ -10,18 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.xtext.entityDsl.Attribute;
-import org.xtext.entityDsl.CheckBox;
-import org.xtext.entityDsl.ComboBox;
-import org.xtext.entityDsl.ComboBoxItem;
-import org.xtext.entityDsl.Domainmodel;
-import org.xtext.entityDsl.Entity;
-import org.xtext.entityDsl.EntityDslPackage;
-import org.xtext.entityDsl.Label;
-import org.xtext.entityDsl.RadioButton;
-import org.xtext.entityDsl.RadioButtonGroup;
-import org.xtext.entityDsl.TextBox;
-import org.xtext.entityDsl.WinFormControlType;
+import org.xtext.entityDsl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,6 +84,10 @@ public class EntityDslAdapterFactory extends AdapterFactoryImpl
 				return createAttributeAdapter();
 			}
 			@Override
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
+			}
+			@Override
 			public Adapter caseLabel(Label object) {
 				return createLabelAdapter();
 			}
@@ -117,10 +110,6 @@ public class EntityDslAdapterFactory extends AdapterFactoryImpl
 			@Override
 			public Adapter caseTextBox(TextBox object) {
 				return createTextBoxAdapter();
-			}
-			@Override
-			public Adapter caseBoolean(org.xtext.entityDsl.Boolean object) {
-				return createBooleanAdapter();
 			}
 			@Override
 			public Adapter caseComboBox(ComboBox object) {
@@ -192,6 +181,21 @@ public class EntityDslAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createAttributeAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.entityDsl.DataType
+	 * @generated
+	 */
+  public Adapter createDataTypeAdapter()
   {
 		return null;
 	}
@@ -282,21 +286,6 @@ public class EntityDslAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createTextBoxAdapter()
-  {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Boolean <em>Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.Boolean
-	 * @generated
-	 */
-  public Adapter createBooleanAdapter()
   {
 		return null;
 	}

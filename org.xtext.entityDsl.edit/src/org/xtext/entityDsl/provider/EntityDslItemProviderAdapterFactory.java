@@ -142,6 +142,29 @@ public class EntityDslItemProviderAdapterFactory extends EntityDslAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.xtext.entityDsl.DataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataTypeItemProvider dataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.xtext.entityDsl.DataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataTypeAdapter() {
+		if (dataTypeItemProvider == null) {
+			dataTypeItemProvider = new DataTypeItemProvider(this);
+		}
+
+		return dataTypeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.xtext.entityDsl.Label} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,29 +300,6 @@ public class EntityDslItemProviderAdapterFactory extends EntityDslAdapterFactory
 		}
 
 		return textBoxItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.xtext.entityDsl.Boolean} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BooleanItemProvider booleanItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.xtext.entityDsl.Boolean}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBooleanAdapter() {
-		if (booleanItemProvider == null) {
-			booleanItemProvider = new BooleanItemProvider(this);
-		}
-
-		return booleanItemProvider;
 	}
 
 	/**
@@ -450,13 +450,13 @@ public class EntityDslItemProviderAdapterFactory extends EntityDslAdapterFactory
 		if (domainmodelItemProvider != null) domainmodelItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
+		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (labelItemProvider != null) labelItemProvider.dispose();
 		if (winFormControlTypeItemProvider != null) winFormControlTypeItemProvider.dispose();
 		if (radioButtonGroupItemProvider != null) radioButtonGroupItemProvider.dispose();
 		if (radioButtonItemProvider != null) radioButtonItemProvider.dispose();
 		if (checkBoxItemProvider != null) checkBoxItemProvider.dispose();
 		if (textBoxItemProvider != null) textBoxItemProvider.dispose();
-		if (booleanItemProvider != null) booleanItemProvider.dispose();
 		if (comboBoxItemProvider != null) comboBoxItemProvider.dispose();
 		if (comboBoxItemItemProvider != null) comboBoxItemItemProvider.dispose();
 	}

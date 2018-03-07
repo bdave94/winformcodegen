@@ -64,9 +64,32 @@ public class AttributeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_required_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_required_feature", "_UI_Attribute_type"),
+				 EntityDslPackage.Literals.ATTRIBUTE__REQUIRED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -160,6 +183,7 @@ public class AttributeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Attribute.class)) {
+			case EntityDslPackage.ATTRIBUTE__REQUIRED:
 			case EntityDslPackage.ATTRIBUTE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

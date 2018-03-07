@@ -149,7 +149,7 @@ public class TextBoxItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EntityDslPackage.Literals.TEXT_BOX__REQUIRED);
+			childrenFeatures.add(EntityDslPackage.Literals.TEXT_BOX__DATA_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -210,7 +210,7 @@ public class TextBoxItemProvider
 			case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case EntityDslPackage.TEXT_BOX__REQUIRED:
+			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -230,8 +230,8 @@ public class TextBoxItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EntityDslPackage.Literals.TEXT_BOX__REQUIRED,
-				 EntityDslFactory.eINSTANCE.createBoolean()));
+				(EntityDslPackage.Literals.TEXT_BOX__DATA_TYPE,
+				 EntityDslFactory.eINSTANCE.createDataType()));
 	}
 
 	/**

@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.entityDsl.TextBox#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.entityDsl.TextBox#getRequired <em>Required</em>}</li>
+ *   <li>{@link org.xtext.entityDsl.TextBox#getDataType <em>Data Type</em>}</li>
  *   <li>{@link org.xtext.entityDsl.TextBox#getMinTextLength <em>Min Text Length</em>}</li>
  *   <li>{@link org.xtext.entityDsl.TextBox#getMaxTextLength <em>Max Text Length</em>}</li>
  * </ul>
@@ -53,30 +53,30 @@ public interface TextBox extends EObject
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Required</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Data Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Required</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Data Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required</em>' containment reference.
-	 * @see #setRequired(org.xtext.entityDsl.Boolean)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTextBox_Required()
+	 * @return the value of the '<em>Data Type</em>' containment reference.
+	 * @see #setDataType(DataType)
+	 * @see org.xtext.entityDsl.EntityDslPackage#getTextBox_DataType()
 	 * @model containment="true"
 	 * @generated
 	 */
-  org.xtext.entityDsl.Boolean getRequired();
+  DataType getDataType();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.TextBox#getRequired <em>Required</em>}' containment reference.
+	 * Sets the value of the '{@link org.xtext.entityDsl.TextBox#getDataType <em>Data Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required</em>' containment reference.
-	 * @see #getRequired()
+	 * @param value the new value of the '<em>Data Type</em>' containment reference.
+	 * @see #getDataType()
 	 * @generated
 	 */
-  void setRequired(org.xtext.entityDsl.Boolean value);
+  void setDataType(DataType value);
 
   /**
 	 * Returns the value of the '<em><b>Min Text Length</b></em>' attribute.

@@ -12,11 +12,15 @@
         eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputType" eType="#//WinFormControlType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labelText" eType="#//Label"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Label">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,7 +33,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RadioButtonGroup" eSuperTypes="#//WinFormControlType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="buttons" upperBound="-1"
         eType="#//RadioButton" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//Boolean"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RadioButton">
@@ -38,18 +42,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//WinFormControlType"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextBox">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//Boolean"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minTextLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTextLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Boolean">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComboBox" eSuperTypes="#//WinFormControlType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//ComboBoxItem" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//Boolean"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComboBoxItem">

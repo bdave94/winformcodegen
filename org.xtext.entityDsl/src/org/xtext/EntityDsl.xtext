@@ -12,7 +12,11 @@ Entity:
     '}';    
     
 Attribute:
-      name=ID ':' '['inputType= WinFormControlType ','labelText=Label']' ;
+      (required='*')? name=ID ':' '['inputType= WinFormControlType ','labelText=Label']' ;
+
+DataType:
+	type= ('string' | 'int' | 'double')
+;
 
 Label:
 	text= STRING;
@@ -21,7 +25,7 @@ WinFormControlType:
 	controlType = TextBox | ComboBox | CheckBox | RadioButtonGroup;
 
 RadioButtonGroup:
-	name = 'RadioButtonGroup' '('(buttons+=RadioButton)* ')''[''required=' required=Boolean ']'
+	name = 'RadioButtonGroup' '('(buttons+=RadioButton)* ')''[' dataType=DataType  ']'
 ;
 
 RadioButton:
@@ -33,16 +37,12 @@ CheckBox:
 ;
 
 TextBox:
-	name = 'TextBox' '[' 'required=' required=Boolean ('min=' minTextLength=INT)? ('max='maxTextLength=INT)? ']'
+	name = 'TextBox' '[' dataType=DataType '('( minTextLength=INT)? ',' (maxTextLength=INT)?')' ']'
 ;
 
-
-Boolean:
-	value = ('true' | 'false')
-;
 
 ComboBox:
-	name = 'ComboBox' '('(items+=ComboBoxItem)* ')' '[' 'required=' required=Boolean']';
+	name = 'ComboBox' '('(items+=ComboBoxItem)* ')' '[' dataType=DataType']';
 
 ComboBoxItem:
 	text=STRING;

@@ -11,19 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.xtext.entityDsl.Attribute;
-import org.xtext.entityDsl.CheckBox;
-import org.xtext.entityDsl.ComboBox;
-import org.xtext.entityDsl.ComboBoxItem;
-import org.xtext.entityDsl.Domainmodel;
-import org.xtext.entityDsl.Entity;
-import org.xtext.entityDsl.EntityDslFactory;
-import org.xtext.entityDsl.EntityDslPackage;
-import org.xtext.entityDsl.Label;
-import org.xtext.entityDsl.RadioButton;
-import org.xtext.entityDsl.RadioButtonGroup;
-import org.xtext.entityDsl.TextBox;
-import org.xtext.entityDsl.WinFormControlType;
+import org.xtext.entityDsl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,13 +64,13 @@ public class EntityDslFactoryImpl extends EFactoryImpl implements EntityDslFacto
 			case EntityDslPackage.DOMAINMODEL: return createDomainmodel();
 			case EntityDslPackage.ENTITY: return createEntity();
 			case EntityDslPackage.ATTRIBUTE: return createAttribute();
+			case EntityDslPackage.DATA_TYPE: return createDataType();
 			case EntityDslPackage.LABEL: return createLabel();
 			case EntityDslPackage.WIN_FORM_CONTROL_TYPE: return createWinFormControlType();
 			case EntityDslPackage.RADIO_BUTTON_GROUP: return createRadioButtonGroup();
 			case EntityDslPackage.RADIO_BUTTON: return createRadioButton();
 			case EntityDslPackage.CHECK_BOX: return createCheckBox();
 			case EntityDslPackage.TEXT_BOX: return createTextBox();
-			case EntityDslPackage.BOOLEAN: return createBoolean();
 			case EntityDslPackage.COMBO_BOX: return createComboBox();
 			case EntityDslPackage.COMBO_BOX_ITEM: return createComboBoxItem();
 			default:
@@ -121,6 +109,17 @@ public class EntityDslFactoryImpl extends EFactoryImpl implements EntityDslFacto
   {
 		AttributeImpl attribute = new AttributeImpl();
 		return attribute;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public DataType createDataType()
+  {
+		DataTypeImpl dataType = new DataTypeImpl();
+		return dataType;
 	}
 
   /**
@@ -187,17 +186,6 @@ public class EntityDslFactoryImpl extends EFactoryImpl implements EntityDslFacto
   {
 		TextBoxImpl textBox = new TextBoxImpl();
 		return textBox;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public org.xtext.entityDsl.Boolean createBoolean()
-  {
-		BooleanImpl boolean_ = new BooleanImpl();
-		return boolean_;
 	}
 
   /**

@@ -25,6 +25,7 @@ import org.xtext.entityDsl.WinFormControlType;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.entityDsl.impl.AttributeImpl#getRequired <em>Required</em>}</li>
  *   <li>{@link org.xtext.entityDsl.impl.AttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.entityDsl.impl.AttributeImpl#getInputType <em>Input Type</em>}</li>
  *   <li>{@link org.xtext.entityDsl.impl.AttributeImpl#getLabelText <em>Label Text</em>}</li>
@@ -34,6 +35,26 @@ import org.xtext.entityDsl.WinFormControlType;
  */
 public class AttributeImpl extends MinimalEObjectImpl.Container implements Attribute
 {
+  /**
+	 * The default value of the '{@link #getRequired() <em>Required</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getRequired()
+	 * @generated
+	 * @ordered
+	 */
+  protected static final String REQUIRED_EDEFAULT = " ";
+
+  /**
+	 * The cached value of the '{@link #getRequired() <em>Required</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getRequired()
+	 * @generated
+	 * @ordered
+	 */
+  protected String required = REQUIRED_EDEFAULT;
+
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,6 +114,29 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   protected EClass eStaticClass()
   {
 		return EntityDslPackage.Literals.ATTRIBUTE;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String getRequired()
+  {
+		return required;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setRequired(String newRequired)
+  {
+		String oldRequired = required;
+		required = newRequired;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.ATTRIBUTE__REQUIRED, oldRequired, required));
 	}
 
   /**
@@ -236,6 +280,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
+			case EntityDslPackage.ATTRIBUTE__REQUIRED:
+				return getRequired();
 			case EntityDslPackage.ATTRIBUTE__NAME:
 				return getName();
 			case EntityDslPackage.ATTRIBUTE__INPUT_TYPE:
@@ -255,6 +301,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
+			case EntityDslPackage.ATTRIBUTE__REQUIRED:
+				setRequired((String)newValue);
+				return;
 			case EntityDslPackage.ATTRIBUTE__NAME:
 				setName((String)newValue);
 				return;
@@ -277,6 +326,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   public void eUnset(int featureID)
   {
 		switch (featureID) {
+			case EntityDslPackage.ATTRIBUTE__REQUIRED:
+				setRequired(REQUIRED_EDEFAULT);
+				return;
 			case EntityDslPackage.ATTRIBUTE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -299,6 +351,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
+			case EntityDslPackage.ATTRIBUTE__REQUIRED:
+				return REQUIRED_EDEFAULT == null ? required != null : !REQUIRED_EDEFAULT.equals(required);
 			case EntityDslPackage.ATTRIBUTE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EntityDslPackage.ATTRIBUTE__INPUT_TYPE:
@@ -320,7 +374,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (required: ");
+		result.append(required);
+		result.append(", name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

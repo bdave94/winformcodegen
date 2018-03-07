@@ -14,6 +14,7 @@ import org.xtext.entityDsl.Attribute;
 import org.xtext.entityDsl.CheckBox;
 import org.xtext.entityDsl.ComboBox;
 import org.xtext.entityDsl.ComboBoxItem;
+import org.xtext.entityDsl.DataType;
 import org.xtext.entityDsl.Domainmodel;
 import org.xtext.entityDsl.Entity;
 import org.xtext.entityDsl.EntityDslFactory;
@@ -58,6 +59,13 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  private EClass dataTypeEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   private EClass labelEClass = null;
 
   /**
@@ -94,13 +102,6 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 	 * @generated
 	 */
   private EClass textBoxEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass booleanEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -254,7 +255,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getAttribute_Name()
+  public EAttribute getAttribute_Required()
   {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -264,9 +265,19 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EAttribute getAttribute_Name()
+  {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EReference getAttribute_InputType()
   {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(1);
+		return (EReference)attributeEClass.getEStructuralFeatures().get(2);
 	}
 
   /**
@@ -276,7 +287,27 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 	 */
   public EReference getAttribute_LabelText()
   {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(2);
+		return (EReference)attributeEClass.getEStructuralFeatures().get(3);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getDataType()
+  {
+		return dataTypeEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getDataType_Type()
+  {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
   /**
@@ -354,7 +385,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getRadioButtonGroup_Required()
+  public EReference getRadioButtonGroup_DataType()
   {
 		return (EReference)radioButtonGroupEClass.getEStructuralFeatures().get(1);
 	}
@@ -414,7 +445,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getTextBox_Required()
+  public EReference getTextBox_DataType()
   {
 		return (EReference)textBoxEClass.getEStructuralFeatures().get(1);
 	}
@@ -444,26 +475,6 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EClass getBoolean()
-  {
-		return booleanEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getBoolean_Value()
-  {
-		return (EAttribute)booleanEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EClass getComboBox()
   {
 		return comboBoxEClass;
@@ -484,7 +495,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getComboBox_Required()
+  public EReference getComboBox_DataType()
   {
 		return (EReference)comboBoxEClass.getEStructuralFeatures().get(1);
 	}
@@ -548,9 +559,13 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
 
 		attributeEClass = createEClass(ATTRIBUTE);
+		createEAttribute(attributeEClass, ATTRIBUTE__REQUIRED);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
 		createEReference(attributeEClass, ATTRIBUTE__INPUT_TYPE);
 		createEReference(attributeEClass, ATTRIBUTE__LABEL_TEXT);
+
+		dataTypeEClass = createEClass(DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__TYPE);
 
 		labelEClass = createEClass(LABEL);
 		createEAttribute(labelEClass, LABEL__TEXT);
@@ -561,7 +576,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 
 		radioButtonGroupEClass = createEClass(RADIO_BUTTON_GROUP);
 		createEReference(radioButtonGroupEClass, RADIO_BUTTON_GROUP__BUTTONS);
-		createEReference(radioButtonGroupEClass, RADIO_BUTTON_GROUP__REQUIRED);
+		createEReference(radioButtonGroupEClass, RADIO_BUTTON_GROUP__DATA_TYPE);
 
 		radioButtonEClass = createEClass(RADIO_BUTTON);
 		createEAttribute(radioButtonEClass, RADIO_BUTTON__TEXT);
@@ -570,16 +585,13 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 
 		textBoxEClass = createEClass(TEXT_BOX);
 		createEAttribute(textBoxEClass, TEXT_BOX__NAME);
-		createEReference(textBoxEClass, TEXT_BOX__REQUIRED);
+		createEReference(textBoxEClass, TEXT_BOX__DATA_TYPE);
 		createEAttribute(textBoxEClass, TEXT_BOX__MIN_TEXT_LENGTH);
 		createEAttribute(textBoxEClass, TEXT_BOX__MAX_TEXT_LENGTH);
 
-		booleanEClass = createEClass(BOOLEAN);
-		createEAttribute(booleanEClass, BOOLEAN__VALUE);
-
 		comboBoxEClass = createEClass(COMBO_BOX);
 		createEReference(comboBoxEClass, COMBO_BOX__ITEMS);
-		createEReference(comboBoxEClass, COMBO_BOX__REQUIRED);
+		createEReference(comboBoxEClass, COMBO_BOX__DATA_TYPE);
 
 		comboBoxItemEClass = createEClass(COMBO_BOX_ITEM);
 		createEAttribute(comboBoxItemEClass, COMBO_BOX_ITEM__TEXT);
@@ -628,9 +640,13 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		initEReference(getEntity_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttribute_Required(), ecorePackage.getEString(), "required", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttribute_InputType(), this.getWinFormControlType(), null, "inputType", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttribute_LabelText(), this.getLabel(), null, "labelText", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataType_Type(), ecorePackage.getEString(), "type", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLabel_Text(), ecorePackage.getEString(), "text", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -641,7 +657,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 
 		initEClass(radioButtonGroupEClass, RadioButtonGroup.class, "RadioButtonGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRadioButtonGroup_Buttons(), this.getRadioButton(), null, "buttons", null, 0, -1, RadioButtonGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRadioButtonGroup_Required(), this.getBoolean(), null, "required", null, 0, 1, RadioButtonGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRadioButtonGroup_DataType(), this.getDataType(), null, "dataType", null, 0, 1, RadioButtonGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(radioButtonEClass, RadioButton.class, "RadioButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRadioButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -650,16 +666,13 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 
 		initEClass(textBoxEClass, TextBox.class, "TextBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTextBox_Name(), ecorePackage.getEString(), "name", null, 0, 1, TextBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextBox_Required(), this.getBoolean(), null, "required", null, 0, 1, TextBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextBox_DataType(), this.getDataType(), null, "dataType", null, 0, 1, TextBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTextBox_MinTextLength(), ecorePackage.getEInt(), "minTextLength", null, 0, 1, TextBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTextBox_MaxTextLength(), ecorePackage.getEInt(), "maxTextLength", null, 0, 1, TextBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(booleanEClass, org.xtext.entityDsl.Boolean.class, "Boolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBoolean_Value(), ecorePackage.getEString(), "value", null, 0, 1, org.xtext.entityDsl.Boolean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(comboBoxEClass, ComboBox.class, "ComboBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComboBox_Items(), this.getComboBoxItem(), null, "items", null, 0, -1, ComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComboBox_Required(), this.getBoolean(), null, "required", null, 0, 1, ComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComboBox_DataType(), this.getDataType(), null, "dataType", null, 0, 1, ComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comboBoxItemEClass, ComboBoxItem.class, "ComboBoxItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComboBoxItem_Text(), ecorePackage.getEString(), "text", null, 0, 1, ComboBoxItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -64,7 +64,7 @@ public class RadioButtonGroupItemProvider extends WinFormControlTypeItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EntityDslPackage.Literals.RADIO_BUTTON_GROUP__BUTTONS);
-			childrenFeatures.add(EntityDslPackage.Literals.RADIO_BUTTON_GROUP__REQUIRED);
+			childrenFeatures.add(EntityDslPackage.Literals.RADIO_BUTTON_GROUP__DATA_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -121,7 +121,7 @@ public class RadioButtonGroupItemProvider extends WinFormControlTypeItemProvider
 
 		switch (notification.getFeatureID(RadioButtonGroup.class)) {
 			case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
-			case EntityDslPackage.RADIO_BUTTON_GROUP__REQUIRED:
+			case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -146,8 +146,8 @@ public class RadioButtonGroupItemProvider extends WinFormControlTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EntityDslPackage.Literals.RADIO_BUTTON_GROUP__REQUIRED,
-				 EntityDslFactory.eINSTANCE.createBoolean()));
+				(EntityDslPackage.Literals.RADIO_BUTTON_GROUP__DATA_TYPE,
+				 EntityDslFactory.eINSTANCE.createDataType()));
 	}
 
 }

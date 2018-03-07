@@ -128,7 +128,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«ELSE»
 	        	«entity.name.toFirstLower»TextboxMinimalTextLength.Add("tb«entity.name»«attribute.name»", 0);
 	        	«ENDIF»
-	        	«IF tb.required.value.equals("true") == true»
+	        	«IF attribute.required.equals("*") == true»
 	        	«entity.name.toFirstLower»RequiredFields.Add("tb«entity.name»«attribute.name»",true);
 	        	«ENDIF»
 	        	«entity.name.toFirstLower»FieldLabelText.Add("tb«entity.name»«attribute.name»","«attribute.labelText.text»");
@@ -139,14 +139,14 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«ENDFOR» 
 	        	             	
 	        	«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»
-	        	«IF c.required.value.equals("true")»
+	        	«IF attribute.required.equals("*")»
 	        	«entity.name.toFirstLower»RequiredFields.Add("comboBox«entity.name»«attribute.name»",true);
 	        	«ENDIF»
 	        	«entity.name.toFirstLower»FieldLabelText.Add("comboBox«entity.name»«attribute.name»","«attribute.labelText.text»");
 	        	«ENDFOR»
 	        	
 	        	«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
-	        	«IF rbg.required.value.equals("true")»
+	        	«IF attribute.required.equals("*")»
 	        	«entity.name.toFirstLower»RequiredFields.Add("groupBox«entity.name»«attribute.name»",true);
 	        	«ENDIF»
 	        	«entity.name.toFirstLower»FieldLabelText.Add("groupBox«entity.name»«attribute.name»","«attribute.labelText.text»");
@@ -810,7 +810,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		«IF tb.maxTextLength > 0»
 		this.tb«entity.name»«attribute.name».MaxLength = «tb.maxTextLength»;
 		«ENDIF»
-		«IF tb.required.value.equals("true")»
+		«IF attribute.required.equals("*")»
 		// 
 		// label«entity.name»«attribute.name»
 		//
@@ -849,7 +849,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		this.comboBox«entity.name»«attribute.name».Name = "comboBox«entity.name»«attribute.name»";
 		this.comboBox«entity.name»«attribute.name».Size = new System.Drawing.Size(100, 21);
 		
-		«IF c.required.value.equals("true")»
+		«IF attribute.required.equals("*")»
 		// 
 		// label«entity.name»«attribute.name»
 		//
@@ -874,7 +874,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		this.groupBox«entity.name»«attribute.name».TabStop = false;
 				            
 		
-		«IF rbg.required.value.equals("true")»
+		«IF attribute.required.equals("*")»
 		// 
 		// label«entity.name»«attribute.name»
 		//

@@ -10,49 +10,50 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.entityDsl.DataType;
 import org.xtext.entityDsl.EntityDslPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Boolean</b></em>'.
+ * An implementation of the model object '<em><b>Data Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.entityDsl.impl.BooleanImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.entityDsl.impl.DataTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xtext.entityDsl.Boolean
+public class DataTypeImpl extends MinimalEObjectImpl.Container implements DataType
 {
   /**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String VALUE_EDEFAULT = null;
+  protected static final String TYPE_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-  protected String value = VALUE_EDEFAULT;
+  protected String type = TYPE_EDEFAULT;
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected BooleanImpl()
+  protected DataTypeImpl()
   {
 		super();
 	}
@@ -65,7 +66,7 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
   @Override
   protected EClass eStaticClass()
   {
-		return EntityDslPackage.Literals.BOOLEAN;
+		return EntityDslPackage.Literals.DATA_TYPE;
 	}
 
   /**
@@ -73,9 +74,9 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getValue()
+  public String getType()
   {
-		return value;
+		return type;
 	}
 
   /**
@@ -83,12 +84,12 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setValue(String newValue)
+  public void setType(String newType)
   {
-		String oldValue = value;
-		value = newValue;
+		String oldType = type;
+		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.BOOLEAN__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.DATA_TYPE__TYPE, oldType, type));
 	}
 
   /**
@@ -100,8 +101,8 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
-			case EntityDslPackage.BOOLEAN__VALUE:
-				return getValue();
+			case EntityDslPackage.DATA_TYPE__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,8 +116,8 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
-			case EntityDslPackage.BOOLEAN__VALUE:
-				setValue((String)newValue);
+			case EntityDslPackage.DATA_TYPE__TYPE:
+				setType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,8 +132,8 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
   public void eUnset(int featureID)
   {
 		switch (featureID) {
-			case EntityDslPackage.BOOLEAN__VALUE:
-				setValue(VALUE_EDEFAULT);
+			case EntityDslPackage.DATA_TYPE__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,8 +148,8 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
-			case EntityDslPackage.BOOLEAN__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case EntityDslPackage.DATA_TYPE__TYPE:
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -164,10 +165,10 @@ public class BooleanImpl extends MinimalEObjectImpl.Container implements org.xte
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
-		result.append(value);
+		result.append(" (type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}
 
-} //BooleanImpl
+} //DataTypeImpl

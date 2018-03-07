@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.entityDsl.RadioButtonGroup#getButtons <em>Buttons</em>}</li>
- *   <li>{@link org.xtext.entityDsl.RadioButtonGroup#getRequired <em>Required</em>}</li>
+ *   <li>{@link org.xtext.entityDsl.RadioButtonGroup#getDataType <em>Data Type</em>}</li>
  * </ul>
  *
  * @see org.xtext.entityDsl.EntityDslPackage#getRadioButtonGroup()
@@ -41,29 +41,29 @@ public interface RadioButtonGroup extends WinFormControlType
   EList<RadioButton> getButtons();
 
   /**
-	 * Returns the value of the '<em><b>Required</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Data Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Required</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Data Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required</em>' containment reference.
-	 * @see #setRequired(org.xtext.entityDsl.Boolean)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getRadioButtonGroup_Required()
+	 * @return the value of the '<em>Data Type</em>' containment reference.
+	 * @see #setDataType(DataType)
+	 * @see org.xtext.entityDsl.EntityDslPackage#getRadioButtonGroup_DataType()
 	 * @model containment="true"
 	 * @generated
 	 */
-  org.xtext.entityDsl.Boolean getRequired();
+  DataType getDataType();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.RadioButtonGroup#getRequired <em>Required</em>}' containment reference.
+	 * Sets the value of the '{@link org.xtext.entityDsl.RadioButtonGroup#getDataType <em>Data Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required</em>' containment reference.
-	 * @see #getRequired()
+	 * @param value the new value of the '<em>Data Type</em>' containment reference.
+	 * @see #getDataType()
 	 * @generated
 	 */
-  void setRequired(org.xtext.entityDsl.Boolean value);
+  void setDataType(DataType value);
 
 } // RadioButtonGroup

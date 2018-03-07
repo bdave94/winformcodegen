@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.entityDsl.DataType;
 import org.xtext.entityDsl.EntityDslPackage;
 import org.xtext.entityDsl.TextBox;
 
@@ -24,7 +25,7 @@ import org.xtext.entityDsl.TextBox;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.entityDsl.impl.TextBoxImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.entityDsl.impl.TextBoxImpl#getRequired <em>Required</em>}</li>
+ *   <li>{@link org.xtext.entityDsl.impl.TextBoxImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link org.xtext.entityDsl.impl.TextBoxImpl#getMinTextLength <em>Min Text Length</em>}</li>
  *   <li>{@link org.xtext.entityDsl.impl.TextBoxImpl#getMaxTextLength <em>Max Text Length</em>}</li>
  * </ul>
@@ -54,14 +55,14 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getRequired() <em>Required</em>}' containment reference.
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getRequired()
+	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-  protected org.xtext.entityDsl.Boolean required;
+  protected DataType dataType;
 
   /**
 	 * The default value of the '{@link #getMinTextLength() <em>Min Text Length</em>}' attribute.
@@ -152,9 +153,9 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public org.xtext.entityDsl.Boolean getRequired()
+  public DataType getDataType()
   {
-		return required;
+		return dataType;
 	}
 
   /**
@@ -162,12 +163,12 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetRequired(org.xtext.entityDsl.Boolean newRequired, NotificationChain msgs)
+  public NotificationChain basicSetDataType(DataType newDataType, NotificationChain msgs)
   {
-		org.xtext.entityDsl.Boolean oldRequired = required;
-		required = newRequired;
+		DataType oldDataType = dataType;
+		dataType = newDataType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__REQUIRED, oldRequired, newRequired);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__DATA_TYPE, oldDataType, newDataType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -178,19 +179,19 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setRequired(org.xtext.entityDsl.Boolean newRequired)
+  public void setDataType(DataType newDataType)
   {
-		if (newRequired != required) {
+		if (newDataType != dataType) {
 			NotificationChain msgs = null;
-			if (required != null)
-				msgs = ((InternalEObject)required).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__REQUIRED, null, msgs);
-			if (newRequired != null)
-				msgs = ((InternalEObject)newRequired).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__REQUIRED, null, msgs);
-			msgs = basicSetRequired(newRequired, msgs);
+			if (dataType != null)
+				msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__DATA_TYPE, null, msgs);
+			if (newDataType != null)
+				msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__DATA_TYPE, null, msgs);
+			msgs = basicSetDataType(newDataType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__REQUIRED, newRequired, newRequired));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__DATA_TYPE, newDataType, newDataType));
 	}
 
   /**
@@ -248,8 +249,8 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
-			case EntityDslPackage.TEXT_BOX__REQUIRED:
-				return basicSetRequired(null, msgs);
+			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+				return basicSetDataType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -265,8 +266,8 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
 		switch (featureID) {
 			case EntityDslPackage.TEXT_BOX__NAME:
 				return getName();
-			case EntityDslPackage.TEXT_BOX__REQUIRED:
-				return getRequired();
+			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+				return getDataType();
 			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
 				return getMinTextLength();
 			case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
@@ -287,8 +288,8 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
 			case EntityDslPackage.TEXT_BOX__NAME:
 				setName((String)newValue);
 				return;
-			case EntityDslPackage.TEXT_BOX__REQUIRED:
-				setRequired((org.xtext.entityDsl.Boolean)newValue);
+			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+				setDataType((DataType)newValue);
 				return;
 			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
 				setMinTextLength((Integer)newValue);
@@ -312,8 +313,8 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
 			case EntityDslPackage.TEXT_BOX__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case EntityDslPackage.TEXT_BOX__REQUIRED:
-				setRequired((org.xtext.entityDsl.Boolean)null);
+			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+				setDataType((DataType)null);
 				return;
 			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
 				setMinTextLength(MIN_TEXT_LENGTH_EDEFAULT);
@@ -336,8 +337,8 @@ public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
 		switch (featureID) {
 			case EntityDslPackage.TEXT_BOX__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EntityDslPackage.TEXT_BOX__REQUIRED:
-				return required != null;
+			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+				return dataType != null;
 			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
 				return minTextLength != MIN_TEXT_LENGTH_EDEFAULT;
 			case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.entityDsl.ComboBox;
 import org.xtext.entityDsl.ComboBoxItem;
+import org.xtext.entityDsl.DataType;
 import org.xtext.entityDsl.EntityDslPackage;
 
 /**
@@ -31,7 +32,7 @@ import org.xtext.entityDsl.EntityDslPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.entityDsl.impl.ComboBoxImpl#getItems <em>Items</em>}</li>
- *   <li>{@link org.xtext.entityDsl.impl.ComboBoxImpl#getRequired <em>Required</em>}</li>
+ *   <li>{@link org.xtext.entityDsl.impl.ComboBoxImpl#getDataType <em>Data Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,14 +50,14 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
   protected EList<ComboBoxItem> items;
 
   /**
-	 * The cached value of the '{@link #getRequired() <em>Required</em>}' containment reference.
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getRequired()
+	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-  protected org.xtext.entityDsl.Boolean required;
+  protected DataType dataType;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -97,9 +98,9 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public org.xtext.entityDsl.Boolean getRequired()
+  public DataType getDataType()
   {
-		return required;
+		return dataType;
 	}
 
   /**
@@ -107,12 +108,12 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetRequired(org.xtext.entityDsl.Boolean newRequired, NotificationChain msgs)
+  public NotificationChain basicSetDataType(DataType newDataType, NotificationChain msgs)
   {
-		org.xtext.entityDsl.Boolean oldRequired = required;
-		required = newRequired;
+		DataType oldDataType = dataType;
+		dataType = newDataType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__REQUIRED, oldRequired, newRequired);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__DATA_TYPE, oldDataType, newDataType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -123,19 +124,19 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setRequired(org.xtext.entityDsl.Boolean newRequired)
+  public void setDataType(DataType newDataType)
   {
-		if (newRequired != required) {
+		if (newDataType != dataType) {
 			NotificationChain msgs = null;
-			if (required != null)
-				msgs = ((InternalEObject)required).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__REQUIRED, null, msgs);
-			if (newRequired != null)
-				msgs = ((InternalEObject)newRequired).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__REQUIRED, null, msgs);
-			msgs = basicSetRequired(newRequired, msgs);
+			if (dataType != null)
+				msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__DATA_TYPE, null, msgs);
+			if (newDataType != null)
+				msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__DATA_TYPE, null, msgs);
+			msgs = basicSetDataType(newDataType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__REQUIRED, newRequired, newRequired));
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__DATA_TYPE, newDataType, newDataType));
 	}
 
   /**
@@ -149,8 +150,8 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
 		switch (featureID) {
 			case EntityDslPackage.COMBO_BOX__ITEMS:
 				return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
-			case EntityDslPackage.COMBO_BOX__REQUIRED:
-				return basicSetRequired(null, msgs);
+			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+				return basicSetDataType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -166,8 +167,8 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
 		switch (featureID) {
 			case EntityDslPackage.COMBO_BOX__ITEMS:
 				return getItems();
-			case EntityDslPackage.COMBO_BOX__REQUIRED:
-				return getRequired();
+			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+				return getDataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,8 +187,8 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
 				getItems().clear();
 				getItems().addAll((Collection<? extends ComboBoxItem>)newValue);
 				return;
-			case EntityDslPackage.COMBO_BOX__REQUIRED:
-				setRequired((org.xtext.entityDsl.Boolean)newValue);
+			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+				setDataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,8 +206,8 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
 			case EntityDslPackage.COMBO_BOX__ITEMS:
 				getItems().clear();
 				return;
-			case EntityDslPackage.COMBO_BOX__REQUIRED:
-				setRequired((org.xtext.entityDsl.Boolean)null);
+			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+				setDataType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -223,8 +224,8 @@ public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
 		switch (featureID) {
 			case EntityDslPackage.COMBO_BOX__ITEMS:
 				return items != null && !items.isEmpty();
-			case EntityDslPackage.COMBO_BOX__REQUIRED:
-				return required != null;
+			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+				return dataType != null;
 		}
 		return super.eIsSet(featureID);
 	}

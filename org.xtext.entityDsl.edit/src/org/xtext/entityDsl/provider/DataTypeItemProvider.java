@@ -23,15 +23,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.xtext.entityDsl.DataType;
 import org.xtext.entityDsl.EntityDslPackage;
 
 /**
- * This is the item provider adapter for a {@link org.xtext.entityDsl.Boolean} object.
+ * This is the item provider adapter for a {@link org.xtext.entityDsl.DataType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BooleanItemProvider 
+public class DataTypeItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +46,7 @@ public class BooleanItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BooleanItemProvider(AdapterFactory adapterFactory) {
+	public DataTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,25 +61,25 @@ public class BooleanItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Boolean_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Boolean_value_feature", "_UI_Boolean_type"),
-				 EntityDslPackage.Literals.BOOLEAN__VALUE,
+				 getString("_UI_DataType_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_type_feature", "_UI_DataType_type"),
+				 EntityDslPackage.Literals.DATA_TYPE__TYPE,
 				 true,
 				 false,
 				 false,
@@ -88,14 +89,14 @@ public class BooleanItemProvider
 	}
 
 	/**
-	 * This returns Boolean.gif.
+	 * This returns DataType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Boolean"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DataType"));
 	}
 
 	/**
@@ -106,10 +107,10 @@ public class BooleanItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((org.xtext.entityDsl.Boolean)object).getValue();
+		String label = ((DataType)object).getType();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Boolean_type") :
-			getString("_UI_Boolean_type") + " " + label;
+			getString("_UI_DataType_type") :
+			getString("_UI_DataType_type") + " " + label;
 	}
 	
 
@@ -124,8 +125,8 @@ public class BooleanItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(org.xtext.entityDsl.Boolean.class)) {
-			case EntityDslPackage.BOOLEAN__VALUE:
+		switch (notification.getFeatureID(DataType.class)) {
+			case EntityDslPackage.DATA_TYPE__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

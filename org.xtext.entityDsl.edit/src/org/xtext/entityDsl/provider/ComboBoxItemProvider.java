@@ -66,7 +66,7 @@ public class ComboBoxItemProvider extends WinFormControlTypeItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EntityDslPackage.Literals.COMBO_BOX__ITEMS);
-			childrenFeatures.add(EntityDslPackage.Literals.COMBO_BOX__REQUIRED);
+			childrenFeatures.add(EntityDslPackage.Literals.COMBO_BOX__DATA_TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -123,7 +123,7 @@ public class ComboBoxItemProvider extends WinFormControlTypeItemProvider {
 
 		switch (notification.getFeatureID(ComboBox.class)) {
 			case EntityDslPackage.COMBO_BOX__ITEMS:
-			case EntityDslPackage.COMBO_BOX__REQUIRED:
+			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -148,8 +148,8 @@ public class ComboBoxItemProvider extends WinFormControlTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EntityDslPackage.Literals.COMBO_BOX__REQUIRED,
-				 EntityDslFactory.eINSTANCE.createBoolean()));
+				(EntityDslPackage.Literals.COMBO_BOX__DATA_TYPE,
+				 EntityDslFactory.eINSTANCE.createDataType()));
 	}
 
 }

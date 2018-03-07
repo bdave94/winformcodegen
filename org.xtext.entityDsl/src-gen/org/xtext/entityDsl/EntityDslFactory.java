@@ -51,6 +51,15 @@ public interface EntityDslFactory extends EFactory
   Attribute createAttribute();
 
   /**
+	 * Returns a new object of class '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Type</em>'.
+	 * @generated
+	 */
+  DataType createDataType();
+
+  /**
 	 * Returns a new object of class '<em>Label</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,15 +112,6 @@ public interface EntityDslFactory extends EFactory
 	 * @generated
 	 */
   TextBox createTextBox();
-
-  /**
-	 * Returns a new object of class '<em>Boolean</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Boolean</em>'.
-	 * @generated
-	 */
-  Boolean createBoolean();
 
   /**
 	 * Returns a new object of class '<em>Combo Box</em>'.
