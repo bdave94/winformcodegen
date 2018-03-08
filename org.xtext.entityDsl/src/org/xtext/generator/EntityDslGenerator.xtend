@@ -48,6 +48,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	using System.Text;
 	using System.Threading.Tasks;
 	using System.Windows.Forms;
+	using System.Globalization;
 	
 	namespace «r.allContents.toIterable.filter(Domainmodel).get(0).applicationName»
 	{
@@ -94,7 +95,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                 	«IF tb.dataType.type.equals("double")»
 	                	if(«attribute.name.toFirstLower».Length !=0)
 	                 		«entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
-	                 		      double.Parse(«attribute.name.toFirstLower»);
+	                 		      double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                 	«ENDIF»
 	                 	«ENDFOR»		                 	
 	                 	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	
@@ -125,7 +126,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                 	«IF c.dataType.type.equals("double")»
 	                 	if(«attribute.name.toFirstLower».Length !=0)
 	                 		   «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
-	                 		   double.Parse(«attribute.name.toFirstLower»);
+	                 		   double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                 	«ENDIF»	                			                 	
 	                 	«ENDFOR»	
 	                	«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
@@ -150,7 +151,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                	«IF rbg.dataType.type.equals("double")»
 	                		 if(«attribute.name.toFirstLower».Length !=0)
 	                		 «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
-	                		  double.Parse(«attribute.name.toFirstLower»);
+	                		  double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                	«ENDIF»	 
 	                	
 	                	«ENDFOR»	                	
@@ -295,7 +296,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                        {
 	                            ColumnHeader ch = listView«entity.name.toFirstUpper».Columns[columnNumber];
 	                            string columnName = ch.Text;
-	                            foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())
+	                            foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
 	                            {
 	                                string controlLabelName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
 	                                controlLabelName = controlLabelName.ToLower();
@@ -305,7 +306,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                                    tb.Text = listView«entity.name.toFirstUpper».SelectedItems[0].SubItems[columnNumber].Text;
 	                            }
 	         
-	                            foreach (CheckBox c in tabPage«entity.name».Controls.OfType<CheckBox>())
+	                            foreach (CheckBox c in panel«entity.name».Controls.OfType<CheckBox>())
 	                            {
 	                                string controlLabelName = «entity.name.toFirstLower»FieldLabelText[c.Name];
 	                                controlLabelName = controlLabelName.ToLower();
@@ -323,7 +324,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                            
 	                            
 	                            
-	                            foreach (ComboBox cb in tabPage«entity.name».Controls.OfType<ComboBox>())
+	                            foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())
 	                            {
 	                            string controlLabelName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
 	                           	controlLabelName = controlLabelName.ToLower();
@@ -338,7 +339,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                            
 	                            
 	                            
-	                            foreach (GroupBox gb in tabPage«entity.name».Controls.OfType<GroupBox>())
+	                            foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
 	                            {
 	                            	  string controlLabelName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
 	                            	  controlLabelName = controlLabelName.ToLower();
@@ -396,7 +397,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    			«IF tb.dataType.type.equals("double")»
 	                    			if(«attribute.name.toFirstLower».Length !=0)
 	                    			result.«attribute.name.toFirstUpper» = 
-	                    				        double.Parse(«attribute.name.toFirstLower»);
+	                    				        double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                    			«ENDIF»
 	                    				                        	                 	
 	                    			«ENDFOR»
@@ -428,7 +429,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    			«ENDIF»
 	                    			«IF c.dataType.type.equals("double")»
 	                    			if(«attribute.name.toFirstLower».Length !=0)
-	                    			result.«attribute.name.toFirstUpper» = double.Parse(«attribute.name.toFirstLower»);
+	                    			result.«attribute.name.toFirstUpper» = double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                    			«ENDIF»
 	                    			«ENDFOR»
 	                    				                        
@@ -450,7 +451,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    			«ENDIF»
 	                    			«IF rbg.dataType.type.equals("double")»
 	                    			if(«attribute.name.toFirstLower».Length !=0)
-	                    			result.«attribute.name.toFirstUpper» = double.Parse(«attribute.name.toFirstLower»);
+	                    			result.«attribute.name.toFirstUpper» = double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                    			«ENDIF»
 	                    			«ENDFOR»
 	                    				                        	                        
@@ -511,7 +512,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	         private bool «entity.name.toFirstLower»TextBoxTextMinLengthValidator()
 	                 {
 	                 	 
-	                     foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())
+	                     foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
 	                     {
 	                     	 
 	                     	 int textBoxMinimalNumberOfCharacters = «entity.name.toFirstLower»TextboxMinimalTextLength[tb.Name];
@@ -533,7 +534,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	         private bool «entity.name.toFirstLower»TextBoxTextDataTypeValidator()
 	         {
 	         
-	                foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())
+	                foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
 	                {
 	         
 	                    string textBoxDataType = «entity.name.toFirstLower»FieldDataType[tb.Name];
@@ -552,7 +553,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                         if (textBoxDataType.Equals("double"))
 	                         {
 	                             double resultD;
-	                             if (double.TryParse(tb.Text, out resultD) == false) {
+	                             if (double.TryParse(tb.Text.Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"), out resultD) == false) {
 	                                 MessageBox.Show("The textbox \"" + inputFieldName + "\" must contain a number! ",
 	                                     "Validation Error",
 	                                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -568,7 +569,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	         
 	         private bool «entity.name.toFirstLower»RequiredFieldValidator()
 	         {
-	               foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())
+	               foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
 	               {
 	                    if (tb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields[tb.Name]) {
 	                         	
@@ -581,7 +582,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                             
 	               }
 	         
-	               foreach (ComboBox cb in tabPage«entity.name».Controls.OfType<ComboBox>())
+	               foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())
 	                {
 	                      if (cb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields[cb.Name]) {
 	                         	
@@ -596,7 +597,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                     
 	                     
 	                     
-	                     foreach (GroupBox gb in tabPage«entity.name».Controls.OfType<GroupBox>())
+	                     foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
 	                     {	     
 	                     		                		
 	                     	     if («entity.name.toFirstLower»RequiredFields[gb.Name]) {
@@ -673,19 +674,19 @@ class EntityDslGenerator extends AbstractGenerator {
 		«FOR entity: r.allContents.toIterable.filter(Entity)»
 		 private void «entity.name.toFirstLower»ResetForm()
 		        {
-		            foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())		            
+		            foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())		            
 		                tb.Text = "";                 
 		            
 		 
-		            foreach (CheckBox chb in tabPage«entity.name».Controls.OfType<CheckBox>())		            
+		            foreach (CheckBox chb in panel«entity.name».Controls.OfType<CheckBox>())		            
 		                chb.Checked = false;
 		            
 		 
-		            foreach (ComboBox cb in tabPage«entity.name».Controls.OfType<ComboBox>())		            
+		            foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())		            
 		                cb.SelectedIndex = 0;
 		            
 		            
-		            foreach (GroupBox gb in tabPage«entity.name».Controls.OfType<GroupBox>())
+		            foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
 		            	 foreach (RadioButton rb in gb.Controls.OfType<RadioButton>())            
 		            		rb.Checked = false;
 		            		
@@ -813,6 +814,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	 this.tabControl = new System.Windows.Forms.TabControl();
 		        	 «FOR entity: r.allContents.toIterable.filter(Entity)»		        		
 		        	 this.tabPage«entity.name» = new System.Windows.Forms.TabPage();
+		        	 this.panel«entity.name» = new System.Windows.Forms.Panel();
 		        	 this.button«entity.name»  = new System.Windows.Forms.Button();
 		        	 this.button«entity.name»Update  = new System.Windows.Forms.Button();
 		        	 this.button«entity.name»Delete  = new System.Windows.Forms.Button();
@@ -843,7 +845,8 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	 «ENDFOR» 
 		        	    	   	 	  	
 		        	 «ENDFOR»	   	 	 
-		        	 this.tabPage«entity.name».SuspendLayout();	    	 	        	
+		        	 this.tabPage«entity.name».SuspendLayout();
+		        	 this.panel«entity.name».SuspendLayout();	    	 	        	
 		        	«ENDFOR»
 		        			        			        
 		            this.tabControl.SuspendLayout();		          
@@ -886,17 +889,52 @@ class EntityDslGenerator extends AbstractGenerator {
 														    	   	 	  	
 		            «ENDFOR»		          
 					this.tabPage«entity.name».AutoScroll = true;
-					this.tabPage«entity.name».Controls.Add(this.button«entity.name»);
-					this.tabPage«entity.name».Controls.Add(this.button«entity.name»Update);
-					this.tabPage«entity.name».Controls.Add(this.button«entity.name»Delete);
-					this.tabPage«entity.name».Controls.Add(button«entity.name»Reset);
-					this.tabPage«entity.name».Controls.Add(this.listView«entity.name.toFirstUpper»);    		            		            	   	 	 
+					this.tabPage«entity.name».Controls.Add(this.panel«entity.name»);					
+					
+					  		            		            	   	 	 
 					this.tabPage«entity.name».Location = new System.Drawing.Point(4, 22);
 					this.tabPage«entity.name».Name = "«entity.name»";
 					this.tabPage«entity.name».Padding = new System.Windows.Forms.Padding(3);
 					this.tabPage«entity.name».Size = new System.Drawing.Size(829, 448);
 					this.tabPage«entity.name».Text = "«entity.name»";
 					this.tabPage«entity.name».UseVisualStyleBackColor = true;		           					 	        	
+					
+					
+					
+					 // 
+					 // panel«entity.name»
+					 // 
+					 this.panel«entity.name».AutoScroll = true;
+					 this.panel«entity.name».BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+					 this.panel«entity.name».Location = new System.Drawing.Point(5, 5);
+					 this.panel«entity.name».Name = "panel«entity.name»";
+					 this.panel«entity.name».Size = new System.Drawing.Size(810, 435);
+					 this.panel«entity.name».Controls.Add(this.button«entity.name»);
+					 this.panel«entity.name».Controls.Add(this.button«entity.name»Update);
+					 this.panel«entity.name».Controls.Add(this.button«entity.name»Delete);
+					 this.panel«entity.name».Controls.Add(button«entity.name»Reset);
+					 this.panel«entity.name».Controls.Add(this.listView«entity.name.toFirstUpper»);  
+					 «FOR attribute : entity.attributes»
+					 this.panel«entity.name».Controls.Add(this.label«entity.name»«attribute.name»);
+					 										
+					 «FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»		        	 
+					 this.panel«entity.name».Controls.Add(this.tb«entity.name»«attribute.name»);
+					 «ENDFOR»
+					 «FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»		        	 
+					 this.panel«entity.name».Controls.Add(this.cb«entity.name»«attribute.name»);
+					 «ENDFOR»
+					 				
+					 «FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»		        	 
+					 this.panel«entity.name».Controls.Add(this.comboBox«entity.name»«attribute.name»);
+					 «ENDFOR»
+					 					
+					 «FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
+					 this.panel«entity.name».Controls.Add(this.groupBox«entity.name»«attribute.name»);					
+					 «ENDFOR»
+					 «ENDFOR»           
+					
+					
+					
 					
 		            «generateFormElements(entity)»         
 					
@@ -925,8 +963,10 @@ class EntityDslGenerator extends AbstractGenerator {
 		            this.Load += new System.EventHandler(this.Form1_Load);
 		            this.tabControl.ResumeLayout(false);
 		            «FOR entity : r.allContents.toIterable.filter(Entity)»		          
-		             this.tabPage«entity.name».ResumeLayout(false);
-		             this.tabPage«entity.name».PerformLayout();
+		            this.panel«entity.name».ResumeLayout(false);
+		            this.panel«entity.name».PerformLayout();
+		            this.panel«entity.name».ResumeLayout(false);
+		            this.panel«entity.name».PerformLayout();
 		             
 		            «FOR attribute :entity.attributes»
 		            «FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
@@ -945,6 +985,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		        «FOR entity : r.allContents.toIterable.filter(Entity)»
 		        
 		         private System.Windows.Forms.TabPage tabPage«entity.name»;
+		         private System.Windows.Forms.Panel panel«entity.name»;
 		         private System.Windows.Forms.Button button«entity.name»;
 		         private System.Windows.Forms.Button button«entity.name»Update;
 		         private System.Windows.Forms.Button button«entity.name»Delete;
