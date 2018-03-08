@@ -18,6 +18,7 @@ import org.xtext.entityDsl.RadioButton
 import java.util.Collections
 import com.google.common.collect.Lists
 import org.xtext.entityDsl.Domainmodel
+import org.xtext.entityDsl.DataType
 
 /**
  * Generates code from your model files on save.
@@ -58,6 +59,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	    	private Dictionary<string, int> «entity.name.toFirstLower»TextboxMinimalTextLength = new Dictionary<string, int>();
 	    	private Dictionary<string, bool> «entity.name.toFirstLower»RequiredFields = new Dictionary<string, bool>();
 	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldLabelText = new Dictionary<string, string>();
+	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldDataType = new Dictionary<string, string>(); 
 	    	 
 	    	«ENDFOR»
 	        public Form1()
@@ -71,12 +73,30 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	if («entity.name.toFirstLower»FormValidator() == true)
 	        	{
 	            	using (var db = new EntityContext())
-	            	{	              
-	                	«FOR attribute : entity.attributes»
-
-	                 	«FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»
-	                 	var «attribute.name.toFirstLower» = tb«entity.name»«attribute.name».Text;                 	
-	                 	«ENDFOR»
+	            	{	 
+	            		
+	            		var «entity.name.toFirstLower» = new «entity.name.toFirstUpper»();
+	            		«FOR attribute : entity.attributes»
+	            		
+	            		«FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»	
+	            		var «attribute.name.toFirstLower» = tb«entity.name»«attribute.name».Text; 
+	            		
+	            		«IF tb.dataType.type.equals("string")»	                		                		
+	            			  «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
+	            			    «attribute.name.toFirstLower»;
+	            		«ENDIF»
+	                	«IF tb.dataType.type.equals("int")»
+	                	if(«attribute.name.toFirstLower».Length !=0)
+	                	      	  «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
+	                	      	  int.Parse(«attribute.name.toFirstLower»);
+	                	      	          	
+	                 	«ENDIF»
+	                 	«IF tb.dataType.type.equals("double")»
+	                	if(«attribute.name.toFirstLower».Length !=0)
+	                 		«entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
+	                 		      double.Parse(«attribute.name.toFirstLower»);
+	                 	«ENDIF»
+	                 	«ENDFOR»		                 	
 	                 	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	
 
 	                 	string «attribute.name.toFirstLower»;
@@ -84,15 +104,30 @@ class EntityDslGenerator extends AbstractGenerator {
 	                 	«attribute.name.toFirstLower» = "True";
 	                 	else
 	                 	«attribute.name.toFirstLower» = "False";
+	                 	«entity.name.toFirstLower».«attribute.name.toFirstUpper» =«attribute.name.toFirstLower»;
 	                 	«ENDFOR»
 
 	                 	«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»
 
 	                 	string «attribute.name.toFirstLower» = "";		        	 
 	                 	if(comboBox«entity.name»«attribute.name».SelectedItem != null)
-	                 		«attribute.name.toFirstLower» = comboBox«entity.name»«attribute.name».SelectedItem.ToString();	                 	
+	                 		«attribute.name.toFirstLower» = comboBox«entity.name»«attribute.name».SelectedItem.ToString();
+	                 	
+	                 	«IF c.dataType.type.equals("string")»	                		                		
+	                 		«entity.name.toFirstLower».«attribute.name.toFirstUpper» = «attribute.name.toFirstLower»;
+	                 	«ENDIF»	
+	                 	«IF c.dataType.type.equals("int")»
+	                 	if(«attribute.name.toFirstLower».Length !=0)
+	                 		«entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
+	                 		     int.Parse(«attribute.name.toFirstLower»);
+	                 		                	      	          	
+	                 	«ENDIF»
+	                 	«IF c.dataType.type.equals("double")»
+	                 	if(«attribute.name.toFirstLower».Length !=0)
+	                 		   «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
+	                 		   double.Parse(«attribute.name.toFirstLower»);
+	                 	«ENDIF»	                			                 	
 	                 	«ENDFOR»	
-	                	
 	                	«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
 	                	string «attribute.name.toFirstLower» = "";	                			             		            		        	
 	                	foreach (RadioButton rb in groupBox«entity.name»«attribute.name».Controls)
@@ -100,13 +135,26 @@ class EntityDslGenerator extends AbstractGenerator {
 	                		if (rb.Checked)
 	                	    	«attribute.name.toFirstLower» = rb.Text;
 	                	} 
-	                	«ENDFOR»
 	                	
+	                	«IF rbg.dataType.type.equals("string")»	                		                		
+	                	«entity.name.toFirstLower».«attribute.name.toFirstUpper» = «attribute.name.toFirstLower»;
+	                		                		                 		                	      	          	
+	                	«ENDIF»
+	                	
+	                	«IF rbg.dataType.type.equals("int")»
+	                		 if(«attribute.name.toFirstLower».Length !=0)
+	                		 «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
+	                		 int.Parse(«attribute.name.toFirstLower»);
+	                		                 		                	      	          	
+	                	«ENDIF»
+	                	«IF rbg.dataType.type.equals("double")»
+	                		 if(«attribute.name.toFirstLower».Length !=0)
+	                		 «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
+	                		  double.Parse(«attribute.name.toFirstLower»);
+	                	«ENDIF»	 
+	                	
+	                	«ENDFOR»	                	
 	                 	«ENDFOR» 	               	             
-	                  	var «entity.name.toFirstLower» = new «entity.name.toFirstUpper» {	                 
-	                  	«FOR i : 0 ..< entity.attributes.size »
-	                  	«entity.attributes.get(i).name.toFirstUpper» = «entity.attributes.get(i).name.toFirstLower»,
-	                  	«ENDFOR» };
 	                   
 	                  	db.«entity.name»s.Add(«entity.name.toFirstLower»);
 	                  	db.SaveChanges();                	
@@ -130,26 +178,65 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«ENDIF»
 	        	«IF attribute.required.equals("*") == true»
 	        	«entity.name.toFirstLower»RequiredFields.Add("tb«entity.name»«attribute.name»",true);
+	        	«ELSE»
+	        	«entity.name.toFirstLower»RequiredFields.Add("tb«entity.name»«attribute.name»",false);
 	        	«ENDIF»
 	        	«entity.name.toFirstLower»FieldLabelText.Add("tb«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	
+	        	«IF tb.dataType.type.equals("string")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "string");
+	        	«ENDIF»
+	        	«IF tb.dataType.type.equals("int")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "int");
+	        	«ENDIF»
+	        	«IF tb.dataType.type.equals("double")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "double");
+	        	«ENDIF»	        		        	
 	        	«ENDFOR»
 	        	
 	        	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	        		        	
 	        	«entity.name.toFirstLower»FieldLabelText.Add("cb«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	«entity.name.toFirstLower»FieldDataType.Add("cb«entity.name»«attribute.name»", "string");
 	        	«ENDFOR» 
 	        	             	
 	        	«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»
 	        	«IF attribute.required.equals("*")»
 	        	«entity.name.toFirstLower»RequiredFields.Add("comboBox«entity.name»«attribute.name»",true);
+	        	«ELSE»
+	        	«entity.name.toFirstLower»RequiredFields.Add("comboBox«entity.name»«attribute.name»",false);
 	        	«ENDIF»
+	        	
 	        	«entity.name.toFirstLower»FieldLabelText.Add("comboBox«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	
+	        	
+	        	«IF c.dataType.type.equals("string")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("comboBox«entity.name»«attribute.name»", "string");
+	        	«ENDIF»
+	        	«IF c.dataType.type.equals("int")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("comboBox«entity.name»«attribute.name»", "int");
+	        	«ENDIF»
+	        	«IF c.dataType.type.equals("double")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("comboBox«entity.name»«attribute.name»", "double");
+	        	«ENDIF»
 	        	«ENDFOR»
 	        	
 	        	«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
 	        	«IF attribute.required.equals("*")»
 	        	«entity.name.toFirstLower»RequiredFields.Add("groupBox«entity.name»«attribute.name»",true);
+	        	«ELSE»
+	        	«entity.name.toFirstLower»RequiredFields.Add("groupBox«entity.name»«attribute.name»",false);
 	        	«ENDIF»
 	        	«entity.name.toFirstLower»FieldLabelText.Add("groupBox«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	
+	        	«IF rbg.dataType.type.equals("string")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("groupBox«entity.name»«attribute.name»", "string");
+	        	«ENDIF»
+	        	«IF rbg.dataType.type.equals("int")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("groupBox«entity.name»«attribute.name»", "int");
+	        	«ENDIF»
+	        	«IF rbg.dataType.type.equals("double")»
+	        	«entity.name.toFirstLower»FieldDataType.Add("groupBox«entity.name»«attribute.name»", "double");
+	        	«ENDIF»	        	
 	        	«ENDFOR»	        	
 	        	
 	        	              	
@@ -283,52 +370,98 @@ class EntityDslGenerator extends AbstractGenerator {
 	                	if («entity.name.toFirstLower»FormValidator() == true)
 	                	{
 	                    	using (var db = new EntityContext())
-	                    	{	        
-	                        	«FOR attribute : entity.attributes»	                        
-	                        	«FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»
-	                        	var «attribute.name.toFirstLower» = tb«entity.name»«attribute.name».Text;                 	
-	                        	«ENDFOR»
-	                        	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	
+	                    	{	 
+	                    		
+	                    			var query = from p in db.«entity.name»s select p;
+	                    			                  
+	                    			int updateID = result«entity.name.toFirstUpper»Ids[«entity.name.toFirstLower»ListViewSelectedIndex];
+	                    			var result = db.«entity.name»s.SingleOrDefault(m => m.«entity.name»Id == updateID);
+	                    			        
+	                    			if (result != null)
+	                    			{
+	                    			«FOR attribute : entity.attributes»	                        
+	                    			«FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»
+	                    			var «attribute.name.toFirstLower» = tb«entity.name»«attribute.name».Text;
+	                    				                        	
+	                    			«IF tb.dataType.type.equals("string")»	                		                		
+	                    			 result.«attribute.name.toFirstUpper» = 
+	                    			 «attribute.name.toFirstLower»;
+	                    			«ENDIF»
+	                    			 «IF tb.dataType.type.equals("int")»
+	                    			 if(«attribute.name.toFirstLower».Length !=0)
+	                    			 result.«attribute.name.toFirstUpper» = 
+	                    			 int.Parse(«attribute.name.toFirstLower»);
+	                    			 
+	                    			«ENDIF»
+	                    			«IF tb.dataType.type.equals("double")»
+	                    			if(«attribute.name.toFirstLower».Length !=0)
+	                    			result.«attribute.name.toFirstUpper» = 
+	                    				        double.Parse(«attribute.name.toFirstLower»);
+	                    			«ENDIF»
+	                    				                        	                 	
+	                    			«ENDFOR»
+	                    			«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	
+	                    			
+	                    			string «attribute.name.toFirstLower»;
+	                    			if(cb«entity.name»«attribute.name».Checked)
+	                    				«attribute.name.toFirstLower» = "True";
+	                    				else
+	                    			«attribute.name.toFirstLower» = "False";
+	                    			result.«attribute.name.toFirstUpper» = «attribute.name.toFirstLower»;
+	                    			«ENDFOR»
+	                    				                        
+	                    			«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»
+	                    				                        	
+	                    			string «attribute.name.toFirstLower»;		        	 
+	                    			if(comboBox«entity.name»«attribute.name».SelectedItem != null)
+	                    				«attribute.name.toFirstLower» = comboBox«entity.name»«attribute.name».SelectedItem.ToString();
+	                    			else
+	                    			«attribute.name.toFirstLower» = "";
+	                    			
+	                    			«IF c.dataType.type.equals("string")»	                		                		
+	                    			result.«attribute.name.toFirstUpper» = «attribute.name.toFirstLower»;
+	                    			«ENDIF»
+	                    			«IF c.dataType.type.equals("int")»
+	                    			if(«attribute.name.toFirstLower».Length !=0)
+	                    			result.«attribute.name.toFirstUpper» = int.Parse(«attribute.name.toFirstLower»);
+	                    				                    			 
+	                    			«ENDIF»
+	                    			«IF c.dataType.type.equals("double")»
+	                    			if(«attribute.name.toFirstLower».Length !=0)
+	                    			result.«attribute.name.toFirstUpper» = double.Parse(«attribute.name.toFirstLower»);
+	                    			«ENDIF»
+	                    			«ENDFOR»
+	                    				                        
+	                    			«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
+	                    			string «attribute.name.toFirstLower» = "";	                			             		            		        	
+	                    			foreach (RadioButton rb in groupBox«entity.name»«attribute.name».Controls)
+	                    			{
+	                    				if (rb.Checked)
+	                    					«attribute.name.toFirstLower» = rb.Text;
+	                    			}
+	                    			
+	                    			«IF rbg.dataType.type.equals("string")»	                		                		
+	                    			result.«attribute.name.toFirstUpper» = «attribute.name.toFirstLower»;
+	                    			«ENDIF»
+	                    			«IF rbg.dataType.type.equals("int")»
+	                    			if(«attribute.name.toFirstLower».Length !=0)
+	                    			result.«attribute.name.toFirstUpper» = int.Parse(«attribute.name.toFirstLower»);
+	                    				                    				                    			 
+	                    			«ENDIF»
+	                    			«IF rbg.dataType.type.equals("double")»
+	                    			if(«attribute.name.toFirstLower».Length !=0)
+	                    			result.«attribute.name.toFirstUpper» = double.Parse(«attribute.name.toFirstLower»);
+	                    			«ENDIF»
+	                    			«ENDFOR»
+	                    				                        	                        
+	                    			«ENDFOR»
+	                    			                            		                            
+	                    			}
+	                    		
+	                    		       
 	                        	
-								string «attribute.name.toFirstLower»;
-								if(cb«entity.name»«attribute.name».Checked)
-	                        	«attribute.name.toFirstLower» = "True";
-							else
-	                       	 	«attribute.name.toFirstLower» = "False";
-	                        	«ENDFOR»
+	                             db.SaveChanges();   
 	                        
-	                        	«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»
-	                        	
-	                        	string «attribute.name.toFirstLower»;		        	 
-	                        	if(comboBox«entity.name»«attribute.name».SelectedItem != null)
-	                        	«attribute.name.toFirstLower» = comboBox«entity.name»«attribute.name».SelectedItem.ToString();
-	                        	else
-	                        	«attribute.name.toFirstLower» = "";
-	                        	«ENDFOR»
-	                        
-	                        	«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
-	                        	string «attribute.name.toFirstLower» = "";	                			             		            		        	
-	                        	foreach (RadioButton rb in groupBox«entity.name»«attribute.name».Controls)
-	                        	{
-	                        	  	if (rb.Checked)
-	                        	        «attribute.name.toFirstLower» = rb.Text;
-	                        	} 
-	                        	«ENDFOR»
-	                        	                        
-	        					«ENDFOR»
-	                                
-	                        	var query = from p in db.«entity.name»s select p;
-	                  
-	                        	int updateID = result«entity.name.toFirstUpper»Ids[«entity.name.toFirstLower»ListViewSelectedIndex];
-	                        	var result = db.«entity.name»s.SingleOrDefault(m => m.«entity.name»Id == updateID);
-	        
-	                        	if (result != null)
-	                        	{
-	                        		«FOR a : entity.attributes»
-	                        		result.«a.name.toFirstUpper» = «a.name.toFirstLower»;
-	                            	«ENDFOR»
-	                            	db.SaveChanges();	                            
-	                        	}
 	                     	              
 	        
 	                    	}
@@ -397,41 +530,76 @@ class EntityDslGenerator extends AbstractGenerator {
 	                 }
 	         
 	         
+	         private bool «entity.name.toFirstLower»TextBoxTextDataTypeValidator()
+	         {
+	         
+	                foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())
+	                {
+	         
+	                    string textBoxDataType = «entity.name.toFirstLower»FieldDataType[tb.Name];
+	                    string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                    bool required = «entity.name.toFirstLower»RequiredFields[tb.Name];
+	                    if (!required && tb.Text.Equals("") == false){
+	                    if (textBoxDataType.Equals("int"))
+	                    {
+	                         int result;
+	                         if(int.TryParse(tb.Text, out result) == false) {                
+	                             MessageBox.Show("The textbox \"" + inputFieldName + "\" must contain an Integer! ",
+	                                 "Validation Error",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);	         
+	                             return false;
+	                         }
+	         
+	                         if (textBoxDataType.Equals("double"))
+	                         {
+	                             double resultD;
+	                             if (double.TryParse(tb.Text, out resultD) == false) {
+	                                 MessageBox.Show("The textbox \"" + inputFieldName + "\" must contain a number! ",
+	                                     "Validation Error",
+	                                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+	         
+	                             return false;
+	                             }
+	                         }	         	         
+	                     }
+	                     }	                   
+	                 }
+	                return true;
+	          }
 	         
 	         private bool «entity.name.toFirstLower»RequiredFieldValidator()
-	                 {
-	                     foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())
-	                     {
-	                         if (tb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields.ContainsKey(tb.Name)) {
+	         {
+	               foreach (TextBox tb in tabPage«entity.name».Controls.OfType<TextBox>())
+	               {
+	                    if (tb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields[tb.Name]) {
 	                         	
-	                         	string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                            string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
 	                         	
 	                         	MessageBox.Show("The \"" + inputFieldName + "\" is a required field!", "Validation error",
 	                         	MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 	                         	return false;
-	                         }
+	                    }
 	                             
-	                     }
+	               }
 	         
-	                     foreach (ComboBox cb in tabPage«entity.name».Controls.OfType<ComboBox>())
-	                     {
-	                         if (cb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields.ContainsKey(cb.Name)) {
+	               foreach (ComboBox cb in tabPage«entity.name».Controls.OfType<ComboBox>())
+	                {
+	                      if (cb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields[cb.Name]) {
 	                         	
 	                         	string inputFieldName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
 	                         	
 	                         	MessageBox.Show("The \"" + inputFieldName + "\" is a required field!", "Validation error",
 	                         	MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 	                         	return false;
-	                         }
-	                             
 	                     }
+	                             
+	                }
 	                     
 	                     
 	                     
 	                     foreach (GroupBox gb in tabPage«entity.name».Controls.OfType<GroupBox>())
 	                     {	     
 	                     		                		
-	                     	     if («entity.name.toFirstLower»RequiredFields.ContainsKey(gb.Name)) {
+	                     	     if («entity.name.toFirstLower»RequiredFields[gb.Name]) {
 	                     	     	bool selectedButtonFound = false; 
 	                     	     	foreach(RadioButton rb in gb.Controls)
 	                     	          	if(rb.Checked)
@@ -455,13 +623,14 @@ class EntityDslGenerator extends AbstractGenerator {
 	                 }
 	                 
 	         private bool «entity.name.toFirstLower»FormValidator()
-	                 {
-	                     if («entity.name.toFirstLower»RequiredFieldValidator() && «entity.name.toFirstLower»TextBoxTextMinLengthValidator())
-	                         return true;
-	                     else
-	                         return false;
+	         {
+	              if («entity.name.toFirstLower»TextBoxTextDataTypeValidator() && «entity.name.toFirstLower»RequiredFieldValidator() &&
+	              «entity.name.toFirstLower»TextBoxTextMinLengthValidator() )
+	                   return true;
+	              else
+	                   return false;
 	         
-	                 }        
+	         }        
 	         «ENDFOR»
 	         
 	         
@@ -479,10 +648,15 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                 foreach (var item in query)
 	                 {
-	                 	result«entity.name.toFirstUpper»Ids.Add(item.«entity.name»Id);
-	                 «FOR attribute : entity.attributes»	                 
-	                 results.Add(item.«attribute.name.toFirstUpper»);
-	                  «ENDFOR»
+	                 result«entity.name.toFirstUpper»Ids.Add(item.«entity.name»Id);	                 
+	                 «FOR attribute : entity.attributes»
+	                 if(item.«attribute.name.toFirstUpper» != null)	                 
+	                 results.Add(item.«attribute.name.toFirstUpper».ToString());
+	                 else
+	                 results.Add("");
+	                 
+	                 
+	                 «ENDFOR»
 	                 	                   
 	                 }
 	                 setListView(results, «entity.attributes.size»,listView«entity.name.toFirstUpper» );
@@ -538,10 +712,33 @@ class EntityDslGenerator extends AbstractGenerator {
 		    «FOR entity: r.allContents.toIterable.filter(Entity)»
 		    public class «entity.name.toFirstUpper»
 		    { 
-		    public int «entity.name»Id { get; set; }
-		    «FOR attribute : entity.attributes»
-		          public string «attribute.name.toFirstUpper» { get; set; }		   	 	  	
-		   	 	 «ENDFOR»	   	 	 
+		    	public int «entity.name»Id { get; set; }
+		    	«FOR attribute : entity.attributes»
+		    	
+		    	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»
+		    	public string «attribute.name.toFirstUpper» { get; set; }
+		    	«ENDFOR»
+		    	
+		    	«FOR dataType :attribute.eAllContents.toIterable.filter(DataType)»
+		    	«IF dataType.type.equals("string")»	                		                		
+		    	public string «attribute.name.toFirstUpper» { get; set; }
+		    	«ENDIF»
+		    	«IF dataType.type.equals("int")»
+		    	«IF attribute.required.equals("*")»
+		    	public int «attribute.name.toFirstUpper» { get; set; }
+		    	«ELSE»
+		    	public int? «attribute.name.toFirstUpper» { get; set; }
+		    	«ENDIF»
+		    	«ENDIF»
+		    	«IF dataType.type.equals("double")»
+		    	«IF attribute.required.equals("*")»
+		    	public double «attribute.name.toFirstUpper» { get; set; }
+		    	«ELSE»
+		    	public double? «attribute.name.toFirstUpper» { get; set; }                 			
+		        «ENDIF»
+		    	«ENDIF»		    	              		    	
+		    	«ENDFOR»	    			           	 	  	
+		   	 	«ENDFOR»	   	 	 
 		    } 	 
 		   	«ENDFOR»
 		   	 				

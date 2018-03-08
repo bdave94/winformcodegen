@@ -45,4 +45,8 @@ ComboBox:
 	name = 'ComboBox' '('(items+=ComboBoxItem)* ')' '[' dataType=DataType']';
 
 ComboBoxItem:
-	text=STRING;
+	text= STRING
+;
+
+
+
