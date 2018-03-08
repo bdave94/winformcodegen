@@ -61,7 +61,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	    	private Dictionary<string, bool> «entity.name.toFirstLower»RequiredFields = new Dictionary<string, bool>();
 	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldLabelText = new Dictionary<string, string>();
 	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldDataType = new Dictionary<string, string>(); 
-	    	 
+	    	private Dictionary<string, Label> «entity.name.toFirstLower»FieldErrorLabel = new Dictionary<string, Label>(); 
 	    	«ENDFOR»
 	        public Form1()
 	        {
@@ -192,7 +192,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«ENDIF»
 	        	«IF tb.dataType.type.equals("double")»
 	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "double");
-	        	«ENDIF»	        		        	
+	        	«ENDIF»
+	        	
+	        	«entity.name.toFirstLower»FieldErrorLabel.Add("tb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        		        	
 	        	«ENDFOR»
 	        	
 	        	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	        		        	
@@ -219,6 +221,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«IF c.dataType.type.equals("double")»
 	        	«entity.name.toFirstLower»FieldDataType.Add("comboBox«entity.name»«attribute.name»", "double");
 	        	«ENDIF»
+	        	
+	        	«entity.name.toFirstLower»FieldErrorLabel.Add("comboBox«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        		        	
+	        	
 	        	«ENDFOR»
 	        	
 	        	«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
@@ -237,18 +242,24 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«ENDIF»
 	        	«IF rbg.dataType.type.equals("double")»
 	        	«entity.name.toFirstLower»FieldDataType.Add("groupBox«entity.name»«attribute.name»", "double");
-	        	«ENDIF»	        	
+	        	«ENDIF»
+	        	
+	        	«entity.name.toFirstLower»FieldErrorLabel.Add("groupBox«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        	
 	        	«ENDFOR»	        	
 	        	
 	        	              	
 	        	«ENDFOR»	        	        		    	 
 	        	«ENDFOR»
 	        	
+	        	
 	        	List<string> results = new List<string>();
 	        	«FOR entity: r.allContents.toIterable.filter(Entity)»
 	        	listView«entity.name.toFirstUpper».View = View.Details;	        	
 	        	listView«entity.name.toFirstUpper».FullRowSelect = true;	        	
 	        	listView«entity.name.toFirstUpper».GridLines = true;
+	        	
+	        	button«entity.name»Update.Enabled = false;
+	        	button«entity.name»Delete.Enabled = false;
 	        	
 	            «entity.name.toFirstLower»EntityDataListing();				 
 	            «ENDFOR»
@@ -358,7 +369,18 @@ class EntityDslGenerator extends AbstractGenerator {
 	                            
 	                        }
 	                    }
-	         
+	         			
+	         			if(«entity.name.toFirstLower»ListViewSelectedIndex == -1) 
+	         			{
+	         				button«entity.name»Update.Enabled = false;
+	         				button«entity.name»Delete.Enabled = false;
+	         				
+	         			} else 
+	         			{
+	         				button«entity.name»Update.Enabled = true;
+	         				button«entity.name»Delete.Enabled = true;
+	         				
+	         			}
 	         
 	                }
 	         
@@ -471,8 +493,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    }
 	               
 	               } else {
-	                    MessageBox.Show("No record selected!", "Validation error",
-	                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+	               		button«entity.name»Update.Enabled = false;
+	               		button«entity.name»Delete.Enabled = false;
+	                  
 	               }                                
 	         }
 	        «ENDFOR»
@@ -494,9 +517,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    }
 	                    «entity.name.toFirstLower»ResetForm();
 	                    «entity.name.toFirstLower»EntityDataListing();
-	               } else {
-	               		MessageBox.Show("No record selected!", "Validation error",
-	               		          MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+	               } else {	           
+	               		button«entity.name»Update.Enabled = false;
+	               		button«entity.name»Delete.Enabled = false;
 	               	
 	               }
 	           }
@@ -519,9 +542,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	                         if (tb.Text.Length < textBoxMinimalNumberOfCharacters) {
 	                         	
 	                         	string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
-	                         	MessageBox.Show("The textbox \""+ inputFieldName+ "\" must contain at least "
-	                         	+ textBoxMinimalNumberOfCharacters + " characters!", "Validation error",
-	                         	MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+	                         	«entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text = "The textbox \""+ inputFieldName+ "\" must contain at least "
+	                         		                         	+ textBoxMinimalNumberOfCharacters + " characters!";
+	                         	
 	                         	
 	                         	return false;
 	                         }                
@@ -544,9 +567,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    if (textBoxDataType.Equals("int"))
 	                    {
 	                         int result;
-	                         if(int.TryParse(tb.Text, out result) == false) {                
-	                             MessageBox.Show("The textbox \"" + inputFieldName + "\" must contain an Integer! ",
-	                                 "Validation Error",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);	         
+	                         if(int.TryParse(tb.Text, out result) == false) {
+	                         	«entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text =  "The textbox \"" + inputFieldName + "\" must contain an Integer! ";              
+	                                   
 	                             return false;
 	                         }
 	         
@@ -554,9 +577,8 @@ class EntityDslGenerator extends AbstractGenerator {
 	                         {
 	                             double resultD;
 	                             if (double.TryParse(tb.Text.Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"), out resultD) == false) {
-	                                 MessageBox.Show("The textbox \"" + inputFieldName + "\" must contain a number! ",
-	                                     "Validation Error",
-	                                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+	                                 «entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text = "The textbox \"" + inputFieldName + "\" must contain a number! ";
+	                                
 	         
 	                             return false;
 	                             }
@@ -575,8 +597,8 @@ class EntityDslGenerator extends AbstractGenerator {
 	                         	
 	                            string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
 	                         	
-	                         	MessageBox.Show("The \"" + inputFieldName + "\" is a required field!", "Validation error",
-	                         	MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+	                         	«entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
+	                         	
 	                         	return false;
 	                    }
 	                             
@@ -587,9 +609,8 @@ class EntityDslGenerator extends AbstractGenerator {
 	                      if (cb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields[cb.Name]) {
 	                         	
 	                         	string inputFieldName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
+	                         	«entity.name.toFirstLower»FieldErrorLabel[cb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
 	                         	
-	                         	MessageBox.Show("The \"" + inputFieldName + "\" is a required field!", "Validation error",
-	                         	MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 	                         	return false;
 	                     }
 	                             
@@ -610,8 +631,8 @@ class EntityDslGenerator extends AbstractGenerator {
 	                     	     		
 	                     	     		string inputFieldName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
 	                     	     		
-	                     	     		MessageBox.Show("The \"" + inputFieldName + "\" is a required field!", "Validation error",
-	                     	     		MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+	                     	     		«entity.name.toFirstLower»FieldErrorLabel[gb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
+	                     	     		
 	                     	     		return false;
 	                     	     	}
 	                     	     		
@@ -625,6 +646,11 @@ class EntityDslGenerator extends AbstractGenerator {
 	                 
 	         private bool «entity.name.toFirstLower»FormValidator()
 	         {
+	         	
+	         	foreach (Label l in «entity.name.toFirstLower»FieldErrorLabel.Values)
+	         	{
+	         	     l.Text = "";
+	         	}
 	              if («entity.name.toFirstLower»TextBoxTextDataTypeValidator() && «entity.name.toFirstLower»RequiredFieldValidator() &&
 	              «entity.name.toFirstLower»TextBoxTextMinLengthValidator() )
 	                   return true;
@@ -689,7 +715,14 @@ class EntityDslGenerator extends AbstractGenerator {
 		            foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
 		            	 foreach (RadioButton rb in gb.Controls.OfType<RadioButton>())            
 		            		rb.Checked = false;
-		            		
+		            
+		            foreach (Label l in «entity.name.toFirstLower»FieldErrorLabel.Values)
+		            {
+		            	  l.Text = "";
+		            }
+		            
+		            button«entity.name»Update.Enabled = false;
+		            button«entity.name»Delete.Enabled = false;
 		            «entity.name.toFirstLower»ListViewSelectedIndex = -1;		
 
 		        }
@@ -823,6 +856,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	 «FOR attribute : entity.attributes»
 		        	 
 		        	 this.label«entity.name»«attribute.name»  = new System.Windows.Forms.Label();
+		        	 this.label«entity.name»«attribute.name»Error  = new System.Windows.Forms.Label();
 		        	 		        	
 		        	 «FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»		        	 
 		        	 this.tb«entity.name»«attribute.name» = new System.Windows.Forms.TextBox();
@@ -916,6 +950,7 @@ class EntityDslGenerator extends AbstractGenerator {
 					 this.panel«entity.name».Controls.Add(this.listView«entity.name.toFirstUpper»);  
 					 «FOR attribute : entity.attributes»
 					 this.panel«entity.name».Controls.Add(this.label«entity.name»«attribute.name»);
+					 this.panel«entity.name».Controls.Add(this.label«entity.name»«attribute.name»Error);
 					 										
 					 «FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»		        	 
 					 this.panel«entity.name».Controls.Add(this.tb«entity.name»«attribute.name»);
@@ -994,7 +1029,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		         
 		        «FOR attribute : entity.attributes»
 		         private System.Windows.Forms.Label label«entity.name»«attribute.name»;
-		         
+		         private System.Windows.Forms.Label label«entity.name»«attribute.name»Error;
 		         «FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»		        	 
 		         private System.Windows.Forms.TextBox tb«entity.name»«attribute.name»;
 		         «ENDFOR»
@@ -1037,6 +1072,16 @@ class EntityDslGenerator extends AbstractGenerator {
 		this.label«entity.name»«attribute.name».Size = new System.Drawing.Size(45, 13);
 		this.label«entity.name»«attribute.name».MaximumSize = new System.Drawing.Size(100, 0);
 		this.label«entity.name»«attribute.name».Text = "«attribute.labelText.text»";
+		// 
+		// label«entity.name»«attribute.name»Error
+		//
+		this.label«entity.name»«attribute.name»Error.AutoSize = true;
+		this.label«entity.name»«attribute.name»Error.ForeColor = System.Drawing.Color.Red;
+		this.label«entity.name»«attribute.name»Error.Location = new System.Drawing.Point(22, «YCoordlist.get(i+1)-40»);
+		this.label«entity.name»«attribute.name»Error.Name = "label«entity.name»«attribute.name»Error";
+		this.label«entity.name»«attribute.name»Error.Size = new System.Drawing.Size(45, 13);
+		this.label«entity.name»«attribute.name»Error.MaximumSize = new System.Drawing.Size(150, 0);
+		this.label«entity.name»«attribute.name»Error.Text = "";
 				           
 		«FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»
 		// 
@@ -1185,7 +1230,7 @@ class EntityDslGenerator extends AbstractGenerator {
 						
 		var List<Integer> winFormControlYCoordList = Lists.newArrayList();
 		
-		var winFormControlYCoord = 40
+		var winFormControlYCoord = 60
 		          
 		var numberOfRadioButtonsInGroup = 0
 		     
@@ -1198,7 +1243,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		
 		val Attribute attribute =  entity.attributes.get(j)
 		            	
-		winFormControlYCoord+=40
+		winFormControlYCoord+=60
 		numberOfRadioButtonsInGroup= 0;
 			for( rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)){
 				winFormControlYCoord+=30
