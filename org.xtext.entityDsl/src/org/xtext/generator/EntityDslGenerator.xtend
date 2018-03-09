@@ -56,7 +56,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	    {
 	    	«FOR entity: r.allContents.toIterable.filter(Entity)»
 	    	private List<int> result«entity.name.toFirstUpper»Ids = new List<int>();
-	    	private int «entity.name.toFirstLower»ListViewSelectedIndex = -1;
+	    	private int «entity.name.toFirstLower»DataGridSelectedRowIndex = -1;
 	    	private Dictionary<string, int> «entity.name.toFirstLower»TextboxMinimalTextLength = new Dictionary<string, int>();
 	    	private Dictionary<string, bool> «entity.name.toFirstLower»RequiredFields = new Dictionary<string, bool>();
 	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldLabelText = new Dictionary<string, string>();
@@ -194,12 +194,13 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "double");
 	        	«ENDIF»
 	        	
-	        	«entity.name.toFirstLower»FieldErrorLabel.Add("tb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        		        	
+	        	«entity.name.toFirstLower»FieldErrorLabel.Add("tb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
 	        	«ENDFOR»
 	        	
 	        	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	        		        	
 	        	«entity.name.toFirstLower»FieldLabelText.Add("cb«entity.name»«attribute.name»","«attribute.labelText.text»");
 	        	«entity.name.toFirstLower»FieldDataType.Add("cb«entity.name»«attribute.name»", "string");
+	        	«entity.name.toFirstLower»FieldErrorLabel.Add("cb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
 	        	«ENDFOR» 
 	        	             	
 	        	«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»
@@ -254,9 +255,11 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	
 	        	List<string> results = new List<string>();
 	        	«FOR entity: r.allContents.toIterable.filter(Entity)»
-	        	listView«entity.name.toFirstUpper».View = View.Details;	        	
-	        	listView«entity.name.toFirstUpper».FullRowSelect = true;	        	
-	        	listView«entity.name.toFirstUpper».GridLines = true;
+	        	
+	        	
+	        	dataGridView«entity.name.toFirstUpper».ColumnCount = «entity.attributes.size»;
+	        	dataGridView«entity.name.toFirstUpper».ColumnHeadersVisible = true;
+	        	
 	        	
 	        	button«entity.name»Update.Enabled = false;
 	        	button«entity.name»Delete.Enabled = false;
@@ -265,131 +268,11 @@ class EntityDslGenerator extends AbstractGenerator {
 	            «ENDFOR»
 	        }
 			 
-	        private void setListView(List<string> results, int numberOfAttributes, ListView lv)
-	        {
-	            for (int i = 0; i < results.Count / numberOfAttributes; i++)
-	            {
-	                ListViewItem item = new ListViewItem();
-	                 for (int j = 0; j < numberOfAttributes; j++)
-	                 {
-	                      ListViewItem.ListViewSubItem subitem = new ListViewItem.ListViewSubItem();
-	                      subitem.Text = results[numberOfAttributes * i + j];
-	                      item.SubItems.Insert(j, subitem);
-	                 }       
-	                lv.Items.Add(item);
-	            }
-	
-	        }
-	        
-	        «FOR entity: r.allContents.toIterable.filter(Entity)»
-	         private void listView«entity.name.toFirstUpper»_SelectedIndexChanged(object sender, EventArgs e)
-	                {        
-	         
-	                    int itemsCount = 0;
-	                    itemsCount = listView«entity.name.toFirstUpper».SelectedItems.Count;
-	         
-	                    foreach (ListViewItem lvi in listView«entity.name.toFirstUpper».Items)
-	                    {
-	                        lvi.BackColor = SystemColors.Window;
-	                        lvi.ForeColor = SystemColors.WindowText;	        
-	                    }
-	         
-	                    foreach (ListViewItem lvi in listView«entity.name.toFirstUpper».SelectedItems)
-	                    {
-	                        lvi.BackColor = Color.LightBlue;
-	                    }
-	         
-	         
-	                    if (listView«entity.name.toFirstUpper».SelectedItems.Count > 0)
-	                    {
-	                        «entity.name.toFirstLower»ListViewSelectedIndex = listView«entity.name.toFirstUpper».SelectedIndices[0];
-	                        for (int columnNumber = 0; columnNumber < listView«entity.name.toFirstUpper».Columns.Count; columnNumber++)
-	                        {
-	                            ColumnHeader ch = listView«entity.name.toFirstUpper».Columns[columnNumber];
-	                            string columnName = ch.Text;
-	                            foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
-	                            {
-	                                string controlLabelName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
-	                                controlLabelName = controlLabelName.ToLower();
-	                                columnName = columnName.ToLower();
-	         
-	                                if (controlLabelName.Contains(columnName))
-	                                    tb.Text = listView«entity.name.toFirstUpper».SelectedItems[0].SubItems[columnNumber].Text;
-	                            }
-	         
-	                            foreach (CheckBox c in panel«entity.name».Controls.OfType<CheckBox>())
-	                            {
-	                                string controlLabelName = «entity.name.toFirstLower»FieldLabelText[c.Name];
-	                                controlLabelName = controlLabelName.ToLower();
-	                                columnName = columnName.ToLower();
-	         
-	                                if (controlLabelName.Contains(columnName))
-	                                {
-	                                    string cbAsText = listView«entity.name.toFirstUpper».SelectedItems[0].SubItems[columnNumber].Text;
-	                                    if (cbAsText.Equals("True"))
-	                                        c.Checked = true;
-	                                    else
-	                                        c.Checked = false;
-	                                }
-	                            }
-	                            
-	                            
-	                            
-	                            foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())
-	                            {
-	                            string controlLabelName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
-	                           	controlLabelName = controlLabelName.ToLower();
-	                            columnName = columnName.ToLower();
-	                            	        
-	                            if (controlLabelName.Contains(columnName))
-	                            {
-	                            	string cbAsText = listView«entity.name.toFirstUpper».SelectedItems[0].SubItems[columnNumber].Text;
-	                            	cb.SelectedIndex = cb.Items.IndexOf(cbAsText);
-	                            }
-	                            }
-	                            
-	                            
-	                            
-	                            foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
-	                            {
-	                            	  string controlLabelName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
-	                            	  controlLabelName = controlLabelName.ToLower();
-	                            	  columnName = columnName.ToLower();
-	                            	        
-	                            	  if (controlLabelName.Contains(columnName))
-	                            	  {
-	                            	  		string gbAsText = listView«entity.name.toFirstUpper».SelectedItems[0].SubItems[columnNumber].Text;
-	                            	        foreach (RadioButton rb in gb.Controls)
-	                            	        	if(rb.Text.Equals(gbAsText))
-	                            	        		rb.Checked = true;
-	                            	        	else
-	                            	            	rb.Checked = false;
-	                            	  }
-	                            }
-	                            
-	                        }
-	                    }
-	         			
-	         			if(«entity.name.toFirstLower»ListViewSelectedIndex == -1) 
-	         			{
-	         				button«entity.name»Update.Enabled = false;
-	         				button«entity.name»Delete.Enabled = false;
-	         				
-	         			} else 
-	         			{
-	         				button«entity.name»Update.Enabled = true;
-	         				button«entity.name»Delete.Enabled = true;
-	         				
-	         			}
-	         
-	                }
-	         
-	        «ENDFOR»
-	        
+			 
 	        «FOR entity: r.allContents.toIterable.filter(Entity)»
 	        private void button«entity.name»Update_Click(object sender, EventArgs e)
 	        {    
-	        	if(«entity.name.toFirstLower»ListViewSelectedIndex != -1) {
+	        	if(«entity.name.toFirstLower»DataGridSelectedRowIndex != -1) {
 	                	if («entity.name.toFirstLower»FormValidator() == true)
 	                	{
 	                    	using (var db = new EntityContext())
@@ -397,7 +280,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    		
 	                    			var query = from p in db.«entity.name»s select p;
 	                    			                  
-	                    			int updateID = result«entity.name.toFirstUpper»Ids[«entity.name.toFirstLower»ListViewSelectedIndex];
+	                    			int updateID = result«entity.name.toFirstUpper»Ids[«entity.name.toFirstLower»DataGridSelectedRowIndex];
 	                    			var result = db.«entity.name»s.SingleOrDefault(m => m.«entity.name»Id == updateID);
 	                    			        
 	                    			if (result != null)
@@ -503,10 +386,10 @@ class EntityDslGenerator extends AbstractGenerator {
 	         «FOR entity: r.allContents.toIterable.filter(Entity)»
 	         private void button«entity.name»Delete_Click(object sender, EventArgs e)
 	           {
-	               if(«entity.name.toFirstLower»ListViewSelectedIndex != -1) {
+	               if(«entity.name.toFirstLower»DataGridSelectedRowIndex != -1) {
 	                    using (var db = new EntityContext())
 	                    {	                               
-	                        int updateID = result«entity.name.toFirstUpper»Ids[«entity.name.toFirstLower»ListViewSelectedIndex];
+	                        int updateID = result«entity.name.toFirstUpper»Ids[«entity.name.toFirstLower»DataGridSelectedRowIndex];
 	                        var result = db.«entity.name»s.SingleOrDefault(m => m.«entity.name»Id == updateID);
 	                        	        
 	                        if (result != null)
@@ -686,16 +569,264 @@ class EntityDslGenerator extends AbstractGenerator {
 	                 «ENDFOR»
 	                 	                   
 	                 }
-	                 setListView(results, «entity.attributes.size»,listView«entity.name.toFirstUpper» );
-	                 listView«entity.name.toFirstUpper».Clear();
-	                 «FOR attribute : entity.attributes»	            
-	                 listView«entity.name.toFirstUpper».Columns.Add("«attribute.labelText.text»", 100, HorizontalAlignment.Left);	          
+	                 
+	        		 dataGridView«entity.name.toFirstUpper».Rows.Clear();
+	                 dataGridView«entity.name.toFirstUpper».Refresh();
+	        		 «FOR int i : 0..<entity.attributes.size»
+	        		 «val Attribute a = entity.attributes.get(i)»
+	        		 dataGridView«entity.name.toFirstUpper».Columns[«i»].Name = "«a.labelText.text»";
 	                 «ENDFOR»
-	                 setListView(results, «entity.attributes.size»,listView«entity.name.toFirstUpper» );        	        
+	                 	        
+	                 setDataGridView(results, «entity.attributes.size», dataGridView«entity.name.toFirstUpper»);
+	        
 	           }
 	        
 	        }
+	        
+	        
+	        
+	        private void dataGridView«entity.name.toFirstUpper»_CellClick(object sender, DataGridViewCellEventArgs e)
+	        {
+	        
+	        
+	        	foreach (DataGridViewRow row in dataGridView«entity.name.toFirstUpper».Rows)
+	        	{
+	        		foreach(DataGridViewCell cell in row.Cells)
+	        		{
+	        			if(cell.Style.BackColor != Color.Red)
+	        			{ 
+	        				cell.Style.BackColor = SystemColors.Window;
+	        				cell.Style.ForeColor = SystemColors.WindowText;
+	                     }
+	        	  	}
+	        	} 	
+	        	foreach (DataGridViewCell cell in dataGridView«entity.name.toFirstUpper».Rows[e.RowIndex].Cells)
+	            {
+	                 if (cell.Style.BackColor != Color.Red)       
+	                     cell.Style.BackColor  = Color.LightBlue;
+	            }
+	        
+	           
+	            «entity.name.toFirstLower»DataGridSelectedRowIndex = e.RowIndex;
+	            DataGridViewRow selectedRow = dataGridView«entity.name.toFirstUpper».Rows[e.RowIndex];
+	            for (int columnNumber = 0; columnNumber < dataGridView«entity.name.toFirstUpper».Columns.Count; columnNumber++)
+	            {
+	                      
+	                     string columnName = dataGridView«entity.name.toFirstUpper».Columns[columnNumber].HeaderText;
+	                     foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
+	                     {
+	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                         controlLabelName = controlLabelName.ToLower();
+	                         columnName = columnName.ToLower();
+	        
+	                         if (controlLabelName.Contains(columnName))
+	                             tb.Text = selectedRow.Cells[columnNumber].Value.ToString();
+	                     }
+	        
+	                     foreach (CheckBox c in panel«entity.name».Controls.OfType<CheckBox>())
+	                     {
+	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[c.Name];
+	                         controlLabelName = controlLabelName.ToLower();
+	                         columnName = columnName.ToLower();
+	        
+	                         if (controlLabelName.Contains(columnName))
+	                         {
+	                             string cbAsText = selectedRow.Cells[columnNumber].Value.ToString(); 
+	                             if (cbAsText.Equals("True"))
+	                                 c.Checked = true;
+	                             else
+	                                 c.Checked = false;
+	                         }
+	                     }
+	        
+	        
+	        
+	                     foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())
+	                     {
+	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
+	                         controlLabelName = controlLabelName.ToLower();
+	                         columnName = columnName.ToLower();
+	        
+	                         if (controlLabelName.Contains(columnName))
+	                         {
+	                             string cbAsText = selectedRow.Cells[columnNumber].Value.ToString();
+	                             cb.SelectedIndex = cb.Items.IndexOf(cbAsText);
+	                         }
+	                     }
+	        
+	        
+	        
+	                     foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
+	                     {
+	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
+	                         controlLabelName = controlLabelName.ToLower();
+	                         columnName = columnName.ToLower();
+	        
+	                         if (controlLabelName.Contains(columnName))
+	                         {
+	                             string gbAsText = selectedRow.Cells[columnNumber].Value.ToString(); 
+	                             foreach (RadioButton rb in gb.Controls)
+	                                 if (rb.Text.Equals(gbAsText))
+	                                     rb.Checked = true;
+	                                 else
+	                                     rb.Checked = false;
+	                         }
+	                     }
+	        
+	                 }
+	             
+	        
+	             if («entity.name.toFirstLower»DataGridSelectedRowIndex == -1)
+	             {
+	                 button«entity.name»Update.Enabled = false;
+	                 button«entity.name»Delete.Enabled = false;
+	        
+	             }
+	             else
+	             {
+	                 button«entity.name»Update.Enabled = true;
+	                 button«entity.name»Delete.Enabled = true;
+	        
+	             }
+	        }
+	        
+	        private void dataGridView«entity.name.toFirstUpper»_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+	        {
+	            bool invalidValueFound = false;
+	        
+	            foreach(Label l in «entity.name.toFirstLower»FieldErrorLabel.Values)
+	            {
+	                l.Text = "";
+	            }
+	        
+	            «entity.name.toFirstLower»DataGridSelectedRowIndex = e.RowIndex;
+	            DataGridViewRow selectedRow = dataGridView«entity.name.toFirstUpper».Rows[e.RowIndex];
+	            int columnNumber = e.ColumnIndex;
+	            
+	        
+	                string columnName = dataGridView«entity.name.toFirstUpper».Columns[columnNumber].HeaderText;
+	                foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
+	                {
+	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                    controlLabelName = controlLabelName.ToLower();
+	                    columnName = columnName.ToLower();
+	        
+	                    if (controlLabelName.Contains(columnName))
+	                        tb.Text = selectedRow.Cells[columnNumber].Value.ToString();
+	                }
+	        
+	                foreach (CheckBox c in panel«entity.name».Controls.OfType<CheckBox>())
+	                {
+	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[c.Name];
+	                    controlLabelName = controlLabelName.ToLower();
+	                    columnName = columnName.ToLower();
+	        
+	                    if (controlLabelName.Contains(columnName))
+	                    {
+	                        string cbAsText = selectedRow.Cells[columnNumber].Value.ToString();
+	        
+	                        if(cbAsText.Equals("True")|| cbAsText.Equals("False")) { 
+	                        if (cbAsText.Equals("True"))
+	                            c.Checked = true;
+	                        else
+	                            c.Checked = false;
+	                          } else
+	                          {
+	                        invalidValueFound = true;
+	                        «entity.name.toFirstLower»FieldErrorLabel[c.Name].Text = "Invalid value: \""+ cbAsText + "\"";
+	        
+	                          }
+	                    }
+	                }
+	        
+	        
+	        
+	                foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())
+	                {
+	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
+	                    controlLabelName = controlLabelName.ToLower();
+	                    columnName = columnName.ToLower();
+	        
+	                    if (controlLabelName.Contains(columnName))
+	                    {
+	                        string cbAsText = selectedRow.Cells[columnNumber].Value.ToString(); 
+	                        cb.SelectedIndex = cb.Items.IndexOf(cbAsText);
+	        
+	                        if(cb.SelectedIndex == -1)
+	                        {
+	                        invalidValueFound = true;
+	                        «entity.name.toFirstLower»FieldErrorLabel[cb.Name].Text = "Invalid value: \"" + cbAsText + "\"";
+	        
+	                        }
+	                    }
+	                }
+	        
+	        
+	        
+	                foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
+	                {
+	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
+	                    controlLabelName = controlLabelName.ToLower();
+	                    columnName = columnName.ToLower();
+	        
+	                    if (controlLabelName.Contains(columnName))
+	                    {
+	                        string gbAsText = selectedRow.Cells[columnNumber].Value.ToString();
+	                        foreach (RadioButton rb in gb.Controls)
+	                            if (rb.Text.Equals(gbAsText))
+	                                rb.Checked = true;
+	                            else
+	                                rb.Checked = false;
+	        
+	                        invalidValueFound = true;
+	        
+	                    foreach (RadioButton rb in gb.Controls)
+	                        if (rb.Checked == true)
+	                            invalidValueFound = false;
+	                        
+	                        if(invalidValueFound == true)
+	                        «entity.name.toFirstLower»FieldErrorLabel[gb.Name].Text = "Invalid value: \"" + gbAsText + "\"";
+	        
+	                }
+	                }
+	        
+	            if (invalidValueFound == false)
+	            {
+	                selectedRow.Cells[columnNumber].Style.BackColor = SystemColors.Window;
+	                selectedRow.Cells[columnNumber].Style.ForeColor = SystemColors.WindowText;
+	                if («entity.name.toFirstLower»FormValidator())                
+	                    button«entity.name»Update_Click(sender, e);
+	                    else
+	                    selectedRow.Cells[columnNumber].Style.BackColor = Color.Red;
+	            }               
+	            else
+	            {
+	                selectedRow.Cells[columnNumber].Style.BackColor = Color.Red;
+	            }
+	                
+	        }
+	        
 		«ENDFOR»
+		
+		
+		private void setDataGridView(List<string> results, int numberOfAttributes, DataGridView dv)
+		{
+		      object[] rows = new object[numberOfAttributes];
+		
+		      for (int i = 0; i < results.Count / numberOfAttributes; i++)
+		      {
+		            
+		                string[] row = new string[numberOfAttributes];
+		
+		                for (int j = 0; j < numberOfAttributes; j++)
+		                    row[j] = results[numberOfAttributes * i + j];
+		                
+		                dv.Rows.Add(row);
+		                              
+		            }
+		          
+		        }
+		
 		
 		«FOR entity: r.allContents.toIterable.filter(Entity)»
 		 private void «entity.name.toFirstLower»ResetForm()
@@ -723,7 +854,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		            
 		            button«entity.name»Update.Enabled = false;
 		            button«entity.name»Delete.Enabled = false;
-		            «entity.name.toFirstLower»ListViewSelectedIndex = -1;		
+		            «entity.name.toFirstLower»DataGridSelectedRowIndex = -1;		
 
 		        }
 		«ENDFOR»
@@ -852,7 +983,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	 this.button«entity.name»Update  = new System.Windows.Forms.Button();
 		        	 this.button«entity.name»Delete  = new System.Windows.Forms.Button();
 		        	 this.button«entity.name»Reset  = new System.Windows.Forms.Button();
-		        	 this.listView«entity.name.toFirstUpper» = new System.Windows.Forms.ListView(); 	 	 
+		        	 this.dataGridView«entity.name.toFirstUpper» = new System.Windows.Forms.DataGridView(); 	 	 
 		        	 «FOR attribute : entity.attributes»
 		        	 
 		        	 this.label«entity.name»«attribute.name»  = new System.Windows.Forms.Label();
@@ -880,9 +1011,10 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	    	   	 	  	
 		        	 «ENDFOR»	   	 	 
 		        	 this.tabPage«entity.name».SuspendLayout();
-		        	 this.panel«entity.name».SuspendLayout();	    	 	        	
+		        	 this.panel«entity.name».SuspendLayout();
+		        	 ((System.ComponentModel.ISupportInitialize)(this.dataGridView«entity.name.toFirstUpper»)).BeginInit();		    	 	        	
 		        	«ENDFOR»
-		        			        			        
+		        		        			        
 		            this.tabControl.SuspendLayout();		          
 		            this.SuspendLayout();
 		            // 
@@ -895,33 +1027,14 @@ class EntityDslGenerator extends AbstractGenerator {
 		            this.tabControl.Location = new System.Drawing.Point(12, 12);
 		            this.tabControl.Name = "tabControl";
 		            this.tabControl.SelectedIndex = 0;
-		            this.tabControl.Size = new System.Drawing.Size(837, 474);
+		            this.tabControl.Size = new System.Drawing.Size(955, 543);
 		            this.tabControl.TabIndex = 0;
 		            
 		            		             
 					«FOR entity: r.allContents.toIterable.filter(Entity)»
 					// 
 					// tabPage«entity.name»
-					// 								           	   	 	 
-					«FOR attribute : entity.attributes»
-					this.tabPage«entity.name».Controls.Add(this.label«entity.name»«attribute.name»);
-										
-					«FOR tb :attribute.eAllContents.toIterable.filter(TextBox)»		        	 
-					this.tabPage«entity.name».Controls.Add(this.tb«entity.name»«attribute.name»);
-					«ENDFOR»
-					«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»		        	 
-					this.tabPage«entity.name».Controls.Add(this.cb«entity.name»«attribute.name»);
-					«ENDFOR»
-				
-					«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»		        	 
-					this.tabPage«entity.name».Controls.Add(this.comboBox«entity.name»«attribute.name»);
-					«ENDFOR»
-					
-					«FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
-					this.tabPage«entity.name».Controls.Add(this.groupBox«entity.name»«attribute.name»);					
-					«ENDFOR»
-														    	   	 	  	
-		            «ENDFOR»		          
+					// 								           	   	 	 		          
 					this.tabPage«entity.name».AutoScroll = true;
 					this.tabPage«entity.name».Controls.Add(this.panel«entity.name»);					
 					
@@ -929,7 +1042,7 @@ class EntityDslGenerator extends AbstractGenerator {
 					this.tabPage«entity.name».Location = new System.Drawing.Point(4, 22);
 					this.tabPage«entity.name».Name = "«entity.name»";
 					this.tabPage«entity.name».Padding = new System.Windows.Forms.Padding(3);
-					this.tabPage«entity.name».Size = new System.Drawing.Size(829, 448);
+					this.tabPage«entity.name».Size = new System.Drawing.Size(947, 517);
 					this.tabPage«entity.name».Text = "«entity.name»";
 					this.tabPage«entity.name».UseVisualStyleBackColor = true;		           					 	        	
 					
@@ -942,12 +1055,13 @@ class EntityDslGenerator extends AbstractGenerator {
 					 this.panel«entity.name».BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 					 this.panel«entity.name».Location = new System.Drawing.Point(5, 5);
 					 this.panel«entity.name».Name = "panel«entity.name»";
-					 this.panel«entity.name».Size = new System.Drawing.Size(810, 435);
+					 this.panel«entity.name».Size = new System.Drawing.Size(936, 506);
 					 this.panel«entity.name».Controls.Add(this.button«entity.name»);
 					 this.panel«entity.name».Controls.Add(this.button«entity.name»Update);
 					 this.panel«entity.name».Controls.Add(this.button«entity.name»Delete);
 					 this.panel«entity.name».Controls.Add(button«entity.name»Reset);
-					 this.panel«entity.name».Controls.Add(this.listView«entity.name.toFirstUpper»);  
+					 
+					 this.panel«entity.name».Controls.Add(this.dataGridView«entity.name.toFirstUpper»);  
 					 «FOR attribute : entity.attributes»
 					 this.panel«entity.name».Controls.Add(this.label«entity.name»«attribute.name»);
 					 this.panel«entity.name».Controls.Add(this.label«entity.name»«attribute.name»Error);
@@ -972,17 +1086,19 @@ class EntityDslGenerator extends AbstractGenerator {
 					
 					
 		            «generateFormElements(entity)»         
-					
-					
 					// 
-					// listView«entity.name.toFirstUpper»
-					// 		           
+					// dataGridView«entity.name.toFirstUpper»
+					// 
+					this.dataGridView«entity.name.toFirstUpper».AllowUserToAddRows = false;
+					this.dataGridView«entity.name.toFirstUpper».AllowUserToDeleteRows = false;
+					this.dataGridView«entity.name.toFirstUpper».ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+					this.dataGridView«entity.name.toFirstUpper».Location = new System.Drawing.Point(391, 53);
+					this.dataGridView«entity.name.toFirstUpper».Name = "dataGridView«entity.name.toFirstUpper»";
+					this.dataGridView«entity.name.toFirstUpper».Size = new System.Drawing.Size(521, 329);
+					this.dataGridView«entity.name.toFirstUpper».CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView«entity.name.toFirstUpper»_CellClick);
+					this.dataGridView«entity.name.toFirstUpper».CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView«entity.name.toFirstUpper»_CellEndEdit);
 					
-					this.listView«entity.name.toFirstUpper».Location = new System.Drawing.Point(434, 40);
-					this.listView«entity.name.toFirstUpper».Name = "listView«entity.name»";
-					this.listView«entity.name.toFirstUpper».Size = new System.Drawing.Size(370, 278);
-					this.listView«entity.name.toFirstUpper».UseCompatibleStateImageBehavior = false;
-					this.listView«entity.name.toFirstUpper».SelectedIndexChanged += new System.EventHandler(this.listView«entity.name.toFirstUpper»_SelectedIndexChanged);
+					
 		            «ENDFOR»
 
 			
@@ -991,7 +1107,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		            // 
 		            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 		            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-		            this.ClientSize = new System.Drawing.Size(871, 511);
+		            this.ClientSize = new System.Drawing.Size(979, 558);
 		            this.Controls.Add(this.tabControl);
 		            this.Name = "Form1";
 		            this.Text = "Form1";
@@ -1009,6 +1125,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		             this.groupBox«entity.name»«attribute.name».PerformLayout();
 		            «ENDFOR»	           		            
 		            «ENDFOR»
+		            ((System.ComponentModel.ISupportInitialize)(this.dataGridView«entity.name.toFirstUpper»)).EndInit();
 		            «ENDFOR»		           
 		            this.ResumeLayout(false);
 		           
@@ -1025,8 +1142,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		         private System.Windows.Forms.Button button«entity.name»Update;
 		         private System.Windows.Forms.Button button«entity.name»Delete;
 		         private System.Windows.Forms.Button button«entity.name»Reset;
-		         private System.Windows.Forms.ListView listView«entity.name.toFirstUpper»;
-		         
+		          private System.Windows.Forms.DataGridView dataGridView«entity.name.toFirstUpper»;
 		        «FOR attribute : entity.attributes»
 		         private System.Windows.Forms.Label label«entity.name»«attribute.name»;
 		         private System.Windows.Forms.Label label«entity.name»«attribute.name»Error;
