@@ -204,12 +204,13 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cComboBoxParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cCheckBoxParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cRadioButtonGroupParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cSpinnerParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//WinFormControlType:
-		//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup;
+		//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup
+		//controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//controlType=TextBox
@@ -226,6 +227,76 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RadioButtonGroup
 		public RuleCall getRadioButtonGroupParserRuleCall_3() { return cRadioButtonGroupParserRuleCall_3; }
+		
+		//Spinner
+		public RuleCall getSpinnerParserRuleCall_4() { return cSpinnerParserRuleCall_4; }
+	}
+	public class SpinnerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.Spinner");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cNameSpinnerKeyword_0_0 = (Keyword)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDefaultValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDefaultValueINTTerminalRuleCall_2_0 = (RuleCall)cDefaultValueAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMinimumValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cMinimumValueINTTerminalRuleCall_5_0 = (RuleCall)cMinimumValueAssignment_5.eContents().get(0);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMaximumValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMaximumValueINTTerminalRuleCall_7_0 = (RuleCall)cMaximumValueAssignment_7.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRightSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//Spinner:
+		//	name='Spinner' '[' defaultValue=INT ',' '(' minimumValue=INT ',' maximumValue=INT ')' ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name='Spinner' '[' defaultValue=INT ',' '(' minimumValue=INT ',' maximumValue=INT ')' ']'
+		public Group getGroup() { return cGroup; }
+		
+		//name='Spinner'
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//'Spinner'
+		public Keyword getNameSpinnerKeyword_0_0() { return cNameSpinnerKeyword_0_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//defaultValue=INT
+		public Assignment getDefaultValueAssignment_2() { return cDefaultValueAssignment_2; }
+		
+		//INT
+		public RuleCall getDefaultValueINTTerminalRuleCall_2_0() { return cDefaultValueINTTerminalRuleCall_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
+		
+		//minimumValue=INT
+		public Assignment getMinimumValueAssignment_5() { return cMinimumValueAssignment_5; }
+		
+		//INT
+		public RuleCall getMinimumValueINTTerminalRuleCall_5_0() { return cMinimumValueINTTerminalRuleCall_5_0; }
+		
+		//','
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+		
+		//maximumValue=INT
+		public Assignment getMaximumValueAssignment_7() { return cMaximumValueAssignment_7; }
+		
+		//INT
+		public RuleCall getMaximumValueINTTerminalRuleCall_7_0() { return cMaximumValueINTTerminalRuleCall_7_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_9() { return cRightSquareBracketKeyword_9; }
 	}
 	public class RadioButtonGroupElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.RadioButtonGroup");
@@ -445,6 +516,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final DataTypeElements pDataType;
 	private final LabelElements pLabel;
 	private final WinFormControlTypeElements pWinFormControlType;
+	private final SpinnerElements pSpinner;
 	private final RadioButtonGroupElements pRadioButtonGroup;
 	private final RadioButtonElements pRadioButton;
 	private final CheckBoxElements pCheckBox;
@@ -467,6 +539,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDataType = new DataTypeElements();
 		this.pLabel = new LabelElements();
 		this.pWinFormControlType = new WinFormControlTypeElements();
+		this.pSpinner = new SpinnerElements();
 		this.pRadioButtonGroup = new RadioButtonGroupElements();
 		this.pRadioButton = new RadioButtonElements();
 		this.pCheckBox = new CheckBoxElements();
@@ -556,13 +629,23 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WinFormControlType:
-	//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup;
+	//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner;
 	public WinFormControlTypeElements getWinFormControlTypeAccess() {
 		return pWinFormControlType;
 	}
 	
 	public ParserRule getWinFormControlTypeRule() {
 		return getWinFormControlTypeAccess().getRule();
+	}
+	
+	//Spinner:
+	//	name='Spinner' '[' defaultValue=INT ',' '(' minimumValue=INT ',' maximumValue=INT ')' ']';
+	public SpinnerElements getSpinnerAccess() {
+		return pSpinner;
+	}
+	
+	public ParserRule getSpinnerRule() {
+		return getSpinnerAccess().getRule();
 	}
 	
 	//RadioButtonGroup:

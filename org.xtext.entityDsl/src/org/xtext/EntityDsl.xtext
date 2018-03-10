@@ -22,7 +22,11 @@ Label:
 	text= STRING;
      
 WinFormControlType:
-	controlType = TextBox | ComboBox | CheckBox | RadioButtonGroup;
+	controlType = TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner;
+
+Spinner:
+	name = 'Spinner' '[' defaultValue=INT','  '(' minimumValue=INT ',' maximumValue=INT')' ']'
+;
 
 RadioButtonGroup:
 	name = 'RadioButtonGroup' '('(buttons+=RadioButton)* ')''[' dataType=DataType  ']'

@@ -211,6 +211,29 @@ public class EntityDslItemProviderAdapterFactory extends EntityDslAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.xtext.entityDsl.Spinner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SpinnerItemProvider spinnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.xtext.entityDsl.Spinner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSpinnerAdapter() {
+		if (spinnerItemProvider == null) {
+			spinnerItemProvider = new SpinnerItemProvider(this);
+		}
+
+		return spinnerItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.xtext.entityDsl.RadioButtonGroup} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -453,6 +476,7 @@ public class EntityDslItemProviderAdapterFactory extends EntityDslAdapterFactory
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (labelItemProvider != null) labelItemProvider.dispose();
 		if (winFormControlTypeItemProvider != null) winFormControlTypeItemProvider.dispose();
+		if (spinnerItemProvider != null) spinnerItemProvider.dispose();
 		if (radioButtonGroupItemProvider != null) radioButtonGroupItemProvider.dispose();
 		if (radioButtonItemProvider != null) radioButtonItemProvider.dispose();
 		if (checkBoxItemProvider != null) checkBoxItemProvider.dispose();

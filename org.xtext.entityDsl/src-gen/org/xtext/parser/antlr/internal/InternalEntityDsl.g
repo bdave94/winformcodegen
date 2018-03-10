@@ -445,6 +445,126 @@ ruleWinFormControlType returns [EObject current=null]
 			$current = $this_RadioButtonGroup_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getWinFormControlTypeAccess().getSpinnerParserRuleCall_4());
+		}
+		this_Spinner_4=ruleSpinner
+		{
+			$current = $this_Spinner_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleSpinner
+entryRuleSpinner returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSpinnerRule()); }
+	iv_ruleSpinner=ruleSpinner
+	{ $current=$iv_ruleSpinner.current; }
+	EOF;
+
+// Rule Spinner
+ruleSpinner returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_0='Spinner'
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getSpinnerAccess().getNameSpinnerKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpinnerRule());
+					}
+					setWithLastConsumed($current, "name", lv_name_0_0, "Spinner");
+				}
+			)
+		)
+		otherlv_1='['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSpinnerAccess().getLeftSquareBracketKeyword_1());
+		}
+		(
+			(
+				lv_defaultValue_2_0=RULE_INT
+				{
+					newLeafNode(lv_defaultValue_2_0, grammarAccess.getSpinnerAccess().getDefaultValueINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpinnerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"defaultValue",
+						lv_defaultValue_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_3=','
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSpinnerAccess().getCommaKeyword_3());
+		}
+		otherlv_4='('
+		{
+			newLeafNode(otherlv_4, grammarAccess.getSpinnerAccess().getLeftParenthesisKeyword_4());
+		}
+		(
+			(
+				lv_minimumValue_5_0=RULE_INT
+				{
+					newLeafNode(lv_minimumValue_5_0, grammarAccess.getSpinnerAccess().getMinimumValueINTTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpinnerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"minimumValue",
+						lv_minimumValue_5_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_6=','
+		{
+			newLeafNode(otherlv_6, grammarAccess.getSpinnerAccess().getCommaKeyword_6());
+		}
+		(
+			(
+				lv_maximumValue_7_0=RULE_INT
+				{
+					newLeafNode(lv_maximumValue_7_0, grammarAccess.getSpinnerAccess().getMaximumValueINTTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpinnerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"maximumValue",
+						lv_maximumValue_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_8=')'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getSpinnerAccess().getRightParenthesisKeyword_8());
+		}
+		otherlv_9=']'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getSpinnerAccess().getRightSquareBracketKeyword_9());
+		}
 	)
 ;
 

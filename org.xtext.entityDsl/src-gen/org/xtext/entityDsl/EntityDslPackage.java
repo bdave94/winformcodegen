@@ -280,6 +280,70 @@ public interface EntityDslPackage extends EPackage
   int WIN_FORM_CONTROL_TYPE_FEATURE_COUNT = 2;
 
   /**
+	 * The meta object id for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.entityDsl.impl.SpinnerImpl
+	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getSpinner()
+	 * @generated
+	 */
+  int SPINNER = 6;
+
+  /**
+	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SPINNER__CONTROL_TYPE = WIN_FORM_CONTROL_TYPE__CONTROL_TYPE;
+
+  /**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SPINNER__NAME = WIN_FORM_CONTROL_TYPE__NAME;
+
+  /**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SPINNER__DEFAULT_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
+
+  /**
+	 * The feature id for the '<em><b>Minimum Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SPINNER__MINIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
+
+  /**
+	 * The feature id for the '<em><b>Maximum Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SPINNER__MAXIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 2;
+
+  /**
+	 * The number of structural features of the '<em>Spinner</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SPINNER_FEATURE_COUNT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 3;
+
+  /**
 	 * The meta object id for the '{@link org.xtext.entityDsl.impl.RadioButtonGroupImpl <em>Radio Button Group</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -287,7 +351,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButtonGroup()
 	 * @generated
 	 */
-  int RADIO_BUTTON_GROUP = 6;
+  int RADIO_BUTTON_GROUP = 7;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -342,7 +406,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButton()
 	 * @generated
 	 */
-  int RADIO_BUTTON = 7;
+  int RADIO_BUTTON = 8;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -370,7 +434,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getCheckBox()
 	 * @generated
 	 */
-  int CHECK_BOX = 8;
+  int CHECK_BOX = 9;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -407,7 +471,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTextBox()
 	 * @generated
 	 */
-  int TEXT_BOX = 9;
+  int TEXT_BOX = 10;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -462,7 +526,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBox()
 	 * @generated
 	 */
-  int COMBO_BOX = 10;
+  int COMBO_BOX = 11;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -517,7 +581,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBoxItem()
 	 * @generated
 	 */
-  int COMBO_BOX_ITEM = 11;
+  int COMBO_BOX_ITEM = 12;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -729,6 +793,49 @@ public interface EntityDslPackage extends EPackage
 	 * @generated
 	 */
   EAttribute getWinFormControlType_Name();
+
+  /**
+	 * Returns the meta object for class '{@link org.xtext.entityDsl.Spinner <em>Spinner</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Spinner</em>'.
+	 * @see org.xtext.entityDsl.Spinner
+	 * @generated
+	 */
+  EClass getSpinner();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Value</em>'.
+	 * @see org.xtext.entityDsl.Spinner#getDefaultValue()
+	 * @see #getSpinner()
+	 * @generated
+	 */
+  EAttribute getSpinner_DefaultValue();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getMinimumValue <em>Minimum Value</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Minimum Value</em>'.
+	 * @see org.xtext.entityDsl.Spinner#getMinimumValue()
+	 * @see #getSpinner()
+	 * @generated
+	 */
+  EAttribute getSpinner_MinimumValue();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getMaximumValue <em>Maximum Value</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Value</em>'.
+	 * @see org.xtext.entityDsl.Spinner#getMaximumValue()
+	 * @see #getSpinner()
+	 * @generated
+	 */
+  EAttribute getSpinner_MaximumValue();
 
   /**
 	 * Returns the meta object for class '{@link org.xtext.entityDsl.RadioButtonGroup <em>Radio Button Group</em>}'.
@@ -1078,6 +1185,40 @@ public interface EntityDslPackage extends EPackage
 		 * @generated
 		 */
     EAttribute WIN_FORM_CONTROL_TYPE__NAME = eINSTANCE.getWinFormControlType_Name();
+
+    /**
+		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.entityDsl.impl.SpinnerImpl
+		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getSpinner()
+		 * @generated
+		 */
+    EClass SPINNER = eINSTANCE.getSpinner();
+
+    /**
+		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute SPINNER__DEFAULT_VALUE = eINSTANCE.getSpinner_DefaultValue();
+
+    /**
+		 * The meta object literal for the '<em><b>Minimum Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute SPINNER__MINIMUM_VALUE = eINSTANCE.getSpinner_MinimumValue();
+
+    /**
+		 * The meta object literal for the '<em><b>Maximum Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute SPINNER__MAXIMUM_VALUE = eINSTANCE.getSpinner_MaximumValue();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.RadioButtonGroupImpl <em>Radio Button Group</em>}' class.

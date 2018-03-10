@@ -22,6 +22,7 @@ import org.xtext.entityDsl.EntityDslPackage;
 import org.xtext.entityDsl.Label;
 import org.xtext.entityDsl.RadioButton;
 import org.xtext.entityDsl.RadioButtonGroup;
+import org.xtext.entityDsl.Spinner;
 import org.xtext.entityDsl.TextBox;
 import org.xtext.entityDsl.WinFormControlType;
 
@@ -74,6 +75,13 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 	 * @generated
 	 */
   private EClass winFormControlTypeEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass spinnerEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -365,6 +373,46 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EClass getSpinner()
+  {
+		return spinnerEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getSpinner_DefaultValue()
+  {
+		return (EAttribute)spinnerEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getSpinner_MinimumValue()
+  {
+		return (EAttribute)spinnerEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getSpinner_MaximumValue()
+  {
+		return (EAttribute)spinnerEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EClass getRadioButtonGroup()
   {
 		return radioButtonGroupEClass;
@@ -574,6 +622,11 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		createEReference(winFormControlTypeEClass, WIN_FORM_CONTROL_TYPE__CONTROL_TYPE);
 		createEAttribute(winFormControlTypeEClass, WIN_FORM_CONTROL_TYPE__NAME);
 
+		spinnerEClass = createEClass(SPINNER);
+		createEAttribute(spinnerEClass, SPINNER__DEFAULT_VALUE);
+		createEAttribute(spinnerEClass, SPINNER__MINIMUM_VALUE);
+		createEAttribute(spinnerEClass, SPINNER__MAXIMUM_VALUE);
+
 		radioButtonGroupEClass = createEClass(RADIO_BUTTON_GROUP);
 		createEReference(radioButtonGroupEClass, RADIO_BUTTON_GROUP__BUTTONS);
 		createEReference(radioButtonGroupEClass, RADIO_BUTTON_GROUP__DATA_TYPE);
@@ -626,6 +679,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		spinnerEClass.getESuperTypes().add(this.getWinFormControlType());
 		radioButtonGroupEClass.getESuperTypes().add(this.getWinFormControlType());
 		checkBoxEClass.getESuperTypes().add(this.getWinFormControlType());
 		comboBoxEClass.getESuperTypes().add(this.getWinFormControlType());
@@ -654,6 +708,11 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		initEClass(winFormControlTypeEClass, WinFormControlType.class, "WinFormControlType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWinFormControlType_ControlType(), this.getTextBox(), null, "controlType", null, 0, 1, WinFormControlType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWinFormControlType_Name(), ecorePackage.getEString(), "name", null, 0, 1, WinFormControlType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(spinnerEClass, Spinner.class, "Spinner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSpinner_DefaultValue(), ecorePackage.getEInt(), "defaultValue", null, 0, 1, Spinner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpinner_MinimumValue(), ecorePackage.getEInt(), "minimumValue", null, 0, 1, Spinner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpinner_MaximumValue(), ecorePackage.getEInt(), "maximumValue", null, 0, 1, Spinner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(radioButtonGroupEClass, RadioButtonGroup.class, "RadioButtonGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRadioButtonGroup_Buttons(), this.getRadioButton(), null, "buttons", null, 0, -1, RadioButtonGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

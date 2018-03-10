@@ -96,6 +96,10 @@ public class EntityDslAdapterFactory extends AdapterFactoryImpl
 				return createWinFormControlTypeAdapter();
 			}
 			@Override
+			public Adapter caseSpinner(Spinner object) {
+				return createSpinnerAdapter();
+			}
+			@Override
 			public Adapter caseRadioButtonGroup(RadioButtonGroup object) {
 				return createRadioButtonGroupAdapter();
 			}
@@ -226,6 +230,21 @@ public class EntityDslAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createWinFormControlTypeAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Spinner <em>Spinner</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xtext.entityDsl.Spinner
+	 * @generated
+	 */
+  public Adapter createSpinnerAdapter()
   {
 		return null;
 	}

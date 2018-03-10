@@ -25,6 +25,7 @@ import org.xtext.entityDsl.EntityDslPackage;
 import org.xtext.entityDsl.Label;
 import org.xtext.entityDsl.RadioButton;
 import org.xtext.entityDsl.RadioButtonGroup;
+import org.xtext.entityDsl.Spinner;
 import org.xtext.entityDsl.TextBox;
 import org.xtext.entityDsl.WinFormControlType;
 import org.xtext.services.EntityDslGrammarAccess;
@@ -72,6 +73,9 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case EntityDslPackage.RADIO_BUTTON_GROUP:
 				sequence_RadioButtonGroup(context, (RadioButtonGroup) semanticObject); 
+				return; 
+			case EntityDslPackage.SPINNER:
+				sequence_Spinner(context, (Spinner) semanticObject); 
 				return; 
 			case EntityDslPackage.TEXT_BOX:
 				sequence_TextBox(context, (TextBox) semanticObject); 
@@ -227,6 +231,34 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_0(), semanticObject.getText());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     WinFormControlType returns Spinner
+	 *     Spinner returns Spinner
+	 *
+	 * Constraint:
+	 *     (name='Spinner' defaultValue=INT minimumValue=INT maximumValue=INT)
+	 */
+	protected void sequence_Spinner(ISerializationContext context, Spinner semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, EntityDslPackage.Literals.WIN_FORM_CONTROL_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.WIN_FORM_CONTROL_TYPE__NAME));
+			if (transientValues.isValueTransient(semanticObject, EntityDslPackage.Literals.SPINNER__DEFAULT_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.SPINNER__DEFAULT_VALUE));
+			if (transientValues.isValueTransient(semanticObject, EntityDslPackage.Literals.SPINNER__MINIMUM_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.SPINNER__MINIMUM_VALUE));
+			if (transientValues.isValueTransient(semanticObject, EntityDslPackage.Literals.SPINNER__MAXIMUM_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EntityDslPackage.Literals.SPINNER__MAXIMUM_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSpinnerAccess().getNameSpinnerKeyword_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSpinnerAccess().getDefaultValueINTTerminalRuleCall_2_0(), semanticObject.getDefaultValue());
+		feeder.accept(grammarAccess.getSpinnerAccess().getMinimumValueINTTerminalRuleCall_5_0(), semanticObject.getMinimumValue());
+		feeder.accept(grammarAccess.getSpinnerAccess().getMaximumValueINTTerminalRuleCall_7_0(), semanticObject.getMaximumValue());
 		feeder.finish();
 	}
 	

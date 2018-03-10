@@ -67,6 +67,7 @@ public class EntityDslFactoryImpl extends EFactoryImpl implements EntityDslFacto
 			case EntityDslPackage.DATA_TYPE: return createDataType();
 			case EntityDslPackage.LABEL: return createLabel();
 			case EntityDslPackage.WIN_FORM_CONTROL_TYPE: return createWinFormControlType();
+			case EntityDslPackage.SPINNER: return createSpinner();
 			case EntityDslPackage.RADIO_BUTTON_GROUP: return createRadioButtonGroup();
 			case EntityDslPackage.RADIO_BUTTON: return createRadioButton();
 			case EntityDslPackage.CHECK_BOX: return createCheckBox();
@@ -142,6 +143,17 @@ public class EntityDslFactoryImpl extends EFactoryImpl implements EntityDslFacto
   {
 		WinFormControlTypeImpl winFormControlType = new WinFormControlTypeImpl();
 		return winFormControlType;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Spinner createSpinner()
+  {
+		SpinnerImpl spinner = new SpinnerImpl();
+		return spinner;
 	}
 
   /**

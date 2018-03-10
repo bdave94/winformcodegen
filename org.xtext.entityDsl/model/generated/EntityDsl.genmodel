@@ -30,6 +30,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//WinFormControlType/controlType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//WinFormControlType/name"/>
     </genClasses>
+    <genClasses ecoreClass="EntityDsl.ecore#//Spinner">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Spinner/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Spinner/minimumValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Spinner/maximumValue"/>
+    </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//RadioButtonGroup">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//RadioButtonGroup/buttons"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//RadioButtonGroup/dataType"/>

@@ -19,6 +19,7 @@ import java.util.Collections
 import com.google.common.collect.Lists
 import org.xtext.entityDsl.Domainmodel
 import org.xtext.entityDsl.DataType
+import org.xtext.entityDsl.Spinner
 
 /**
  * Generates code from your model files on save.
@@ -61,7 +62,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	    	private Dictionary<string, bool> «entity.name.toFirstLower»RequiredFields = new Dictionary<string, bool>();
 	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldLabelText = new Dictionary<string, string>();
 	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldDataType = new Dictionary<string, string>(); 
-	    	private Dictionary<string, Label> «entity.name.toFirstLower»FieldErrorLabel = new Dictionary<string, Label>(); 
+	    	private Dictionary<string, Label> «entity.name.toFirstLower»FieldErrorLabel = new Dictionary<string, Label>();
+	    	private Dictionary<string, int> «entity.name.toFirstLower»SpinnerDefaultValues = new Dictionary<string, int>();
+	    	 
 	    	«ENDFOR»
 	        public Form1()
 	        {
@@ -153,11 +156,14 @@ class EntityDslGenerator extends AbstractGenerator {
 	                		 «entity.name.toFirstLower».«attribute.name.toFirstUpper» = 
 	                		  double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                	«ENDIF»	 
-	                	
+	                	«ENDFOR»
+	            		
+	                	«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
+	                	«entity.name.toFirstLower».«attribute.name.toFirstUpper» = (int) numericUpDown«entity.name»«attribute.name».Value;
 	                	«ENDFOR»	                	
 	                 	«ENDFOR» 	               	             
-	                   
-	                  	db.«entity.name»s.Add(«entity.name.toFirstLower»);
+
+	            		db.«entity.name»s.Add(«entity.name.toFirstLower»);
 	                  	db.SaveChanges();                	
 	            	}
 	            	«entity.name.toFirstLower»EntityDataListing();
@@ -248,7 +254,13 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«entity.name.toFirstLower»FieldErrorLabel.Add("groupBox«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        	
 	        	«ENDFOR»	        	
 	        	
-	        	              	
+	        	
+	        	«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
+	        	«entity.name.toFirstLower»FieldLabelText.Add("numericUpDown«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	«entity.name.toFirstLower»FieldErrorLabel.Add("numericUpDown«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
+	        	«entity.name.toFirstLower»FieldDataType.Add("numericUpDown«entity.name»«attribute.name»", "string");
+	        	«entity.name.toFirstLower»SpinnerDefaultValues.Add("numericUpDown«entity.name»«attribute.name»", «spinner.defaultValue»);
+	        	«ENDFOR»             	
 	        	«ENDFOR»	        	        		    	 
 	        	«ENDFOR»
 	        	
@@ -359,7 +371,10 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    			result.«attribute.name.toFirstUpper» = double.Parse(«attribute.name.toFirstLower».Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"));
 	                    			«ENDIF»
 	                    			«ENDFOR»
-	                    				                        	                        
+	                    			
+	                    			«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»	                    			
+	                    			result.«attribute.name.toFirstUpper» = (int) numericUpDown«entity.name»«attribute.name».Value;
+	                    			«ENDFOR»	                    				                        	                        
 	                    			«ENDFOR»
 	                    			                            		                            
 	                    			}
@@ -672,8 +687,27 @@ class EntityDslGenerator extends AbstractGenerator {
 	                                     rb.Checked = false;
 	                         }
 	                     }
+	                     
+	                     
+	        			 foreach (NumericUpDown spinner in panel«entity.name».Controls.OfType<NumericUpDown>())
+	        			 {
+	        				string controlLabelName = «entity.name.toFirstLower»FieldLabelText[spinner.Name];
+	        				controlLabelName = controlLabelName.ToLower();
+	        				columnName = columnName.ToLower();
 	        
-	                 }
+	        				if (controlLabelName.Contains(columnName))
+	        				{
+	        				int spinnerValue;	
+	        				string spinnerAsText = selectedRow.Cells[columnNumber].Value.ToString();
+	        				 if(int.TryParse(spinnerAsText, out spinnerValue)) 
+	        				        	spinner.Value = spinnerValue; 
+	        				
+	        				}
+	        			 }
+	                     
+	                     
+	        
+	             }
 	             
 	        
 	             if («entity.name.toFirstLower»DataGridSelectedRowIndex == -1)
@@ -789,6 +823,42 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                }
 	                }
+	                
+	                
+	        		foreach (NumericUpDown spinner in panel«entity.name».Controls.OfType<NumericUpDown>())
+	          		{
+	        			string controlLabelName = «entity.name.toFirstLower»FieldLabelText[spinner.Name];
+	        			controlLabelName = controlLabelName.ToLower();
+	        			columnName = columnName.ToLower();
+	        
+	        			if (controlLabelName.Contains(columnName))
+	        			{
+	        				string spinnerAsText = selectedRow.Cells[columnNumber].Value.ToString();
+	        				int spinnerValue;
+	        				if(int.TryParse(spinnerAsText, out spinnerValue)) {  
+	        					spinnerValue = int.Parse(spinnerAsText);
+	        					
+	        					if(spinnerValue < spinner.Minimum)
+	        						spinner.Value = spinner.Minimum;
+	        					
+	        					if(spinnerValue > spinner.Maximum)
+	        						spinner.Value = spinner.Maximum;
+	        					
+	        					if(spinnerValue < spinner.Maximum && spinnerValue > spinner.Minimum)
+	        						spinner.Value = spinnerValue;
+	        					
+	        				} else {
+	        					invalidValueFound = true;
+	        					«entity.name.toFirstLower»FieldErrorLabel[spinner.Name].Text = 
+	        					"Invalid value: \"" + spinnerAsText + "\", value must be an integer!";
+	        				}
+	        				
+	        			}
+	        		}
+	                
+	                
+	                
+	                
 	        
 	            if (invalidValueFound == false)
 	            {
@@ -847,6 +917,10 @@ class EntityDslGenerator extends AbstractGenerator {
 		            	 foreach (RadioButton rb in gb.Controls.OfType<RadioButton>())            
 		            		rb.Checked = false;
 		            
+		            
+		            foreach (NumericUpDown spinner in panel«entity.name».Controls.OfType<NumericUpDown>())		            		            	            
+		            	spinner.Value = «entity.name.toFirstLower»SpinnerDefaultValues[spinner.Name];
+		           
 		            foreach (Label l in «entity.name.toFirstLower»FieldErrorLabel.Values)
 		            {
 		            	  l.Text = "";
@@ -882,6 +956,10 @@ class EntityDslGenerator extends AbstractGenerator {
 		    	
 		    	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»
 		    	public string «attribute.name.toFirstUpper» { get; set; }
+		    	«ENDFOR»
+		    	
+		    	«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
+		    	public int «attribute.name.toFirstUpper» { get; set; }
 		    	«ENDFOR»
 		    	
 		    	«FOR dataType :attribute.eAllContents.toIterable.filter(DataType)»
@@ -1008,6 +1086,11 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	 this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")» = new System.Windows.Forms.RadioButton();
 		        	 «ENDFOR»		        	 
 		        	 «ENDFOR» 
+		        	 
+		        	 «FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
+		        	 this.numericUpDown«entity.name»«attribute.name» = new System.Windows.Forms.NumericUpDown(); 
+		        	 «ENDFOR»
+		        	  
 		        	    	   	 	  	
 		        	 «ENDFOR»	   	 	 
 		        	 this.tabPage«entity.name».SuspendLayout();
@@ -1080,6 +1163,11 @@ class EntityDslGenerator extends AbstractGenerator {
 					 «FOR rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)»
 					 this.panel«entity.name».Controls.Add(this.groupBox«entity.name»«attribute.name»);					
 					 «ENDFOR»
+					 
+					 «FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
+					  this.panel«entity.name».Controls.Add(this.numericUpDown«entity.name»«attribute.name»); 
+					 «ENDFOR»
+					 
 					 «ENDFOR»           
 					
 					
@@ -1162,6 +1250,10 @@ class EntityDslGenerator extends AbstractGenerator {
 		        «FOR rb : rbg.buttons»		        
 		        private System.Windows.Forms.RadioButton radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")»;
 		        «ENDFOR»
+		        «ENDFOR»
+		        
+		        «FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
+		        private System.Windows.Forms.NumericUpDown numericUpDown«entity.name»«attribute.name»;
 		        «ENDFOR»			         
 		        «ENDFOR»
 		        «ENDFOR»
@@ -1294,9 +1386,26 @@ class EntityDslGenerator extends AbstractGenerator {
 		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».Text = "«rb.text»";
 		this.radioButton«entity.name»«attribute.name»«rb.text.replace(" ","_")».UseVisualStyleBackColor = true;
 				            		           
+		«ENDFOR»				                   	          	            
 		«ENDFOR»
-				                   	          	            
+		
+		
+		
+		«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»		
+		// 
+		// numericUpDown«entity.name»«attribute.name»
+		// 
+		this.numericUpDown«entity.name»«attribute.name».Location = new System.Drawing.Point(140, «winFormControlYCoord»);
+		this.numericUpDown«entity.name»«attribute.name».Name = "numericUpDown«entity.name»«attribute.name»";
+		this.numericUpDown«entity.name»«attribute.name».ReadOnly = true;
+		this.numericUpDown«entity.name»«attribute.name».Size = new System.Drawing.Size(70, 20);
+		this.numericUpDown«entity.name»«attribute.name».Minimum = «spinner.minimumValue»;
+		this.numericUpDown«entity.name»«attribute.name».Maximum = «spinner.maximumValue»;
+		this.numericUpDown«entity.name»«attribute.name».Value = «spinner.defaultValue»;
 		«ENDFOR»
+		
+		
+		
 		«ENDFOR»	
 		
 			            

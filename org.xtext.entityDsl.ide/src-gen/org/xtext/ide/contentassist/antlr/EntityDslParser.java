@@ -36,6 +36,7 @@ public class EntityDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDomainmodelAccess().getGroup(), "rule__Domainmodel__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
+					put(grammarAccess.getSpinnerAccess().getGroup(), "rule__Spinner__Group__0");
 					put(grammarAccess.getRadioButtonGroupAccess().getGroup(), "rule__RadioButtonGroup__Group__0");
 					put(grammarAccess.getTextBoxAccess().getGroup(), "rule__TextBox__Group__0");
 					put(grammarAccess.getComboBoxAccess().getGroup(), "rule__ComboBox__Group__0");
@@ -50,6 +51,10 @@ public class EntityDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeAccess().getTypeAssignment(), "rule__DataType__TypeAssignment");
 					put(grammarAccess.getLabelAccess().getTextAssignment(), "rule__Label__TextAssignment");
 					put(grammarAccess.getWinFormControlTypeAccess().getControlTypeAssignment_0(), "rule__WinFormControlType__ControlTypeAssignment_0");
+					put(grammarAccess.getSpinnerAccess().getNameAssignment_0(), "rule__Spinner__NameAssignment_0");
+					put(grammarAccess.getSpinnerAccess().getDefaultValueAssignment_2(), "rule__Spinner__DefaultValueAssignment_2");
+					put(grammarAccess.getSpinnerAccess().getMinimumValueAssignment_5(), "rule__Spinner__MinimumValueAssignment_5");
+					put(grammarAccess.getSpinnerAccess().getMaximumValueAssignment_7(), "rule__Spinner__MaximumValueAssignment_7");
 					put(grammarAccess.getRadioButtonGroupAccess().getNameAssignment_0(), "rule__RadioButtonGroup__NameAssignment_0");
 					put(grammarAccess.getRadioButtonGroupAccess().getButtonsAssignment_2(), "rule__RadioButtonGroup__ButtonsAssignment_2");
 					put(grammarAccess.getRadioButtonGroupAccess().getDataTypeAssignment_5(), "rule__RadioButtonGroup__DataTypeAssignment_5");
