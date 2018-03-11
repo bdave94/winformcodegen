@@ -205,12 +205,13 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCheckBoxParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cRadioButtonGroupParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cSpinnerParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cTrackBarParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//WinFormControlType:
-		//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner;
+		//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner | TrackBar;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner
+		//controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner | TrackBar
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//controlType=TextBox
@@ -230,6 +231,138 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Spinner
 		public RuleCall getSpinnerParserRuleCall_4() { return cSpinnerParserRuleCall_4; }
+		
+		//TrackBar
+		public RuleCall getTrackBarParserRuleCall_5() { return cTrackBarParserRuleCall_5; }
+	}
+	public class TrackBarElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.TrackBar");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cNameTrackBarKeyword_0_0 = (Keyword)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDataTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDataTypeDataTypeParserRuleCall_2_0 = (RuleCall)cDataTypeAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDefaultTickAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDefaultTickINTTerminalRuleCall_4_0 = (RuleCall)cDefaultTickAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cIncrementAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cIncrementINTTerminalRuleCall_6_0 = (RuleCall)cIncrementAssignment_6.eContents().get(0);
+		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cDenominatorAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cDenominatorINTTerminalRuleCall_8_0_0 = (RuleCall)cDenominatorAssignment_8_0.eContents().get(0);
+		private final Keyword cCommaKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cMinimumValueAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cMinimumValueINTTerminalRuleCall_10_0 = (RuleCall)cMinimumValueAssignment_10.eContents().get(0);
+		private final Keyword cCommaKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cMaximumValueAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cMaximumValueINTTerminalRuleCall_12_0 = (RuleCall)cMaximumValueAssignment_12.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
+		private final Keyword cLeftParenthesisKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cStringValuesAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cStringValuesSTRINGTerminalRuleCall_14_1_0 = (RuleCall)cStringValuesAssignment_14_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_14_2 = (Keyword)cGroup_14.eContents().get(2);
+		private final Keyword cRightSquareBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		
+		//TrackBar:
+		//	name='TrackBar' '[' dataType=DataType ',' defaultTick=INT ',' increment=INT ',' (denominator=INT ',')? '('
+		//	minimumValue=INT ',' maximumValue=INT ')' ('(' stringValues+=STRING* ')')? ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name='TrackBar' '[' dataType=DataType ',' defaultTick=INT ',' increment=INT ',' (denominator=INT ',')? '('
+		//minimumValue=INT ',' maximumValue=INT ')' ('(' stringValues+=STRING* ')')? ']'
+		public Group getGroup() { return cGroup; }
+		
+		//name='TrackBar'
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//'TrackBar'
+		public Keyword getNameTrackBarKeyword_0_0() { return cNameTrackBarKeyword_0_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//dataType=DataType
+		public Assignment getDataTypeAssignment_2() { return cDataTypeAssignment_2; }
+		
+		//DataType
+		public RuleCall getDataTypeDataTypeParserRuleCall_2_0() { return cDataTypeDataTypeParserRuleCall_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		
+		//defaultTick=INT
+		public Assignment getDefaultTickAssignment_4() { return cDefaultTickAssignment_4; }
+		
+		//INT
+		public RuleCall getDefaultTickINTTerminalRuleCall_4_0() { return cDefaultTickINTTerminalRuleCall_4_0; }
+		
+		//','
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+		
+		//increment=INT
+		public Assignment getIncrementAssignment_6() { return cIncrementAssignment_6; }
+		
+		//INT
+		public RuleCall getIncrementINTTerminalRuleCall_6_0() { return cIncrementINTTerminalRuleCall_6_0; }
+		
+		//','
+		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		
+		//(denominator=INT ',')?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//denominator=INT
+		public Assignment getDenominatorAssignment_8_0() { return cDenominatorAssignment_8_0; }
+		
+		//INT
+		public RuleCall getDenominatorINTTerminalRuleCall_8_0_0() { return cDenominatorINTTerminalRuleCall_8_0_0; }
+		
+		//','
+		public Keyword getCommaKeyword_8_1() { return cCommaKeyword_8_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_9() { return cLeftParenthesisKeyword_9; }
+		
+		//minimumValue=INT
+		public Assignment getMinimumValueAssignment_10() { return cMinimumValueAssignment_10; }
+		
+		//INT
+		public RuleCall getMinimumValueINTTerminalRuleCall_10_0() { return cMinimumValueINTTerminalRuleCall_10_0; }
+		
+		//','
+		public Keyword getCommaKeyword_11() { return cCommaKeyword_11; }
+		
+		//maximumValue=INT
+		public Assignment getMaximumValueAssignment_12() { return cMaximumValueAssignment_12; }
+		
+		//INT
+		public RuleCall getMaximumValueINTTerminalRuleCall_12_0() { return cMaximumValueINTTerminalRuleCall_12_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
+		
+		//('(' stringValues+=STRING* ')')?
+		public Group getGroup_14() { return cGroup_14; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_14_0() { return cLeftParenthesisKeyword_14_0; }
+		
+		//stringValues+=STRING*
+		public Assignment getStringValuesAssignment_14_1() { return cStringValuesAssignment_14_1; }
+		
+		//STRING
+		public RuleCall getStringValuesSTRINGTerminalRuleCall_14_1_0() { return cStringValuesSTRINGTerminalRuleCall_14_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_14_2() { return cRightParenthesisKeyword_14_2; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_15() { return cRightSquareBracketKeyword_15; }
 	}
 	public class SpinnerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.EntityDsl.Spinner");
@@ -516,6 +649,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final DataTypeElements pDataType;
 	private final LabelElements pLabel;
 	private final WinFormControlTypeElements pWinFormControlType;
+	private final TrackBarElements pTrackBar;
 	private final SpinnerElements pSpinner;
 	private final RadioButtonGroupElements pRadioButtonGroup;
 	private final RadioButtonElements pRadioButton;
@@ -539,6 +673,7 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDataType = new DataTypeElements();
 		this.pLabel = new LabelElements();
 		this.pWinFormControlType = new WinFormControlTypeElements();
+		this.pTrackBar = new TrackBarElements();
 		this.pSpinner = new SpinnerElements();
 		this.pRadioButtonGroup = new RadioButtonGroupElements();
 		this.pRadioButton = new RadioButtonElements();
@@ -629,13 +764,24 @@ public class EntityDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WinFormControlType:
-	//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner;
+	//	controlType=TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner | TrackBar;
 	public WinFormControlTypeElements getWinFormControlTypeAccess() {
 		return pWinFormControlType;
 	}
 	
 	public ParserRule getWinFormControlTypeRule() {
 		return getWinFormControlTypeAccess().getRule();
+	}
+	
+	//TrackBar:
+	//	name='TrackBar' '[' dataType=DataType ',' defaultTick=INT ',' increment=INT ',' (denominator=INT ',')? '('
+	//	minimumValue=INT ',' maximumValue=INT ')' ('(' stringValues+=STRING* ')')? ']';
+	public TrackBarElements getTrackBarAccess() {
+		return pTrackBar;
+	}
+	
+	public ParserRule getTrackBarRule() {
+		return getTrackBarAccess().getRule();
 	}
 	
 	//Spinner:

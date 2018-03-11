@@ -10,6 +10,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.services.EntityDslGrammarAccess;
@@ -18,10 +21,12 @@ import org.xtext.services.EntityDslGrammarAccess;
 public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected EntityDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_TrackBar___LeftParenthesisKeyword_14_0_RightParenthesisKeyword_14_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (EntityDslGrammarAccess) access;
+		match_TrackBar___LeftParenthesisKeyword_14_0_RightParenthesisKeyword_14_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTrackBarAccess().getLeftParenthesisKeyword_14_0()), new TokenAlias(false, false, grammarAccess.getTrackBarAccess().getRightParenthesisKeyword_14_2()));
 	}
 	
 	@Override
@@ -36,8 +41,21 @@ public class EntityDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_TrackBar___LeftParenthesisKeyword_14_0_RightParenthesisKeyword_14_2__q.equals(syntax))
+				emit_TrackBar___LeftParenthesisKeyword_14_0_RightParenthesisKeyword_14_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ('(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     maximumValue=INT ')' (ambiguity) ']' (rule end)
+	 */
+	protected void emit_TrackBar___LeftParenthesisKeyword_14_0_RightParenthesisKeyword_14_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

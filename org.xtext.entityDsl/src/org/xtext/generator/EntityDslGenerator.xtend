@@ -20,6 +20,7 @@ import com.google.common.collect.Lists
 import org.xtext.entityDsl.Domainmodel
 import org.xtext.entityDsl.DataType
 import org.xtext.entityDsl.Spinner
+import org.xtext.entityDsl.TrackBar
 
 /**
  * Generates code from your model files on save.
@@ -1091,6 +1092,12 @@ class EntityDslGenerator extends AbstractGenerator {
 		        	 this.numericUpDown«entity.name»«attribute.name» = new System.Windows.Forms.NumericUpDown(); 
 		        	 «ENDFOR»
 		        	  
+		        	 «FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»
+		        	 this.trackBar«entity.name»«attribute.name» = new System.Windows.Forms.TrackBar();
+		        	 this.trackBarLabel«entity.name»«attribute.name» =  new System.Windows.Forms.Label();
+		        	 «ENDFOR»
+		        	  
+		        	  
 		        	    	   	 	  	
 		        	 «ENDFOR»	   	 	 
 		        	 this.tabPage«entity.name».SuspendLayout();
@@ -1166,6 +1173,11 @@ class EntityDslGenerator extends AbstractGenerator {
 					 
 					 «FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
 					  this.panel«entity.name».Controls.Add(this.numericUpDown«entity.name»«attribute.name»); 
+					 «ENDFOR»
+					 
+					 «FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»
+					 this.panel«entity.name».Controls.Add(this.trackBar«entity.name»«attribute.name»);
+					 this.panel«entity.name».Controls.Add(trackBarLabel«entity.name»«attribute.name»); 
 					 «ENDFOR»
 					 
 					 «ENDFOR»           
@@ -1254,6 +1266,10 @@ class EntityDslGenerator extends AbstractGenerator {
 		        
 		        «FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
 		        private System.Windows.Forms.NumericUpDown numericUpDown«entity.name»«attribute.name»;
+		        «ENDFOR»
+		        «FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»
+		        private System.Windows.Forms.TrackBar trackBar«entity.name»«attribute.name»;
+		        private System.Windows.Forms.Label trackBarLabel«entity.name»«attribute.name»;
 		        «ENDFOR»			         
 		        «ENDFOR»
 		        «ENDFOR»
@@ -1405,6 +1421,27 @@ class EntityDslGenerator extends AbstractGenerator {
 		«ENDFOR»
 		
 		
+		«FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»
+		// 
+		// trackBar«entity.name»«attribute.name»
+		// 
+		this.trackBar«entity.name»«attribute.name».Location = new System.Drawing.Point(140, «winFormControlYCoord»);
+		this.trackBar«entity.name»«attribute.name».Maximum = «trackBar.maximumValue»;
+		this.trackBar«entity.name»«attribute.name».Minimum = «trackBar.minimumValue»;
+		this.trackBar«entity.name»«attribute.name».Name = "trackBar«entity.name»«attribute.name»";
+		this.trackBar«entity.name»«attribute.name».Size = new System.Drawing.Size(170, 45);
+		this.trackBar«entity.name»«attribute.name».TickFrequency = «trackBar.increment»;
+		
+		// 
+		// trackBarLabel«entity.name»«attribute.name»
+		// 	
+		this.trackBarLabel«entity.name»«attribute.name».AutoSize = true;
+		this.trackBarLabel«entity.name»«attribute.name».Location = new System.Drawing.Point(140, «winFormControlYCoord+50»);
+		this.trackBarLabel«entity.name»«attribute.name».Name = "trackBarLabel«entity.name»«attribute.name»";
+		this.trackBarLabel«entity.name»«attribute.name».Size = new System.Drawing.Size(45, 13);
+		this.trackBarLabel«entity.name»«attribute.name».MaximumSize = new System.Drawing.Size(100, 0);
+		this.trackBarLabel«entity.name»«attribute.name».Text = " ";		
+		«ENDFOR»
 		
 		«ENDFOR»	
 		
@@ -1455,32 +1492,46 @@ class EntityDslGenerator extends AbstractGenerator {
 						
 		var List<Integer> winFormControlYCoordList = Lists.newArrayList();
 		
-		var winFormControlYCoord = 60
+		var winFormControlYCoord = 0
 		          
 		var numberOfRadioButtonsInGroup = 0
+		var trackBarFound = 0;
+		
 		     
 		for ( j : 0 ..< entity.attributes.size){
+		winFormControlYCoord+=60
 			
 		if(numberOfRadioButtonsInGroup > 0)	
 			winFormControlYCoord += ((numberOfRadioButtonsInGroup-1)*25)
 		
+		winFormControlYCoord += (trackBarFound*25)
+		
+		
 		winFormControlYCoordList.add(winFormControlYCoord)
 		
+		trackBarFound = 0		
+		numberOfRadioButtonsInGroup = 0
+		
 		val Attribute attribute =  entity.attributes.get(j)
-		            	
-		winFormControlYCoord+=60
-		numberOfRadioButtonsInGroup= 0;
 			for( rbg :attribute.eAllContents.toIterable.filter(RadioButtonGroup)){
 				winFormControlYCoord+=30
 		      	 for( rb : rbg.buttons){
-		      		numberOfRadioButtonsInGroup+=1;
+		      		numberOfRadioButtonsInGroup+=1
 				}
 		 	}
+		   
+		   
+		   for( trackBar :attribute.eAllContents.toIterable.filter(TrackBar)){
+		   		trackBarFound = 1
+		   }
 		            	
      	}
      	
+     	winFormControlYCoord+=60
      	if(numberOfRadioButtonsInGroup > 0)
 			winFormControlYCoord += ((numberOfRadioButtonsInGroup-1)*25)
+		
+		winFormControlYCoord += (trackBarFound*25)
 		
 		winFormControlYCoordList.add(winFormControlYCoord)
 	          

@@ -24,6 +24,7 @@ import org.xtext.entityDsl.RadioButton;
 import org.xtext.entityDsl.RadioButtonGroup;
 import org.xtext.entityDsl.Spinner;
 import org.xtext.entityDsl.TextBox;
+import org.xtext.entityDsl.TrackBar;
 import org.xtext.entityDsl.WinFormControlType;
 
 /**
@@ -75,6 +76,13 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 	 * @generated
 	 */
   private EClass winFormControlTypeEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass trackBarEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -373,6 +381,86 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EClass getTrackBar()
+  {
+		return trackBarEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getTrackBar_DataType()
+  {
+		return (EReference)trackBarEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTrackBar_DefaultTick()
+  {
+		return (EAttribute)trackBarEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTrackBar_Increment()
+  {
+		return (EAttribute)trackBarEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTrackBar_Denominator()
+  {
+		return (EAttribute)trackBarEClass.getEStructuralFeatures().get(3);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTrackBar_MinimumValue()
+  {
+		return (EAttribute)trackBarEClass.getEStructuralFeatures().get(4);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTrackBar_MaximumValue()
+  {
+		return (EAttribute)trackBarEClass.getEStructuralFeatures().get(5);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTrackBar_StringValues()
+  {
+		return (EAttribute)trackBarEClass.getEStructuralFeatures().get(6);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EClass getSpinner()
   {
 		return spinnerEClass;
@@ -622,6 +710,15 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		createEReference(winFormControlTypeEClass, WIN_FORM_CONTROL_TYPE__CONTROL_TYPE);
 		createEAttribute(winFormControlTypeEClass, WIN_FORM_CONTROL_TYPE__NAME);
 
+		trackBarEClass = createEClass(TRACK_BAR);
+		createEReference(trackBarEClass, TRACK_BAR__DATA_TYPE);
+		createEAttribute(trackBarEClass, TRACK_BAR__DEFAULT_TICK);
+		createEAttribute(trackBarEClass, TRACK_BAR__INCREMENT);
+		createEAttribute(trackBarEClass, TRACK_BAR__DENOMINATOR);
+		createEAttribute(trackBarEClass, TRACK_BAR__MINIMUM_VALUE);
+		createEAttribute(trackBarEClass, TRACK_BAR__MAXIMUM_VALUE);
+		createEAttribute(trackBarEClass, TRACK_BAR__STRING_VALUES);
+
 		spinnerEClass = createEClass(SPINNER);
 		createEAttribute(spinnerEClass, SPINNER__DEFAULT_VALUE);
 		createEAttribute(spinnerEClass, SPINNER__MINIMUM_VALUE);
@@ -679,6 +776,7 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		trackBarEClass.getESuperTypes().add(this.getWinFormControlType());
 		spinnerEClass.getESuperTypes().add(this.getWinFormControlType());
 		radioButtonGroupEClass.getESuperTypes().add(this.getWinFormControlType());
 		checkBoxEClass.getESuperTypes().add(this.getWinFormControlType());
@@ -708,6 +806,15 @@ public class EntityDslPackageImpl extends EPackageImpl implements EntityDslPacka
 		initEClass(winFormControlTypeEClass, WinFormControlType.class, "WinFormControlType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWinFormControlType_ControlType(), this.getTextBox(), null, "controlType", null, 0, 1, WinFormControlType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWinFormControlType_Name(), ecorePackage.getEString(), "name", null, 0, 1, WinFormControlType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(trackBarEClass, TrackBar.class, "TrackBar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTrackBar_DataType(), this.getDataType(), null, "dataType", null, 0, 1, TrackBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackBar_DefaultTick(), ecorePackage.getEInt(), "defaultTick", null, 0, 1, TrackBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackBar_Increment(), ecorePackage.getEInt(), "increment", null, 0, 1, TrackBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackBar_Denominator(), ecorePackage.getEInt(), "denominator", null, 0, 1, TrackBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackBar_MinimumValue(), ecorePackage.getEInt(), "minimumValue", null, 0, 1, TrackBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackBar_MaximumValue(), ecorePackage.getEInt(), "maximumValue", null, 0, 1, TrackBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackBar_StringValues(), ecorePackage.getEString(), "stringValues", null, 0, -1, TrackBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(spinnerEClass, Spinner.class, "Spinner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpinner_DefaultValue(), ecorePackage.getEInt(), "defaultValue", null, 0, 1, Spinner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

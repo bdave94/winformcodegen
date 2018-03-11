@@ -107,6 +107,13 @@ public class EntityDslSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case EntityDslPackage.TRACK_BAR: {
+				TrackBar trackBar = (TrackBar)theEObject;
+				T result = caseTrackBar(trackBar);
+				if (result == null) result = caseWinFormControlType(trackBar);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case EntityDslPackage.SPINNER: {
 				Spinner spinner = (Spinner)theEObject;
 				T result = caseSpinner(spinner);
@@ -249,6 +256,22 @@ public class EntityDslSwitch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseWinFormControlType(WinFormControlType object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Track Bar</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Track Bar</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseTrackBar(TrackBar object)
   {
 		return null;
 	}

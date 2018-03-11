@@ -214,6 +214,11 @@ public class AttributeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(EntityDslPackage.Literals.ATTRIBUTE__INPUT_TYPE,
+				 EntityDslFactory.eINSTANCE.createTrackBar()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EntityDslPackage.Literals.ATTRIBUTE__INPUT_TYPE,
 				 EntityDslFactory.eINSTANCE.createSpinner()));
 
 		newChildDescriptors.add

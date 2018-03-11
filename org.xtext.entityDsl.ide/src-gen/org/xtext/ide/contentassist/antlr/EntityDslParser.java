@@ -36,6 +36,9 @@ public class EntityDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDomainmodelAccess().getGroup(), "rule__Domainmodel__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
+					put(grammarAccess.getTrackBarAccess().getGroup(), "rule__TrackBar__Group__0");
+					put(grammarAccess.getTrackBarAccess().getGroup_8(), "rule__TrackBar__Group_8__0");
+					put(grammarAccess.getTrackBarAccess().getGroup_14(), "rule__TrackBar__Group_14__0");
 					put(grammarAccess.getSpinnerAccess().getGroup(), "rule__Spinner__Group__0");
 					put(grammarAccess.getRadioButtonGroupAccess().getGroup(), "rule__RadioButtonGroup__Group__0");
 					put(grammarAccess.getTextBoxAccess().getGroup(), "rule__TextBox__Group__0");
@@ -51,6 +54,14 @@ public class EntityDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeAccess().getTypeAssignment(), "rule__DataType__TypeAssignment");
 					put(grammarAccess.getLabelAccess().getTextAssignment(), "rule__Label__TextAssignment");
 					put(grammarAccess.getWinFormControlTypeAccess().getControlTypeAssignment_0(), "rule__WinFormControlType__ControlTypeAssignment_0");
+					put(grammarAccess.getTrackBarAccess().getNameAssignment_0(), "rule__TrackBar__NameAssignment_0");
+					put(grammarAccess.getTrackBarAccess().getDataTypeAssignment_2(), "rule__TrackBar__DataTypeAssignment_2");
+					put(grammarAccess.getTrackBarAccess().getDefaultTickAssignment_4(), "rule__TrackBar__DefaultTickAssignment_4");
+					put(grammarAccess.getTrackBarAccess().getIncrementAssignment_6(), "rule__TrackBar__IncrementAssignment_6");
+					put(grammarAccess.getTrackBarAccess().getDenominatorAssignment_8_0(), "rule__TrackBar__DenominatorAssignment_8_0");
+					put(grammarAccess.getTrackBarAccess().getMinimumValueAssignment_10(), "rule__TrackBar__MinimumValueAssignment_10");
+					put(grammarAccess.getTrackBarAccess().getMaximumValueAssignment_12(), "rule__TrackBar__MaximumValueAssignment_12");
+					put(grammarAccess.getTrackBarAccess().getStringValuesAssignment_14_1(), "rule__TrackBar__StringValuesAssignment_14_1");
 					put(grammarAccess.getSpinnerAccess().getNameAssignment_0(), "rule__Spinner__NameAssignment_0");
 					put(grammarAccess.getSpinnerAccess().getDefaultValueAssignment_2(), "rule__Spinner__DefaultValueAssignment_2");
 					put(grammarAccess.getSpinnerAccess().getMinimumValueAssignment_5(), "rule__Spinner__MinimumValueAssignment_5");

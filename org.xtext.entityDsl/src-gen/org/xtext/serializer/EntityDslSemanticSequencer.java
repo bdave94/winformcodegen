@@ -27,6 +27,7 @@ import org.xtext.entityDsl.RadioButton;
 import org.xtext.entityDsl.RadioButtonGroup;
 import org.xtext.entityDsl.Spinner;
 import org.xtext.entityDsl.TextBox;
+import org.xtext.entityDsl.TrackBar;
 import org.xtext.entityDsl.WinFormControlType;
 import org.xtext.services.EntityDslGrammarAccess;
 
@@ -79,6 +80,9 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case EntityDslPackage.TEXT_BOX:
 				sequence_TextBox(context, (TextBox) semanticObject); 
+				return; 
+			case EntityDslPackage.TRACK_BAR:
+				sequence_TrackBar(context, (TrackBar) semanticObject); 
 				return; 
 			case EntityDslPackage.WIN_FORM_CONTROL_TYPE:
 				sequence_WinFormControlType(context, (WinFormControlType) semanticObject); 
@@ -271,6 +275,28 @@ public class EntityDslSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (name='TextBox' dataType=DataType minTextLength=INT? maxTextLength=INT?)
 	 */
 	protected void sequence_TextBox(ISerializationContext context, TextBox semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     WinFormControlType returns TrackBar
+	 *     TrackBar returns TrackBar
+	 *
+	 * Constraint:
+	 *     (
+	 *         name='TrackBar' 
+	 *         dataType=DataType 
+	 *         defaultTick=INT 
+	 *         increment=INT 
+	 *         denominator=INT? 
+	 *         minimumValue=INT 
+	 *         maximumValue=INT 
+	 *         stringValues+=STRING*
+	 *     )
+	 */
+	protected void sequence_TrackBar(ISerializationContext context, TrackBar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

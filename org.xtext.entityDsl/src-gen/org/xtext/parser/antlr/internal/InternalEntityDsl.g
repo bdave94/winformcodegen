@@ -454,6 +454,223 @@ ruleWinFormControlType returns [EObject current=null]
 			$current = $this_Spinner_4.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getWinFormControlTypeAccess().getTrackBarParserRuleCall_5());
+		}
+		this_TrackBar_5=ruleTrackBar
+		{
+			$current = $this_TrackBar_5.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleTrackBar
+entryRuleTrackBar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTrackBarRule()); }
+	iv_ruleTrackBar=ruleTrackBar
+	{ $current=$iv_ruleTrackBar.current; }
+	EOF;
+
+// Rule TrackBar
+ruleTrackBar returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_0='TrackBar'
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getTrackBarAccess().getNameTrackBarKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTrackBarRule());
+					}
+					setWithLastConsumed($current, "name", lv_name_0_0, "TrackBar");
+				}
+			)
+		)
+		otherlv_1='['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTrackBarAccess().getLeftSquareBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTrackBarAccess().getDataTypeDataTypeParserRuleCall_2_0());
+				}
+				lv_dataType_2_0=ruleDataType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTrackBarRule());
+					}
+					set(
+						$current,
+						"dataType",
+						lv_dataType_2_0,
+						"org.xtext.EntityDsl.DataType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=','
+		{
+			newLeafNode(otherlv_3, grammarAccess.getTrackBarAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				lv_defaultTick_4_0=RULE_INT
+				{
+					newLeafNode(lv_defaultTick_4_0, grammarAccess.getTrackBarAccess().getDefaultTickINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTrackBarRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"defaultTick",
+						lv_defaultTick_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5=','
+		{
+			newLeafNode(otherlv_5, grammarAccess.getTrackBarAccess().getCommaKeyword_5());
+		}
+		(
+			(
+				lv_increment_6_0=RULE_INT
+				{
+					newLeafNode(lv_increment_6_0, grammarAccess.getTrackBarAccess().getIncrementINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTrackBarRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"increment",
+						lv_increment_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_7=','
+		{
+			newLeafNode(otherlv_7, grammarAccess.getTrackBarAccess().getCommaKeyword_7());
+		}
+		(
+			(
+				(
+					lv_denominator_8_0=RULE_INT
+					{
+						newLeafNode(lv_denominator_8_0, grammarAccess.getTrackBarAccess().getDenominatorINTTerminalRuleCall_8_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTrackBarRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"denominator",
+							lv_denominator_8_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_9=','
+			{
+				newLeafNode(otherlv_9, grammarAccess.getTrackBarAccess().getCommaKeyword_8_1());
+			}
+		)?
+		otherlv_10='('
+		{
+			newLeafNode(otherlv_10, grammarAccess.getTrackBarAccess().getLeftParenthesisKeyword_9());
+		}
+		(
+			(
+				lv_minimumValue_11_0=RULE_INT
+				{
+					newLeafNode(lv_minimumValue_11_0, grammarAccess.getTrackBarAccess().getMinimumValueINTTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTrackBarRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"minimumValue",
+						lv_minimumValue_11_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_12=','
+		{
+			newLeafNode(otherlv_12, grammarAccess.getTrackBarAccess().getCommaKeyword_11());
+		}
+		(
+			(
+				lv_maximumValue_13_0=RULE_INT
+				{
+					newLeafNode(lv_maximumValue_13_0, grammarAccess.getTrackBarAccess().getMaximumValueINTTerminalRuleCall_12_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTrackBarRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"maximumValue",
+						lv_maximumValue_13_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_14=')'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getTrackBarAccess().getRightParenthesisKeyword_13());
+		}
+		(
+			otherlv_15='('
+			{
+				newLeafNode(otherlv_15, grammarAccess.getTrackBarAccess().getLeftParenthesisKeyword_14_0());
+			}
+			(
+				(
+					lv_stringValues_16_0=RULE_STRING
+					{
+						newLeafNode(lv_stringValues_16_0, grammarAccess.getTrackBarAccess().getStringValuesSTRINGTerminalRuleCall_14_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTrackBarRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"stringValues",
+							lv_stringValues_16_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)*
+			otherlv_17=')'
+			{
+				newLeafNode(otherlv_17, grammarAccess.getTrackBarAccess().getRightParenthesisKeyword_14_2());
+			}
+		)?
+		otherlv_18=']'
+		{
+			newLeafNode(otherlv_18, grammarAccess.getTrackBarAccess().getRightSquareBracketKeyword_15());
+		}
 	)
 ;
 

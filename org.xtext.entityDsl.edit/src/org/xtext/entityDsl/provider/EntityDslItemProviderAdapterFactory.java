@@ -211,6 +211,29 @@ public class EntityDslItemProviderAdapterFactory extends EntityDslAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.xtext.entityDsl.TrackBar} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TrackBarItemProvider trackBarItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.xtext.entityDsl.TrackBar}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTrackBarAdapter() {
+		if (trackBarItemProvider == null) {
+			trackBarItemProvider = new TrackBarItemProvider(this);
+		}
+
+		return trackBarItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.xtext.entityDsl.Spinner} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,6 +499,7 @@ public class EntityDslItemProviderAdapterFactory extends EntityDslAdapterFactory
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (labelItemProvider != null) labelItemProvider.dispose();
 		if (winFormControlTypeItemProvider != null) winFormControlTypeItemProvider.dispose();
+		if (trackBarItemProvider != null) trackBarItemProvider.dispose();
 		if (spinnerItemProvider != null) spinnerItemProvider.dispose();
 		if (radioButtonGroupItemProvider != null) radioButtonGroupItemProvider.dispose();
 		if (radioButtonItemProvider != null) radioButtonItemProvider.dispose();

@@ -22,7 +22,12 @@ Label:
 	text= STRING;
      
 WinFormControlType:
-	controlType = TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner;
+	controlType = TextBox | ComboBox | CheckBox | RadioButtonGroup | Spinner | TrackBar;
+
+TrackBar:
+	name = 'TrackBar' '['dataType=DataType ',' defaultTick=INT ',' increment=INT ',' (denominator=INT ',')?  '(' minimumValue=INT ',' maximumValue=INT')'
+	('('(stringValues+=STRING)*')')?  ']'
+;
 
 Spinner:
 	name = 'Spinner' '[' defaultValue=INT','  '(' minimumValue=INT ',' maximumValue=INT')' ']'

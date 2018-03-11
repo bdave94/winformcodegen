@@ -78,6 +78,15 @@ public interface EntityDslFactory extends EFactory
   WinFormControlType createWinFormControlType();
 
   /**
+	 * Returns a new object of class '<em>Track Bar</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Track Bar</em>'.
+	 * @generated
+	 */
+  TrackBar createTrackBar();
+
+  /**
 	 * Returns a new object of class '<em>Spinner</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

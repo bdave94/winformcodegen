@@ -30,6 +30,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//WinFormControlType/controlType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//WinFormControlType/name"/>
     </genClasses>
+    <genClasses ecoreClass="EntityDsl.ecore#//TrackBar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EntityDsl.ecore#//TrackBar/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TrackBar/defaultTick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TrackBar/increment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TrackBar/denominator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TrackBar/minimumValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TrackBar/maximumValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//TrackBar/stringValues"/>
+    </genClasses>
     <genClasses ecoreClass="EntityDsl.ecore#//Spinner">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Spinner/defaultValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EntityDsl.ecore#//Spinner/minimumValue"/>

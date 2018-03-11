@@ -280,6 +280,106 @@ public interface EntityDslPackage extends EPackage
   int WIN_FORM_CONTROL_TYPE_FEATURE_COUNT = 2;
 
   /**
+	 * The meta object id for the '{@link org.xtext.entityDsl.impl.TrackBarImpl <em>Track Bar</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see org.xtext.entityDsl.impl.TrackBarImpl
+	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTrackBar()
+	 * @generated
+	 */
+  int TRACK_BAR = 6;
+
+  /**
+	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__CONTROL_TYPE = WIN_FORM_CONTROL_TYPE__CONTROL_TYPE;
+
+  /**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__NAME = WIN_FORM_CONTROL_TYPE__NAME;
+
+  /**
+	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__DATA_TYPE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
+
+  /**
+	 * The feature id for the '<em><b>Default Tick</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__DEFAULT_TICK = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
+
+  /**
+	 * The feature id for the '<em><b>Increment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__INCREMENT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 2;
+
+  /**
+	 * The feature id for the '<em><b>Denominator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__DENOMINATOR = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 3;
+
+  /**
+	 * The feature id for the '<em><b>Minimum Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__MINIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 4;
+
+  /**
+	 * The feature id for the '<em><b>Maximum Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__MAXIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 5;
+
+  /**
+	 * The feature id for the '<em><b>String Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR__STRING_VALUES = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 6;
+
+  /**
+	 * The number of structural features of the '<em>Track Bar</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TRACK_BAR_FEATURE_COUNT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 7;
+
+  /**
 	 * The meta object id for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -287,7 +387,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getSpinner()
 	 * @generated
 	 */
-  int SPINNER = 6;
+  int SPINNER = 7;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -351,7 +451,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButtonGroup()
 	 * @generated
 	 */
-  int RADIO_BUTTON_GROUP = 7;
+  int RADIO_BUTTON_GROUP = 8;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -406,7 +506,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButton()
 	 * @generated
 	 */
-  int RADIO_BUTTON = 8;
+  int RADIO_BUTTON = 9;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -434,7 +534,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getCheckBox()
 	 * @generated
 	 */
-  int CHECK_BOX = 9;
+  int CHECK_BOX = 10;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -471,7 +571,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTextBox()
 	 * @generated
 	 */
-  int TEXT_BOX = 10;
+  int TEXT_BOX = 11;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -526,7 +626,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBox()
 	 * @generated
 	 */
-  int COMBO_BOX = 11;
+  int COMBO_BOX = 12;
 
   /**
 	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
@@ -581,7 +681,7 @@ public interface EntityDslPackage extends EPackage
 	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBoxItem()
 	 * @generated
 	 */
-  int COMBO_BOX_ITEM = 12;
+  int COMBO_BOX_ITEM = 13;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -793,6 +893,93 @@ public interface EntityDslPackage extends EPackage
 	 * @generated
 	 */
   EAttribute getWinFormControlType_Name();
+
+  /**
+	 * Returns the meta object for class '{@link org.xtext.entityDsl.TrackBar <em>Track Bar</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Track Bar</em>'.
+	 * @see org.xtext.entityDsl.TrackBar
+	 * @generated
+	 */
+  EClass getTrackBar();
+
+  /**
+	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.TrackBar#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Data Type</em>'.
+	 * @see org.xtext.entityDsl.TrackBar#getDataType()
+	 * @see #getTrackBar()
+	 * @generated
+	 */
+  EReference getTrackBar_DataType();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getDefaultTick <em>Default Tick</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Tick</em>'.
+	 * @see org.xtext.entityDsl.TrackBar#getDefaultTick()
+	 * @see #getTrackBar()
+	 * @generated
+	 */
+  EAttribute getTrackBar_DefaultTick();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getIncrement <em>Increment</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Increment</em>'.
+	 * @see org.xtext.entityDsl.TrackBar#getIncrement()
+	 * @see #getTrackBar()
+	 * @generated
+	 */
+  EAttribute getTrackBar_Increment();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getDenominator <em>Denominator</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Denominator</em>'.
+	 * @see org.xtext.entityDsl.TrackBar#getDenominator()
+	 * @see #getTrackBar()
+	 * @generated
+	 */
+  EAttribute getTrackBar_Denominator();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getMinimumValue <em>Minimum Value</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Minimum Value</em>'.
+	 * @see org.xtext.entityDsl.TrackBar#getMinimumValue()
+	 * @see #getTrackBar()
+	 * @generated
+	 */
+  EAttribute getTrackBar_MinimumValue();
+
+  /**
+	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getMaximumValue <em>Maximum Value</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Value</em>'.
+	 * @see org.xtext.entityDsl.TrackBar#getMaximumValue()
+	 * @see #getTrackBar()
+	 * @generated
+	 */
+  EAttribute getTrackBar_MaximumValue();
+
+  /**
+	 * Returns the meta object for the attribute list '{@link org.xtext.entityDsl.TrackBar#getStringValues <em>String Values</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>String Values</em>'.
+	 * @see org.xtext.entityDsl.TrackBar#getStringValues()
+	 * @see #getTrackBar()
+	 * @generated
+	 */
+  EAttribute getTrackBar_StringValues();
 
   /**
 	 * Returns the meta object for class '{@link org.xtext.entityDsl.Spinner <em>Spinner</em>}'.
@@ -1185,6 +1372,72 @@ public interface EntityDslPackage extends EPackage
 		 * @generated
 		 */
     EAttribute WIN_FORM_CONTROL_TYPE__NAME = eINSTANCE.getWinFormControlType_Name();
+
+    /**
+		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.TrackBarImpl <em>Track Bar</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see org.xtext.entityDsl.impl.TrackBarImpl
+		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTrackBar()
+		 * @generated
+		 */
+    EClass TRACK_BAR = eINSTANCE.getTrackBar();
+
+    /**
+		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference TRACK_BAR__DATA_TYPE = eINSTANCE.getTrackBar_DataType();
+
+    /**
+		 * The meta object literal for the '<em><b>Default Tick</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TRACK_BAR__DEFAULT_TICK = eINSTANCE.getTrackBar_DefaultTick();
+
+    /**
+		 * The meta object literal for the '<em><b>Increment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TRACK_BAR__INCREMENT = eINSTANCE.getTrackBar_Increment();
+
+    /**
+		 * The meta object literal for the '<em><b>Denominator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TRACK_BAR__DENOMINATOR = eINSTANCE.getTrackBar_Denominator();
+
+    /**
+		 * The meta object literal for the '<em><b>Minimum Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TRACK_BAR__MINIMUM_VALUE = eINSTANCE.getTrackBar_MinimumValue();
+
+    /**
+		 * The meta object literal for the '<em><b>Maximum Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TRACK_BAR__MAXIMUM_VALUE = eINSTANCE.getTrackBar_MaximumValue();
+
+    /**
+		 * The meta object literal for the '<em><b>String Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TRACK_BAR__STRING_VALUES = eINSTANCE.getTrackBar_StringValues();
 
     /**
 		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
