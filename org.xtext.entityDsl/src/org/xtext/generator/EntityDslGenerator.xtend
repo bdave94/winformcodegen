@@ -61,11 +61,15 @@ class EntityDslGenerator extends AbstractGenerator {
 	    	private int «entity.name.toFirstLower»DataGridSelectedRowIndex = -1;
 	    	private Dictionary<string, int> «entity.name.toFirstLower»TextboxMinimalTextLength = new Dictionary<string, int>();
 	    	private Dictionary<string, bool> «entity.name.toFirstLower»RequiredFields = new Dictionary<string, bool>();
-	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldLabelText = new Dictionary<string, string>();
-	    	private Dictionary<string, string> «entity.name.toFirstLower»FieldDataType = new Dictionary<string, string>(); 
-	    	private Dictionary<string, Label> «entity.name.toFirstLower»FieldErrorLabel = new Dictionary<string, Label>();
+	    	private Dictionary<string, string> fieldLabelText = new Dictionary<string, string>();
+	    	private Dictionary<string, string> fieldDataType = new Dictionary<string, string>(); 
+	    	private Dictionary<string, Label> fieldErrorLabels = new Dictionary<string, Label>();
 	    	private Dictionary<string, int> «entity.name.toFirstLower»SpinnerDefaultValues = new Dictionary<string, int>();
-	    	 
+	    	private Dictionary<string, string[]> trackBarStringValues = new Dictionary<string, string[]>(); 
+	    	private Dictionary<string, Label> trackBarValueLabels = new Dictionary<string, Label>();
+	    	private Dictionary<string, int> trackBarDefaultValues = new Dictionary<string, int>();
+	    	private Dictionary<string, int> trackBarDenominatorValues = new Dictionary<string, int>();
+	    	
 	    	«ENDFOR»
 	        public Form1()
 	        {
@@ -161,7 +165,21 @@ class EntityDslGenerator extends AbstractGenerator {
 	            		
 	                	«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
 	                	«entity.name.toFirstLower».«attribute.name.toFirstUpper» = (int) numericUpDown«entity.name»«attribute.name».Value;
-	                	«ENDFOR»	                	
+	                	«ENDFOR»
+	            		
+	                	«FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»
+
+	                	«IF trackBar.dataType.type.equals("string")»
+	                	«entity.name.toFirstLower».«attribute.name.toFirstUpper» = trackBarLabel«entity.name»«attribute.name».Text;
+	                	«ENDIF»
+	                	«IF trackBar.dataType.type.equals("int")»
+	                	«entity.name.toFirstLower».«attribute.name.toFirstUpper» = int.Parse(trackBarLabel«entity.name»«attribute.name».Text);	        	
+	                	«ENDIF»
+	                	«IF trackBar.dataType.type.equals("double")»
+	                	«entity.name.toFirstLower».«attribute.name.toFirstUpper» = double.Parse(trackBarLabel«entity.name»«attribute.name».Text);       	
+	                	«ENDIF»  	
+	                	«ENDFOR»
+
 	                 	«ENDFOR» 	               	             
 
 	            		db.«entity.name»s.Add(«entity.name.toFirstLower»);
@@ -189,25 +207,25 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«ELSE»
 	        	«entity.name.toFirstLower»RequiredFields.Add("tb«entity.name»«attribute.name»",false);
 	        	«ENDIF»
-	        	«entity.name.toFirstLower»FieldLabelText.Add("tb«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	fieldLabelText.Add("tb«entity.name»«attribute.name»","«attribute.labelText.text»");
 	        	
 	        	«IF tb.dataType.type.equals("string")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "string");
+	        	fieldDataType.Add("tb«entity.name»«attribute.name»", "string");
 	        	«ENDIF»
 	        	«IF tb.dataType.type.equals("int")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "int");
+	        	fieldDataType.Add("tb«entity.name»«attribute.name»", "int");
 	        	«ENDIF»
 	        	«IF tb.dataType.type.equals("double")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("tb«entity.name»«attribute.name»", "double");
+	        	fieldDataType.Add("tb«entity.name»«attribute.name»", "double");
 	        	«ENDIF»
 	        	
-	        	«entity.name.toFirstLower»FieldErrorLabel.Add("tb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
+	        	fieldErrorLabels.Add("tb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
 	        	«ENDFOR»
 	        	
 	        	«FOR cb :attribute.eAllContents.toIterable.filter(CheckBox)»	        		        	
-	        	«entity.name.toFirstLower»FieldLabelText.Add("cb«entity.name»«attribute.name»","«attribute.labelText.text»");
-	        	«entity.name.toFirstLower»FieldDataType.Add("cb«entity.name»«attribute.name»", "string");
-	        	«entity.name.toFirstLower»FieldErrorLabel.Add("cb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
+	        	fieldLabelText.Add("cb«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	fieldDataType.Add("cb«entity.name»«attribute.name»", "string");
+	        	fieldErrorLabels.Add("cb«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
 	        	«ENDFOR» 
 	        	             	
 	        	«FOR c :attribute.eAllContents.toIterable.filter(ComboBox)»
@@ -217,20 +235,20 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«entity.name.toFirstLower»RequiredFields.Add("comboBox«entity.name»«attribute.name»",false);
 	        	«ENDIF»
 	        	
-	        	«entity.name.toFirstLower»FieldLabelText.Add("comboBox«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	fieldLabelText.Add("comboBox«entity.name»«attribute.name»","«attribute.labelText.text»");
 	        	
 	        	
 	        	«IF c.dataType.type.equals("string")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("comboBox«entity.name»«attribute.name»", "string");
+	        	fieldDataType.Add("comboBox«entity.name»«attribute.name»", "string");
 	        	«ENDIF»
 	        	«IF c.dataType.type.equals("int")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("comboBox«entity.name»«attribute.name»", "int");
+	        	fieldDataType.Add("comboBox«entity.name»«attribute.name»", "int");
 	        	«ENDIF»
 	        	«IF c.dataType.type.equals("double")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("comboBox«entity.name»«attribute.name»", "double");
+	        	fieldDataType.Add("comboBox«entity.name»«attribute.name»", "double");
 	        	«ENDIF»
 	        	
-	        	«entity.name.toFirstLower»FieldErrorLabel.Add("comboBox«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        		        	
+	        	fieldErrorLabels.Add("comboBox«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        		        	
 	        	
 	        	«ENDFOR»
 	        	
@@ -240,27 +258,52 @@ class EntityDslGenerator extends AbstractGenerator {
 	        	«ELSE»
 	        	«entity.name.toFirstLower»RequiredFields.Add("groupBox«entity.name»«attribute.name»",false);
 	        	«ENDIF»
-	        	«entity.name.toFirstLower»FieldLabelText.Add("groupBox«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	fieldLabelText.Add("groupBox«entity.name»«attribute.name»","«attribute.labelText.text»");
 	        	
 	        	«IF rbg.dataType.type.equals("string")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("groupBox«entity.name»«attribute.name»", "string");
+	        	fieldDataType.Add("groupBox«entity.name»«attribute.name»", "string");
 	        	«ENDIF»
 	        	«IF rbg.dataType.type.equals("int")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("groupBox«entity.name»«attribute.name»", "int");
+	        	fieldDataType.Add("groupBox«entity.name»«attribute.name»", "int");
 	        	«ENDIF»
 	        	«IF rbg.dataType.type.equals("double")»
-	        	«entity.name.toFirstLower»FieldDataType.Add("groupBox«entity.name»«attribute.name»", "double");
+	        	fieldDataType.Add("groupBox«entity.name»«attribute.name»", "double");
 	        	«ENDIF»
 	        	
-	        	«entity.name.toFirstLower»FieldErrorLabel.Add("groupBox«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        	
+	        	fieldErrorLabels.Add("groupBox«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);	        	
 	        	«ENDFOR»	        	
 	        	
 	        	
 	        	«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»
-	        	«entity.name.toFirstLower»FieldLabelText.Add("numericUpDown«entity.name»«attribute.name»","«attribute.labelText.text»");
-	        	«entity.name.toFirstLower»FieldErrorLabel.Add("numericUpDown«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
-	        	«entity.name.toFirstLower»FieldDataType.Add("numericUpDown«entity.name»«attribute.name»", "string");
+	        	fieldLabelText.Add("numericUpDown«entity.name»«attribute.name»","«attribute.labelText.text»");
+	        	fieldErrorLabels.Add("numericUpDown«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
+	        	fieldDataType.Add("numericUpDown«entity.name»«attribute.name»", "string");
 	        	«entity.name.toFirstLower»SpinnerDefaultValues.Add("numericUpDown«entity.name»«attribute.name»", «spinner.defaultValue»);
+	        	«ENDFOR»
+	        	
+	        	«FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»
+	        		        	
+	        	«IF trackBar.dataType.type.equals("string")»
+	        	fieldDataType.Add("trackBar«entity.name»«attribute.name»", "string");
+	        	
+	        	trackBarStringValues.Add("trackBar«entity.name»«attribute.name»",
+	        	new string[] {«FOR value : trackBar.stringValues» "«value»",«ENDFOR»} );
+	        	«ENDIF»
+	        	«IF trackBar.dataType.type.equals("int")»
+	        	fieldDataType.Add("trackBar«entity.name»«attribute.name»", "int");
+	        	«ENDIF»
+	        	«IF trackBar.dataType.type.equals("double")»
+	        	fieldDataType.Add("trackBar«entity.name»«attribute.name»", "double");
+	        	trackBarDenominatorValues.Add("trackBar«entity.name»«attribute.name»", «trackBar.denominator»);
+	        	«ENDIF»
+	        	
+	        	fieldLabelText.Add("trackBar«entity.name»«attribute.name»","«attribute.labelText.text»");	        	
+	        	fieldErrorLabels.Add("trackBar«entity.name»«attribute.name»",label«entity.name»«attribute.name»Error);
+	        	trackBarValueLabels.Add("trackBar«entity.name»«attribute.name»",trackBarLabel«entity.name»«attribute.name»);
+	        	trackBarDefaultValues.Add("trackBar«entity.name»«attribute.name»",«trackBar.defaultTick»);
+	        	
+	        	trackBar«entity.name»«attribute.name».Value = «trackBar.defaultTick»;
+	        	trackBar«entity.name»«attribute.name»_Scroll(sender, e);	    	
 	        	«ENDFOR»             	
 	        	«ENDFOR»	        	        		    	 
 	        	«ENDFOR»
@@ -375,7 +418,22 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    			
 	                    			«FOR spinner :attribute.eAllContents.toIterable.filter(Spinner)»	                    			
 	                    			result.«attribute.name.toFirstUpper» = (int) numericUpDown«entity.name»«attribute.name».Value;
-	                    			«ENDFOR»	                    				                        	                        
+	                    			«ENDFOR»
+	                    			
+	                    			
+	                    			
+	                   
+	                   	            «FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»	                   
+	                   	            «IF trackBar.dataType.type.equals("string")»
+	                   	            result.«attribute.name.toFirstUpper» = trackBarLabel«entity.name»«attribute.name».Text;
+	                   	            «ENDIF»
+	                   	            «IF trackBar.dataType.type.equals("int")»
+	                   	            result.«attribute.name.toFirstUpper» = int.Parse(trackBarLabel«entity.name»«attribute.name».Text);	        	
+	                   	            «ENDIF»
+	                   	            «IF trackBar.dataType.type.equals("double")»
+	                   	            result.«attribute.name.toFirstUpper» = double.Parse(trackBarLabel«entity.name»«attribute.name».Text);       	
+	                   	            «ENDIF»  	
+	                   	            «ENDFOR»		                    				                        	                        
 	                    			«ENDFOR»
 	                    			                            		                            
 	                    			}
@@ -440,8 +498,8 @@ class EntityDslGenerator extends AbstractGenerator {
 	                     	 int textBoxMinimalNumberOfCharacters = «entity.name.toFirstLower»TextboxMinimalTextLength[tb.Name];
 	                         if (tb.Text.Length < textBoxMinimalNumberOfCharacters) {
 	                         	
-	                         	string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
-	                         	«entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text = "The textbox \""+ inputFieldName+ "\" must contain at least "
+	                         	string inputFieldName = fieldLabelText[tb.Name];
+	                         	fieldErrorLabels[tb.Name].Text = "The textbox \""+ inputFieldName+ "\" must contain at least "
 	                         		                         	+ textBoxMinimalNumberOfCharacters + " characters!";
 	                         	
 	                         	
@@ -459,15 +517,15 @@ class EntityDslGenerator extends AbstractGenerator {
 	                foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
 	                {
 	         
-	                    string textBoxDataType = «entity.name.toFirstLower»FieldDataType[tb.Name];
-	                    string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                    string textBoxDataType = fieldDataType[tb.Name];
+	                    string inputFieldName = fieldLabelText[tb.Name];
 	                    bool required = «entity.name.toFirstLower»RequiredFields[tb.Name];
 	                    if (!required && tb.Text.Equals("") == false){
 	                    if (textBoxDataType.Equals("int"))
 	                    {
 	                         int result;
 	                         if(int.TryParse(tb.Text, out result) == false) {
-	                         	«entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text =  "The textbox \"" + inputFieldName + "\" must contain an Integer! ";              
+	                         	fieldErrorLabels[tb.Name].Text =  "The textbox \"" + inputFieldName + "\" must contain an Integer! ";              
 	                                   
 	                             return false;
 	                         }
@@ -476,7 +534,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                         {
 	                             double resultD;
 	                             if (double.TryParse(tb.Text.Replace(",","."), NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"), out resultD) == false) {
-	                                 «entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text = "The textbox \"" + inputFieldName + "\" must contain a number! ";
+	                                 fieldErrorLabels[tb.Name].Text = "The textbox \"" + inputFieldName + "\" must contain a number! ";
 	                                
 	         
 	                             return false;
@@ -494,9 +552,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	               {
 	                    if (tb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields[tb.Name]) {
 	                         	
-	                            string inputFieldName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                            string inputFieldName = fieldLabelText[tb.Name];
 	                         	
-	                         	«entity.name.toFirstLower»FieldErrorLabel[tb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
+	                         	fieldErrorLabels[tb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
 	                         	
 	                         	return false;
 	                    }
@@ -507,8 +565,8 @@ class EntityDslGenerator extends AbstractGenerator {
 	                {
 	                      if (cb.Text.Length == 0 && «entity.name.toFirstLower»RequiredFields[cb.Name]) {
 	                         	
-	                         	string inputFieldName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
-	                         	«entity.name.toFirstLower»FieldErrorLabel[cb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
+	                         	string inputFieldName = fieldLabelText[cb.Name];
+	                         	fieldErrorLabels[cb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
 	                         	
 	                         	return false;
 	                     }
@@ -528,9 +586,9 @@ class EntityDslGenerator extends AbstractGenerator {
 	                     	          		
 	                     	     	if(selectedButtonFound == false) {
 	                     	     		
-	                     	     		string inputFieldName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
+	                     	     		string inputFieldName = fieldLabelText[gb.Name];
 	                     	     		
-	                     	     		«entity.name.toFirstLower»FieldErrorLabel[gb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
+	                     	     		fieldErrorLabels[gb.Name].Text = "The \"" + inputFieldName + "\" is a required field!";
 	                     	     		
 	                     	     		return false;
 	                     	     	}
@@ -546,7 +604,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	         private bool «entity.name.toFirstLower»FormValidator()
 	         {
 	         	
-	         	foreach (Label l in «entity.name.toFirstLower»FieldErrorLabel.Values)
+	         	foreach (Label l in fieldErrorLabels.Values)
 	         	{
 	         	     l.Text = "";
 	         	}
@@ -631,7 +689,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                     string columnName = dataGridView«entity.name.toFirstUpper».Columns[columnNumber].HeaderText;
 	                     foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
 	                     {
-	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                         string controlLabelName = fieldLabelText[tb.Name];
 	                         controlLabelName = controlLabelName.ToLower();
 	                         columnName = columnName.ToLower();
 	        
@@ -641,7 +699,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                     foreach (CheckBox c in panel«entity.name».Controls.OfType<CheckBox>())
 	                     {
-	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[c.Name];
+	                         string controlLabelName = fieldLabelText[c.Name];
 	                         controlLabelName = controlLabelName.ToLower();
 	                         columnName = columnName.ToLower();
 	        
@@ -659,7 +717,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                     foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())
 	                     {
-	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
+	                         string controlLabelName = fieldLabelText[cb.Name];
 	                         controlLabelName = controlLabelName.ToLower();
 	                         columnName = columnName.ToLower();
 	        
@@ -674,7 +732,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                     foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
 	                     {
-	                         string controlLabelName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
+	                         string controlLabelName = fieldLabelText[gb.Name];
 	                         controlLabelName = controlLabelName.ToLower();
 	                         columnName = columnName.ToLower();
 	        
@@ -692,7 +750,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                     
 	        			 foreach (NumericUpDown spinner in panel«entity.name».Controls.OfType<NumericUpDown>())
 	        			 {
-	        				string controlLabelName = «entity.name.toFirstLower»FieldLabelText[spinner.Name];
+	        				string controlLabelName = fieldLabelText[spinner.Name];
 	        				controlLabelName = controlLabelName.ToLower();
 	        				columnName = columnName.ToLower();
 	        
@@ -706,7 +764,19 @@ class EntityDslGenerator extends AbstractGenerator {
 	        				}
 	        			 }
 	                     
-	                     
+	                     foreach (TrackBar trackBar in panel«entity.name».Controls.OfType<TrackBar>())
+	                     {
+	                     	string controlLabelName = fieldLabelText[trackBar.Name];
+	                     	controlLabelName = controlLabelName.ToLower();
+	                     	columnName = columnName.ToLower();
+	                     	        
+	                     	if (controlLabelName.Contains(columnName))
+	                     	{
+	                     	     string trackBarValue= selectedRow.Cells[columnNumber].Value.ToString();	
+	                     	     setTrackBarValue( trackBar,  trackBarValue);
+	                     	        				
+	                     	}
+	                     }
 	        
 	             }
 	             
@@ -729,7 +799,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        {
 	            bool invalidValueFound = false;
 	        
-	            foreach(Label l in «entity.name.toFirstLower»FieldErrorLabel.Values)
+	            foreach(Label l in fieldErrorLabels.Values)
 	            {
 	                l.Text = "";
 	            }
@@ -742,7 +812,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                string columnName = dataGridView«entity.name.toFirstUpper».Columns[columnNumber].HeaderText;
 	                foreach (TextBox tb in panel«entity.name».Controls.OfType<TextBox>())
 	                {
-	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[tb.Name];
+	                    string controlLabelName = fieldLabelText[tb.Name];
 	                    controlLabelName = controlLabelName.ToLower();
 	                    columnName = columnName.ToLower();
 	        
@@ -752,7 +822,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                foreach (CheckBox c in panel«entity.name».Controls.OfType<CheckBox>())
 	                {
-	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[c.Name];
+	                    string controlLabelName = fieldLabelText[c.Name];
 	                    controlLabelName = controlLabelName.ToLower();
 	                    columnName = columnName.ToLower();
 	        
@@ -768,7 +838,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                          } else
 	                          {
 	                        invalidValueFound = true;
-	                        «entity.name.toFirstLower»FieldErrorLabel[c.Name].Text = "Invalid value: \""+ cbAsText + "\"";
+	                        fieldErrorLabels[c.Name].Text = "Invalid value: \""+ cbAsText + "\"";
 	        
 	                          }
 	                    }
@@ -778,7 +848,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                foreach (ComboBox cb in panel«entity.name».Controls.OfType<ComboBox>())
 	                {
-	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[cb.Name];
+	                    string controlLabelName = fieldLabelText[cb.Name];
 	                    controlLabelName = controlLabelName.ToLower();
 	                    columnName = columnName.ToLower();
 	        
@@ -790,7 +860,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                        if(cb.SelectedIndex == -1)
 	                        {
 	                        invalidValueFound = true;
-	                        «entity.name.toFirstLower»FieldErrorLabel[cb.Name].Text = "Invalid value: \"" + cbAsText + "\"";
+	                        fieldErrorLabels[cb.Name].Text = "Invalid value: \"" + cbAsText + "\"";
 	        
 	                        }
 	                    }
@@ -800,7 +870,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	        
 	                foreach (GroupBox gb in panel«entity.name».Controls.OfType<GroupBox>())
 	                {
-	                    string controlLabelName = «entity.name.toFirstLower»FieldLabelText[gb.Name];
+	                    string controlLabelName = fieldLabelText[gb.Name];
 	                    controlLabelName = controlLabelName.ToLower();
 	                    columnName = columnName.ToLower();
 	        
@@ -820,7 +890,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                            invalidValueFound = false;
 	                        
 	                        if(invalidValueFound == true)
-	                        «entity.name.toFirstLower»FieldErrorLabel[gb.Name].Text = "Invalid value: \"" + gbAsText + "\"";
+	                        fieldErrorLabels[gb.Name].Text = "Invalid value: \"" + gbAsText + "\"";
 	        
 	                }
 	                }
@@ -828,7 +898,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                
 	        		foreach (NumericUpDown spinner in panel«entity.name».Controls.OfType<NumericUpDown>())
 	          		{
-	        			string controlLabelName = «entity.name.toFirstLower»FieldLabelText[spinner.Name];
+	        			string controlLabelName = fieldLabelText[spinner.Name];
 	        			controlLabelName = controlLabelName.ToLower();
 	        			columnName = columnName.ToLower();
 	        
@@ -850,14 +920,35 @@ class EntityDslGenerator extends AbstractGenerator {
 	        					
 	        				} else {
 	        					invalidValueFound = true;
-	        					«entity.name.toFirstLower»FieldErrorLabel[spinner.Name].Text = 
+	        					fieldErrorLabels[spinner.Name].Text = 
 	        					"Invalid value: \"" + spinnerAsText + "\", value must be an integer!";
 	        				}
 	        				
 	        			}
 	        		}
 	                
-	                
+	        		foreach (TrackBar trackBar in panel«entity.name».Controls.OfType<TrackBar>())
+	        	    {
+	        	          string controlLabelName = fieldLabelText[trackBar.Name];
+	        	          controlLabelName = controlLabelName.ToLower();
+	        	          columnName = columnName.ToLower();
+	        	                     	        
+	        	          if (controlLabelName.Contains(columnName))
+	        	          {
+	        	                string trackBarValue = 	selectedRow.Cells[columnNumber].Value.ToString();
+	        	                
+	        	                
+	        	                if(setTrackBarValue( trackBar,  trackBarValue) == false) 
+	        	                {
+	        	                	invalidValueFound = true;
+	        	                	fieldErrorLabels[trackBar.Name].Text = 
+	        	                	"Invalid value: \"" + trackBarValue + "\"!";
+
+	        	                }
+	        	                
+	        	                     	        				
+	        	          }
+	        	    }
 	                
 	                
 	        
@@ -876,8 +967,99 @@ class EntityDslGenerator extends AbstractGenerator {
 	            }
 	                
 	        }
-	        
+	         
+
 		«ENDFOR»
+		
+		«FOR entity: r.allContents.toIterable.filter(Entity)»
+		«FOR attribute :entity.eAllContents.toIterable.filter(Attribute)»
+		«FOR trackBar :attribute.eAllContents.toIterable.filter(TrackBar)»
+		private void trackBar«entity.name»«attribute.name»_Scroll(object sender, EventArgs e) {
+			     setTrackBarLabel(trackBar«entity.name»«attribute.name»);
+		}
+		«ENDFOR»
+		«ENDFOR»
+		«ENDFOR»
+		
+		
+		private void setTrackBarLabel(TrackBar trackBar) {
+			
+			if(fieldDataType[trackBar.Name].Equals("string")) {
+				 trackBarValueLabels[trackBar.Name].Text =
+				                trackBarStringValues[trackBar.Name][(trackBar.Value-trackBar.Minimum) /trackBar.TickFrequency ];
+					
+			}
+			
+			if(fieldDataType[trackBar.Name].Equals("int")) {
+				 trackBarValueLabels[trackBar.Name].Text = trackBar.Value.ToString();
+			}
+			
+			if(fieldDataType[trackBar.Name].Equals("double")) {
+							 trackBarValueLabels[trackBar.Name].Text = ((double)trackBar.Value / 
+						trackBarDenominatorValues[trackBar.Name]).ToString();
+			}
+			
+		}
+		
+		
+		private bool setTrackBarValue(TrackBar trackBar, string value)
+	        {
+	            bool valueIsValid = false;
+	            if (fieldDataType[trackBar.Name].Equals("string"))
+	            {
+	
+	                if (trackBarStringValues[trackBar.Name].Contains(value))
+	                {
+	                    valueIsValid = true;
+	                    int arraySize = trackBarStringValues[trackBar.Name].Length;
+	                    for (int i = 0; i < arraySize; i++)
+	                    {
+	                        if (trackBarStringValues[trackBar.Name][i].Equals(value))                      
+	                            trackBar.Value = i * trackBar.TickFrequency + trackBar.Minimum;
+	                                                      
+	                        
+	                    }
+	                }
+	                
+	            }
+	
+	            if (fieldDataType[trackBar.Name].Equals("int"))
+	            {
+	                int valueAsInt;
+	                if(int.TryParse(value, out valueAsInt)) 
+	                {
+	                    if(valueAsInt >= trackBar.Minimum && valueAsInt <= trackBar.Maximum)
+	                    {
+	                        valueIsValid = true;
+	                        trackBar.Value = valueAsInt;
+	                    }
+	
+	                } 
+	                
+	            }
+	
+	            if (fieldDataType[trackBar.Name].Equals("double"))
+	            {
+	                double valueAsDouble;
+	                if (double.TryParse(value.Replace(",","."),NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US"), out valueAsDouble))
+	                {
+	                    int tickValue;
+	                    tickValue = (int)Math.Round(valueAsDouble * trackBarDenominatorValues[trackBar.Name]);
+	                    if (tickValue >= trackBar.Minimum && tickValue <= trackBar.Maximum)
+	                    {
+	                        valueIsValid = true;
+	                        trackBar.Value = tickValue;
+	                    }
+	
+	                }
+	                
+	            }
+	
+	            if(valueIsValid)
+	                setTrackBarLabel(trackBar);
+	
+	            return valueIsValid;
+	        }
 		
 		
 		private void setDataGridView(List<string> results, int numberOfAttributes, DataGridView dv)
@@ -922,10 +1104,17 @@ class EntityDslGenerator extends AbstractGenerator {
 		            foreach (NumericUpDown spinner in panel«entity.name».Controls.OfType<NumericUpDown>())		            		            	            
 		            	spinner.Value = «entity.name.toFirstLower»SpinnerDefaultValues[spinner.Name];
 		           
-		            foreach (Label l in «entity.name.toFirstLower»FieldErrorLabel.Values)
+		            foreach (Label l in fieldErrorLabels.Values)
 		            {
 		            	  l.Text = "";
 		            }
+		            
+		            foreach (TrackBar trackBar in panel«entity.name».Controls.OfType<TrackBar>()) 
+		            {
+		            	trackBar.Value=trackBarDefaultValues[trackBar.Name];
+		            	setTrackBarLabel(trackBar);
+		            }
+		            	
 		            
 		            button«entity.name»Update.Enabled = false;
 		            button«entity.name»Delete.Enabled = false;
@@ -1431,6 +1620,7 @@ class EntityDslGenerator extends AbstractGenerator {
 		this.trackBar«entity.name»«attribute.name».Name = "trackBar«entity.name»«attribute.name»";
 		this.trackBar«entity.name»«attribute.name».Size = new System.Drawing.Size(170, 45);
 		this.trackBar«entity.name»«attribute.name».TickFrequency = «trackBar.increment»;
+		this.trackBar«entity.name»«attribute.name».Scroll += new System.EventHandler(this.trackBar«entity.name»«attribute.name»_Scroll);
 		
 		// 
 		// trackBarLabel«entity.name»«attribute.name»
