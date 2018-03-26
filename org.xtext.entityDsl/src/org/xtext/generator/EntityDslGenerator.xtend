@@ -36,6 +36,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	fsa.generateFile("/src/Model.cs", resource.Modelcontent);
 	fsa.generateFile("/src/Program.cs", resource.Programcontent)
 	fsa.generateFile("/src/Form1.Designer.cs", resource.Form1Designcontent);
+	
 	}
 	
 	def Form1content(Resource r) '''
@@ -1619,7 +1620,11 @@ class EntityDslGenerator extends AbstractGenerator {
 		this.trackBar«entity.name»«attribute.name».Minimum = «trackBar.minimumValue»;
 		this.trackBar«entity.name»«attribute.name».Name = "trackBar«entity.name»«attribute.name»";
 		this.trackBar«entity.name»«attribute.name».Size = new System.Drawing.Size(170, 45);
+		«IF trackBar.dataType.type.equals("string") || trackBar.increment == 0»
+		this.trackBar«entity.name»«attribute.name».TickFrequency = 1;
+		«ELSE»
 		this.trackBar«entity.name»«attribute.name».TickFrequency = «trackBar.increment»;
+		«ENDIF»
 		this.trackBar«entity.name»«attribute.name».Scroll += new System.EventHandler(this.trackBar«entity.name»«attribute.name»_Scroll);
 		
 		// 

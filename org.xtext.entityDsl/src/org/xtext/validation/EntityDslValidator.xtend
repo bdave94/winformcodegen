@@ -6,6 +6,8 @@ package org.xtext.validation
 import org.eclipse.xtext.validation.Check
 import org.xtext.entityDsl.TextBox
 import org.xtext.entityDsl.EntityDslPackage
+import org.xtext.entityDsl.TrackBar
+
 
 /**
  * This class contains custom validation rules. 
@@ -22,6 +24,34 @@ class EntityDslValidator extends AbstractEntityDslValidator {
 					EntityDslPackage.Literals.TEXT_BOX__MIN_TEXT_LENGTH)
 		}
 	}
+	
+	@Check
+	def trackBarDeniminatorZeroValueCheck(TrackBar trackBar) {
+		if (trackBar.dataType.type.equals("double")  && trackBar.denominator == 0 ) {
+			error('Denominator value is 0', 
+					EntityDslPackage.Literals.TRACK_BAR__DENOMINATOR)
+		}
+	}
+	
+	
+	@Check
+	def checkTrackBarDeniminatorValue(TrackBar trackBar) {
+		if (trackBar.dataType.type.equals("int")  && trackBar.denominator > 1 ) {
+			warning('Denominator value is unnecessary when data type is "int"', 
+					EntityDslPackage.Literals.TRACK_BAR__DENOMINATOR)
+		}
+	}
+	
+	@Check
+	def checkTrackBarIncrementValue(TrackBar trackBar) {
+		if (trackBar.dataType.type.equals("string")  && trackBar.increment != 1 ) {
+			error('Increment value must be 1, when data type is "string"', 
+					EntityDslPackage.Literals.TRACK_BAR__INCREMENT)
+		}
+	}
+	
+	
+	
 	
 	
 	
