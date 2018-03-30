@@ -521,7 +521,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                    string textBoxDataType = fieldDataType[tb.Name];
 	                    string inputFieldName = fieldLabelText[tb.Name];
 	                    bool required = «entity.name.toFirstLower»RequiredFields[tb.Name];
-	                    if (!required && tb.Text.Equals("") == false){
+	                    if ( tb.Text.Equals("") == false){
 	                    if (textBoxDataType.Equals("int"))
 	                    {
 	                         int result;
@@ -530,7 +530,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                                   
 	                             return false;
 	                         }
-	         
+	         			}
 	                         if (textBoxDataType.Equals("double"))
 	                         {
 	                             double resultD;
@@ -542,7 +542,7 @@ class EntityDslGenerator extends AbstractGenerator {
 	                             }
 	                         }	         	         
 	                     }
-	                     }	                   
+	                     	                   
 	                 }
 	                return true;
 	          }

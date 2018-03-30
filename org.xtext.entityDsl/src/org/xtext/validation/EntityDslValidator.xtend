@@ -7,7 +7,11 @@ import org.eclipse.xtext.validation.Check
 import org.xtext.entityDsl.TextBox
 import org.xtext.entityDsl.EntityDslPackage
 import org.xtext.entityDsl.TrackBar
-
+import org.xtext.entityDsl.Spinner
+import org.xtext.entityDsl.Attribute
+import org.xtext.entityDsl.ComboBox
+import org.xtext.entityDsl.RadioButtonGroup
+import org.xtext.entityDsl.CheckBox
 
 /**
  * This class contains custom validation rules. 
@@ -16,15 +20,53 @@ import org.xtext.entityDsl.TrackBar
  */
 class EntityDslValidator extends AbstractEntityDslValidator {
 	
-
+	/*Check if a minimal value is less than a maximal */
+	
+	/*TextBox text length */
 	@Check
 	def checkTextBoxMinimalValue(TextBox tb) {
-		if (tb.minTextLength > tb.maxTextLength && tb.maxTextLength != 0 && tb.minTextLength != 0) {
+		if (tb.minTextLength > tb.maxTextLength && tb.maxTextLength != 0 ) {
 			error('Text box minimal text length must be less than maximal length', 
 					EntityDslPackage.Literals.TEXT_BOX__MIN_TEXT_LENGTH)
 		}
 	}
+	/*Spinner value */
+	@Check
+	def checkSpinnerMinimalValue(Spinner s) {
+		if (s.minimumValue > s.maximumValue ) {
+			error('Spinner minimal value must be less than maximal value', 
+					EntityDslPackage.Literals.SPINNER__MINIMUM_VALUE)
+		}
+	}
 	
+	
+	/*TrackBar value */
+	@Check
+	def checkTrackBarMinimalValue(TrackBar trackbar) {
+		if (trackbar.minimumValue > trackbar.maximumValue ) {
+			error('Track bar minimal value must be less than maximal value', 
+					EntityDslPackage.Literals.TRACK_BAR__MINIMUM_VALUE)
+		}
+	}
+	
+	
+	/*Check if a text box minimal text length is not 0 if it is a required field */
+	@Check
+	def checkTextBoxMinimalValueIfRequired(TextBox tb) {
+		for(attr: tb.eContainer.eContainer.eClass.EAllStructuralFeatures) {
+			if(attr.name.equals("required")) {
+				if(tb.eContainer.eContainer.eGet(attr).equals("*")){
+					if (tb.minTextLength  == 0 ) {
+						error('Text box minimal text can not be 0 if it is a required field', 
+						EntityDslPackage.Literals.TEXT_BOX__MIN_TEXT_LENGTH)
+					}
+				}
+			}			
+		}
+		
+	}	
+	
+	/*Check if a track bar denominator value is not 0, when datatype is double */
 	@Check
 	def trackBarDeniminatorZeroValueCheck(TrackBar trackBar) {
 		if (trackBar.dataType.type.equals("double")  && trackBar.denominator == 0 ) {
@@ -33,15 +75,16 @@ class EntityDslValidator extends AbstractEntityDslValidator {
 		}
 	}
 	
-	
+	/*Check if a track bar denominator value is given, when datatype is int or string*/
 	@Check
 	def checkTrackBarDeniminatorValue(TrackBar trackBar) {
-		if (trackBar.dataType.type.equals("int")  && trackBar.denominator > 1 ) {
-			warning('Denominator value is unnecessary when data type is "int"', 
+		if ((trackBar.dataType.type.equals("int") || trackBar.dataType.type.equals("string"))  && trackBar.denominator > 1 ) {
+			warning('Denominator value is unnecessary when data type is "int" or "string"', 
 					EntityDslPackage.Literals.TRACK_BAR__DENOMINATOR)
 		}
 	}
 	
+	/*Check if a track bar increment value is not 1, when datatype is string */
 	@Check
 	def checkTrackBarIncrementValue(TrackBar trackBar) {
 		if (trackBar.dataType.type.equals("string")  && trackBar.increment != 1 ) {
@@ -50,11 +93,115 @@ class EntityDslValidator extends AbstractEntityDslValidator {
 		}
 	}
 	
+	/*Check if a track bar minimal value is not 1, when datatype is string */
+	@Check
+	def checkTrackBarMinimimalValue(TrackBar trackBar) {
+		if (trackBar.dataType.type.equals("string")  && trackBar.minimumValue != 1 ) {
+			error('Minimal value must be 0, when data type is "string"', 
+					EntityDslPackage.Literals.TRACK_BAR__INCREMENT)
+		}
+	}
+	
+	/*Check if the number of trackbar string value values equals maximal value, when datatype is string */
+	@Check
+	def checkTrackBarStringValues(TrackBar trackBar) {
+		if (trackBar.dataType.type.equals("string") && 
+			trackBar.stringValues.size != trackBar.maximumValue) {			
+			error("Number of string values must be "+(trackBar.maximumValue) +", when data type is \"string\"", 
+					EntityDslPackage.Literals.TRACK_BAR__STRING_VALUES)
+		}
+	}
+	
+	
+	/* Check combox items if datatype is int */
+	@Check
+	def checkComboBoxIntValues(ComboBox combobox) {
+		if(combobox.dataType.type.equals("int")) {
+			for(cbitem: combobox.items) {
+				if(cbitem.text.matches("-?[0-9]+") == false) 
+        			error('Combo box item value must be an int, when data type is "int"', 
+							EntityDslPackage.Literals.COMBO_BOX__ITEMS)
+				
+			}							
+    											
+		}		
+	}
 	
 	
 	
+	/* Check combox items if datatype is double */
+	@Check
+	def checkComboBoxDoubleValues(ComboBox combobox) {
+		
+		if(combobox.dataType.type.equals("double")) {
+			for(cbitem: combobox.items) {
+        			        				
+        		if(cbitem.text.matches("-?[0-9]+.[0-9]+") == false &&
+        			cbitem.text.matches("-?[0-9]+") == false) 
+        			error('Combo box item value must be an number, when data type is "double"', 
+						EntityDslPackage.Literals.COMBO_BOX__ITEMS)
+        			  				
+    		}				
+		}		
+	}
+	
+	
+	/* Check radio buttons if datatype is int */
+	@Check
+	def checkRadioButtonIntValues(RadioButtonGroup rbg) {
+		if(rbg.dataType.type.equals("int")) {
+			for(button: rbg.buttons) {
+				if(button.text.matches("-?[0-9]+") == false) 
+        			error('Radio button value must be an int, when data type is "int"', 
+							EntityDslPackage.Literals.RADIO_BUTTON_GROUP__BUTTONS)
+				
+			}																	
+		}		
+	}
+	
+	/* Check radio buttons if datatype is double */
+	@Check
+	def checkRadioButtonDoubleValues(RadioButtonGroup rbg) {
+		if(rbg.dataType.type.equals("double")) {
+			for(button: rbg.buttons) {
+				if(button.text.matches("-?[0-9]+.[0-9]+") == false && 
+					button.text.matches("-?[0-9]+") == false
+				) 
+        			error('Radio button value must be an number, when data type is "double"', 
+							EntityDslPackage.Literals.RADIO_BUTTON_GROUP__BUTTONS)
+				
+			}																	
+		}		
+	}
 	
 	
 	
+	/*Check if a check box, spinner or track bar is set to  required  */
+	@Check
+	def checkCheckBoxRequired(Attribute attr) {
+		
+			if(attr.required.equals("*")) {
+				for(cb: attr.eAllContents.toIterable.filter(CheckBox)) {						
+					warning('Check box can not be a required field', 
+						EntityDslPackage.Literals.ATTRIBUTE__REQUIRED)									
+			}
+			
+			for(spinner: attr.eAllContents.toIterable.filter(Spinner)) {						
+					warning('Spinner can not be a required field', 
+						EntityDslPackage.Literals.ATTRIBUTE__REQUIRED)								
+			}
+						
+			for(trackBar: attr.eAllContents.toIterable.filter(TrackBar)) {						
+					warning('Track bar can not be a required field', 
+						EntityDslPackage.Literals.ATTRIBUTE__REQUIRED)
+						
+			}
+		}
+		
+	}
+	
+	
+	
+		
 	
 }
