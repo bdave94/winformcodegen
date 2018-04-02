@@ -43,484 +43,492 @@ import org.xtext.entityDsl.TrackBar;
 public class TrackBarImpl extends WinFormControlTypeImpl implements TrackBar
 {
   /**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDataType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDataType()
+   * @generated
+   * @ordered
+   */
   protected DataType dataType;
 
   /**
-	 * The default value of the '{@link #getDefaultTick() <em>Default Tick</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getDefaultTick() <em>Default Tick</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDefaultTick()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDefaultTick()
+   * @generated
+   * @ordered
+   */
   protected static final int DEFAULT_TICK_EDEFAULT = 0;
 
   /**
-	 * The cached value of the '{@link #getDefaultTick() <em>Default Tick</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDefaultTick() <em>Default Tick</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDefaultTick()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDefaultTick()
+   * @generated
+   * @ordered
+   */
   protected int defaultTick = DEFAULT_TICK_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getIncrement() <em>Increment</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getIncrement() <em>Increment</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getIncrement()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getIncrement()
+   * @generated
+   * @ordered
+   */
   protected static final int INCREMENT_EDEFAULT = 0;
 
   /**
-	 * The cached value of the '{@link #getIncrement() <em>Increment</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getIncrement() <em>Increment</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getIncrement()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getIncrement()
+   * @generated
+   * @ordered
+   */
   protected int increment = INCREMENT_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getDenominator() <em>Denominator</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getDenominator() <em>Denominator</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDenominator()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDenominator()
+   * @generated
+   * @ordered
+   */
   protected static final int DENOMINATOR_EDEFAULT = 0;
 
   /**
-	 * The cached value of the '{@link #getDenominator() <em>Denominator</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDenominator() <em>Denominator</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDenominator()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDenominator()
+   * @generated
+   * @ordered
+   */
   protected int denominator = DENOMINATOR_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getMinimumValue() <em>Minimum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getMinimumValue() <em>Minimum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMinimumValue()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMinimumValue()
+   * @generated
+   * @ordered
+   */
   protected static final int MINIMUM_VALUE_EDEFAULT = 0;
 
   /**
-	 * The cached value of the '{@link #getMinimumValue() <em>Minimum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getMinimumValue() <em>Minimum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMinimumValue()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMinimumValue()
+   * @generated
+   * @ordered
+   */
   protected int minimumValue = MINIMUM_VALUE_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getMaximumValue() <em>Maximum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getMaximumValue() <em>Maximum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMaximumValue()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMaximumValue()
+   * @generated
+   * @ordered
+   */
   protected static final int MAXIMUM_VALUE_EDEFAULT = 0;
 
   /**
-	 * The cached value of the '{@link #getMaximumValue() <em>Maximum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getMaximumValue() <em>Maximum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMaximumValue()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMaximumValue()
+   * @generated
+   * @ordered
+   */
   protected int maximumValue = MAXIMUM_VALUE_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getStringValues() <em>String Values</em>}' attribute list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getStringValues() <em>String Values</em>}' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getStringValues()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getStringValues()
+   * @generated
+   * @ordered
+   */
   protected EList<String> stringValues;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected TrackBarImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return EntityDslPackage.Literals.TRACK_BAR;
-	}
+    return EntityDslPackage.Literals.TRACK_BAR;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public DataType getDataType()
   {
-		return dataType;
-	}
+    return dataType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetDataType(DataType newDataType, NotificationChain msgs)
   {
-		DataType oldDataType = dataType;
-		dataType = newDataType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DATA_TYPE, oldDataType, newDataType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    DataType oldDataType = dataType;
+    dataType = newDataType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DATA_TYPE, oldDataType, newDataType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDataType(DataType newDataType)
   {
-		if (newDataType != dataType) {
-			NotificationChain msgs = null;
-			if (dataType != null)
-				msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TRACK_BAR__DATA_TYPE, null, msgs);
-			if (newDataType != null)
-				msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TRACK_BAR__DATA_TYPE, null, msgs);
-			msgs = basicSetDataType(newDataType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DATA_TYPE, newDataType, newDataType));
-	}
+    if (newDataType != dataType)
+    {
+      NotificationChain msgs = null;
+      if (dataType != null)
+        msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TRACK_BAR__DATA_TYPE, null, msgs);
+      if (newDataType != null)
+        msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TRACK_BAR__DATA_TYPE, null, msgs);
+      msgs = basicSetDataType(newDataType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DATA_TYPE, newDataType, newDataType));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getDefaultTick()
   {
-		return defaultTick;
-	}
+    return defaultTick;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDefaultTick(int newDefaultTick)
   {
-		int oldDefaultTick = defaultTick;
-		defaultTick = newDefaultTick;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DEFAULT_TICK, oldDefaultTick, defaultTick));
-	}
+    int oldDefaultTick = defaultTick;
+    defaultTick = newDefaultTick;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DEFAULT_TICK, oldDefaultTick, defaultTick));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getIncrement()
   {
-		return increment;
-	}
+    return increment;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setIncrement(int newIncrement)
   {
-		int oldIncrement = increment;
-		increment = newIncrement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__INCREMENT, oldIncrement, increment));
-	}
+    int oldIncrement = increment;
+    increment = newIncrement;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__INCREMENT, oldIncrement, increment));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getDenominator()
   {
-		return denominator;
-	}
+    return denominator;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDenominator(int newDenominator)
   {
-		int oldDenominator = denominator;
-		denominator = newDenominator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DENOMINATOR, oldDenominator, denominator));
-	}
+    int oldDenominator = denominator;
+    denominator = newDenominator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__DENOMINATOR, oldDenominator, denominator));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getMinimumValue()
   {
-		return minimumValue;
-	}
+    return minimumValue;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setMinimumValue(int newMinimumValue)
   {
-		int oldMinimumValue = minimumValue;
-		minimumValue = newMinimumValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__MINIMUM_VALUE, oldMinimumValue, minimumValue));
-	}
+    int oldMinimumValue = minimumValue;
+    minimumValue = newMinimumValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__MINIMUM_VALUE, oldMinimumValue, minimumValue));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getMaximumValue()
   {
-		return maximumValue;
-	}
+    return maximumValue;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setMaximumValue(int newMaximumValue)
   {
-		int oldMaximumValue = maximumValue;
-		maximumValue = newMaximumValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE, oldMaximumValue, maximumValue));
-	}
+    int oldMaximumValue = maximumValue;
+    maximumValue = newMaximumValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE, oldMaximumValue, maximumValue));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<String> getStringValues()
   {
-		if (stringValues == null) {
-			stringValues = new EDataTypeEList<String>(String.class, this, EntityDslPackage.TRACK_BAR__STRING_VALUES);
-		}
-		return stringValues;
-	}
+    if (stringValues == null)
+    {
+      stringValues = new EDataTypeEList<String>(String.class, this, EntityDslPackage.TRACK_BAR__STRING_VALUES);
+    }
+    return stringValues;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EntityDslPackage.TRACK_BAR__DATA_TYPE:
-				return basicSetDataType(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TRACK_BAR__DATA_TYPE:
+        return basicSetDataType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EntityDslPackage.TRACK_BAR__DATA_TYPE:
-				return getDataType();
-			case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
-				return getDefaultTick();
-			case EntityDslPackage.TRACK_BAR__INCREMENT:
-				return getIncrement();
-			case EntityDslPackage.TRACK_BAR__DENOMINATOR:
-				return getDenominator();
-			case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
-				return getMinimumValue();
-			case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
-				return getMaximumValue();
-			case EntityDslPackage.TRACK_BAR__STRING_VALUES:
-				return getStringValues();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TRACK_BAR__DATA_TYPE:
+        return getDataType();
+      case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
+        return getDefaultTick();
+      case EntityDslPackage.TRACK_BAR__INCREMENT:
+        return getIncrement();
+      case EntityDslPackage.TRACK_BAR__DENOMINATOR:
+        return getDenominator();
+      case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
+        return getMinimumValue();
+      case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
+        return getMaximumValue();
+      case EntityDslPackage.TRACK_BAR__STRING_VALUES:
+        return getStringValues();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EntityDslPackage.TRACK_BAR__DATA_TYPE:
-				setDataType((DataType)newValue);
-				return;
-			case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
-				setDefaultTick((Integer)newValue);
-				return;
-			case EntityDslPackage.TRACK_BAR__INCREMENT:
-				setIncrement((Integer)newValue);
-				return;
-			case EntityDslPackage.TRACK_BAR__DENOMINATOR:
-				setDenominator((Integer)newValue);
-				return;
-			case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
-				setMinimumValue((Integer)newValue);
-				return;
-			case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
-				setMaximumValue((Integer)newValue);
-				return;
-			case EntityDslPackage.TRACK_BAR__STRING_VALUES:
-				getStringValues().clear();
-				getStringValues().addAll((Collection<? extends String>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TRACK_BAR__DATA_TYPE:
+        setDataType((DataType)newValue);
+        return;
+      case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
+        setDefaultTick((Integer)newValue);
+        return;
+      case EntityDslPackage.TRACK_BAR__INCREMENT:
+        setIncrement((Integer)newValue);
+        return;
+      case EntityDslPackage.TRACK_BAR__DENOMINATOR:
+        setDenominator((Integer)newValue);
+        return;
+      case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
+        setMinimumValue((Integer)newValue);
+        return;
+      case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
+        setMaximumValue((Integer)newValue);
+        return;
+      case EntityDslPackage.TRACK_BAR__STRING_VALUES:
+        getStringValues().clear();
+        getStringValues().addAll((Collection<? extends String>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.TRACK_BAR__DATA_TYPE:
-				setDataType((DataType)null);
-				return;
-			case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
-				setDefaultTick(DEFAULT_TICK_EDEFAULT);
-				return;
-			case EntityDslPackage.TRACK_BAR__INCREMENT:
-				setIncrement(INCREMENT_EDEFAULT);
-				return;
-			case EntityDslPackage.TRACK_BAR__DENOMINATOR:
-				setDenominator(DENOMINATOR_EDEFAULT);
-				return;
-			case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
-				setMinimumValue(MINIMUM_VALUE_EDEFAULT);
-				return;
-			case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
-				setMaximumValue(MAXIMUM_VALUE_EDEFAULT);
-				return;
-			case EntityDslPackage.TRACK_BAR__STRING_VALUES:
-				getStringValues().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TRACK_BAR__DATA_TYPE:
+        setDataType((DataType)null);
+        return;
+      case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
+        setDefaultTick(DEFAULT_TICK_EDEFAULT);
+        return;
+      case EntityDslPackage.TRACK_BAR__INCREMENT:
+        setIncrement(INCREMENT_EDEFAULT);
+        return;
+      case EntityDslPackage.TRACK_BAR__DENOMINATOR:
+        setDenominator(DENOMINATOR_EDEFAULT);
+        return;
+      case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
+        setMinimumValue(MINIMUM_VALUE_EDEFAULT);
+        return;
+      case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
+        setMaximumValue(MAXIMUM_VALUE_EDEFAULT);
+        return;
+      case EntityDslPackage.TRACK_BAR__STRING_VALUES:
+        getStringValues().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.TRACK_BAR__DATA_TYPE:
-				return dataType != null;
-			case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
-				return defaultTick != DEFAULT_TICK_EDEFAULT;
-			case EntityDslPackage.TRACK_BAR__INCREMENT:
-				return increment != INCREMENT_EDEFAULT;
-			case EntityDslPackage.TRACK_BAR__DENOMINATOR:
-				return denominator != DENOMINATOR_EDEFAULT;
-			case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
-				return minimumValue != MINIMUM_VALUE_EDEFAULT;
-			case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
-				return maximumValue != MAXIMUM_VALUE_EDEFAULT;
-			case EntityDslPackage.TRACK_BAR__STRING_VALUES:
-				return stringValues != null && !stringValues.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TRACK_BAR__DATA_TYPE:
+        return dataType != null;
+      case EntityDslPackage.TRACK_BAR__DEFAULT_TICK:
+        return defaultTick != DEFAULT_TICK_EDEFAULT;
+      case EntityDslPackage.TRACK_BAR__INCREMENT:
+        return increment != INCREMENT_EDEFAULT;
+      case EntityDslPackage.TRACK_BAR__DENOMINATOR:
+        return denominator != DENOMINATOR_EDEFAULT;
+      case EntityDslPackage.TRACK_BAR__MINIMUM_VALUE:
+        return minimumValue != MINIMUM_VALUE_EDEFAULT;
+      case EntityDslPackage.TRACK_BAR__MAXIMUM_VALUE:
+        return maximumValue != MAXIMUM_VALUE_EDEFAULT;
+      case EntityDslPackage.TRACK_BAR__STRING_VALUES:
+        return stringValues != null && !stringValues.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (defaultTick: ");
-		result.append(defaultTick);
-		result.append(", increment: ");
-		result.append(increment);
-		result.append(", denominator: ");
-		result.append(denominator);
-		result.append(", minimumValue: ");
-		result.append(minimumValue);
-		result.append(", maximumValue: ");
-		result.append(maximumValue);
-		result.append(", stringValues: ");
-		result.append(stringValues);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (defaultTick: ");
+    result.append(defaultTick);
+    result.append(", increment: ");
+    result.append(increment);
+    result.append(", denominator: ");
+    result.append(denominator);
+    result.append(", minimumValue: ");
+    result.append(minimumValue);
+    result.append(", maximumValue: ");
+    result.append(maximumValue);
+    result.append(", stringValues: ");
+    result.append(stringValues);
+    result.append(')');
+    return result.toString();
+  }
 
 } //TrackBarImpl

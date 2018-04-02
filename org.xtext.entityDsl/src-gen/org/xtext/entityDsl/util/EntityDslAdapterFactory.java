@@ -23,352 +23,371 @@ import org.xtext.entityDsl.*;
 public class EntityDslAdapterFactory extends AdapterFactoryImpl
 {
   /**
-	 * The cached model package.
-	 * <!-- begin-user-doc -->
+   * The cached model package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected static EntityDslPackage modelPackage;
 
   /**
-	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the adapter factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EntityDslAdapterFactory()
   {
-		if (modelPackage == null) {
-			modelPackage = EntityDslPackage.eINSTANCE;
-		}
-	}
+    if (modelPackage == null)
+    {
+      modelPackage = EntityDslPackage.eINSTANCE;
+    }
+  }
 
   /**
-	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
+   * Returns whether this factory is applicable for the type of the object.
+   * <!-- begin-user-doc -->
    * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
    * <!-- end-user-doc -->
-	 * @return whether this factory is applicable for the type of the object.
-	 * @generated
-	 */
+   * @return whether this factory is applicable for the type of the object.
+   * @generated
+   */
   @Override
   public boolean isFactoryForType(Object object)
   {
-		if (object == modelPackage) {
-			return true;
-		}
-		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
-		}
-		return false;
-	}
+    if (object == modelPackage)
+    {
+      return true;
+    }
+    if (object instanceof EObject)
+    {
+      return ((EObject)object).eClass().getEPackage() == modelPackage;
+    }
+    return false;
+  }
 
   /**
-	 * The switch that delegates to the <code>createXXX</code> methods.
-	 * <!-- begin-user-doc -->
+   * The switch that delegates to the <code>createXXX</code> methods.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected EntityDslSwitch<Adapter> modelSwitch =
-    new EntityDslSwitch<Adapter>() {
-			@Override
-			public Adapter caseDomainmodel(Domainmodel object) {
-				return createDomainmodelAdapter();
-			}
-			@Override
-			public Adapter caseEntity(Entity object) {
-				return createEntityAdapter();
-			}
-			@Override
-			public Adapter caseAttribute(Attribute object) {
-				return createAttributeAdapter();
-			}
-			@Override
-			public Adapter caseDataType(DataType object) {
-				return createDataTypeAdapter();
-			}
-			@Override
-			public Adapter caseLabel(Label object) {
-				return createLabelAdapter();
-			}
-			@Override
-			public Adapter caseWinFormControlType(WinFormControlType object) {
-				return createWinFormControlTypeAdapter();
-			}
-			@Override
-			public Adapter caseTrackBar(TrackBar object) {
-				return createTrackBarAdapter();
-			}
-			@Override
-			public Adapter caseSpinner(Spinner object) {
-				return createSpinnerAdapter();
-			}
-			@Override
-			public Adapter caseRadioButtonGroup(RadioButtonGroup object) {
-				return createRadioButtonGroupAdapter();
-			}
-			@Override
-			public Adapter caseRadioButton(RadioButton object) {
-				return createRadioButtonAdapter();
-			}
-			@Override
-			public Adapter caseCheckBox(CheckBox object) {
-				return createCheckBoxAdapter();
-			}
-			@Override
-			public Adapter caseTextBox(TextBox object) {
-				return createTextBoxAdapter();
-			}
-			@Override
-			public Adapter caseComboBox(ComboBox object) {
-				return createComboBoxAdapter();
-			}
-			@Override
-			public Adapter caseComboBoxItem(ComboBoxItem object) {
-				return createComboBoxItemAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+    new EntityDslSwitch<Adapter>()
+    {
+      @Override
+      public Adapter caseDomainmodel(Domainmodel object)
+      {
+        return createDomainmodelAdapter();
+      }
+      @Override
+      public Adapter caseEntity(Entity object)
+      {
+        return createEntityAdapter();
+      }
+      @Override
+      public Adapter caseAttribute(Attribute object)
+      {
+        return createAttributeAdapter();
+      }
+      @Override
+      public Adapter caseDataType(DataType object)
+      {
+        return createDataTypeAdapter();
+      }
+      @Override
+      public Adapter caseLabel(Label object)
+      {
+        return createLabelAdapter();
+      }
+      @Override
+      public Adapter caseWinFormControlType(WinFormControlType object)
+      {
+        return createWinFormControlTypeAdapter();
+      }
+      @Override
+      public Adapter caseTrackBar(TrackBar object)
+      {
+        return createTrackBarAdapter();
+      }
+      @Override
+      public Adapter caseSpinner(Spinner object)
+      {
+        return createSpinnerAdapter();
+      }
+      @Override
+      public Adapter caseRadioButtonGroup(RadioButtonGroup object)
+      {
+        return createRadioButtonGroupAdapter();
+      }
+      @Override
+      public Adapter caseRadioButton(RadioButton object)
+      {
+        return createRadioButtonAdapter();
+      }
+      @Override
+      public Adapter caseCheckBox(CheckBox object)
+      {
+        return createCheckBoxAdapter();
+      }
+      @Override
+      public Adapter caseTextBox(TextBox object)
+      {
+        return createTextBoxAdapter();
+      }
+      @Override
+      public Adapter caseComboBox(ComboBox object)
+      {
+        return createComboBoxAdapter();
+      }
+      @Override
+      public Adapter caseComboBoxItem(ComboBoxItem object)
+      {
+        return createComboBoxItemAdapter();
+      }
+      @Override
+      public Adapter defaultCase(EObject object)
+      {
+        return createEObjectAdapter();
+      }
+    };
 
   /**
-	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
+   * Creates an adapter for the <code>target</code>.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param target the object to adapt.
-	 * @return the adapter for the <code>target</code>.
-	 * @generated
-	 */
+   * @param target the object to adapt.
+   * @return the adapter for the <code>target</code>.
+   * @generated
+   */
   @Override
   public Adapter createAdapter(Notifier target)
   {
-		return modelSwitch.doSwitch((EObject)target);
-	}
+    return modelSwitch.doSwitch((EObject)target);
+  }
 
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Domainmodel <em>Domainmodel</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Domainmodel <em>Domainmodel</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.Domainmodel
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.Domainmodel
+   * @generated
+   */
   public Adapter createDomainmodelAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Entity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Entity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.Entity
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.Entity
+   * @generated
+   */
   public Adapter createEntityAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Attribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Attribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.Attribute
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.Attribute
+   * @generated
+   */
   public Adapter createAttributeAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.DataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.DataType
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.DataType
+   * @generated
+   */
   public Adapter createDataTypeAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Label <em>Label</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Label <em>Label</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.Label
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.Label
+   * @generated
+   */
   public Adapter createLabelAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.WinFormControlType <em>Win Form Control Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.WinFormControlType <em>Win Form Control Type</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.WinFormControlType
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.WinFormControlType
+   * @generated
+   */
   public Adapter createWinFormControlTypeAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.TrackBar <em>Track Bar</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.TrackBar <em>Track Bar</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.TrackBar
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.TrackBar
+   * @generated
+   */
   public Adapter createTrackBarAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Spinner <em>Spinner</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.Spinner <em>Spinner</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.Spinner
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.Spinner
+   * @generated
+   */
   public Adapter createSpinnerAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.RadioButtonGroup <em>Radio Button Group</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.RadioButtonGroup <em>Radio Button Group</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.RadioButtonGroup
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.RadioButtonGroup
+   * @generated
+   */
   public Adapter createRadioButtonGroupAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.RadioButton <em>Radio Button</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.RadioButton <em>Radio Button</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.RadioButton
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.RadioButton
+   * @generated
+   */
   public Adapter createRadioButtonAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.CheckBox <em>Check Box</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.CheckBox <em>Check Box</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.CheckBox
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.CheckBox
+   * @generated
+   */
   public Adapter createCheckBoxAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.TextBox <em>Text Box</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.TextBox <em>Text Box</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.TextBox
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.TextBox
+   * @generated
+   */
   public Adapter createTextBoxAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.ComboBox <em>Combo Box</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.ComboBox <em>Combo Box</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.ComboBox
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.ComboBox
+   * @generated
+   */
   public Adapter createComboBoxAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.ComboBoxItem <em>Combo Box Item</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.xtext.entityDsl.ComboBoxItem <em>Combo Box Item</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xtext.entityDsl.ComboBoxItem
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.xtext.entityDsl.ComboBoxItem
+   * @generated
+   */
   public Adapter createComboBoxItemAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for the default case.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for the default case.
+   * <!-- begin-user-doc -->
    * This default implementation returns null.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @generated
+   */
   public Adapter createEObjectAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
 } //EntityDslAdapterFactory

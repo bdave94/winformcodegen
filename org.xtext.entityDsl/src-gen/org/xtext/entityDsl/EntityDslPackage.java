@@ -26,1185 +26,1185 @@ import org.eclipse.emf.ecore.EReference;
 public interface EntityDslPackage extends EPackage
 {
   /**
-	 * The package name.
-	 * <!-- begin-user-doc -->
+   * The package name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNAME = "entityDsl";
 
   /**
-	 * The package namespace URI.
-	 * <!-- begin-user-doc -->
+   * The package namespace URI.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNS_URI = "http://www.xtext.org/EntityDsl";
 
   /**
-	 * The package namespace name.
-	 * <!-- begin-user-doc -->
+   * The package namespace name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   String eNS_PREFIX = "entityDsl";
 
   /**
-	 * The singleton instance of the package.
-	 * <!-- begin-user-doc -->
+   * The singleton instance of the package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   EntityDslPackage eINSTANCE = org.xtext.entityDsl.impl.EntityDslPackageImpl.init();
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.DomainmodelImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDomainmodel()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.DomainmodelImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDomainmodel()
+   * @generated
+   */
   int DOMAINMODEL = 0;
 
   /**
-	 * The feature id for the '<em><b>Application Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Application Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int DOMAINMODEL__APPLICATION_NAME = 0;
 
   /**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int DOMAINMODEL__ELEMENTS = 1;
 
   /**
-	 * The number of structural features of the '<em>Domainmodel</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Domainmodel</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int DOMAINMODEL_FEATURE_COUNT = 2;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.EntityImpl <em>Entity</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.EntityImpl <em>Entity</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.EntityImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getEntity()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.EntityImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getEntity()
+   * @generated
+   */
   int ENTITY = 1;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ENTITY__NAME = 0;
 
   /**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ENTITY__ATTRIBUTES = 1;
 
   /**
-	 * The number of structural features of the '<em>Entity</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Entity</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ENTITY_FEATURE_COUNT = 2;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.AttributeImpl <em>Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.AttributeImpl <em>Attribute</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.AttributeImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getAttribute()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.AttributeImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getAttribute()
+   * @generated
+   */
   int ATTRIBUTE = 2;
 
   /**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ATTRIBUTE__REQUIRED = 0;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ATTRIBUTE__NAME = 1;
 
   /**
-	 * The feature id for the '<em><b>Input Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Input Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ATTRIBUTE__INPUT_TYPE = 2;
 
   /**
-	 * The feature id for the '<em><b>Label Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Label Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ATTRIBUTE__LABEL_TEXT = 3;
 
   /**
-	 * The number of structural features of the '<em>Attribute</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Attribute</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int ATTRIBUTE_FEATURE_COUNT = 4;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.DataTypeImpl <em>Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.DataTypeImpl <em>Data Type</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.DataTypeImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDataType()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.DataTypeImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDataType()
+   * @generated
+   */
   int DATA_TYPE = 3;
 
   /**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int DATA_TYPE__TYPE = 0;
 
   /**
-	 * The number of structural features of the '<em>Data Type</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Data Type</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int DATA_TYPE_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.LabelImpl <em>Label</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.LabelImpl <em>Label</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.LabelImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getLabel()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.LabelImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getLabel()
+   * @generated
+   */
   int LABEL = 4;
 
   /**
-	 * The feature id for the '<em><b>Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int LABEL__TEXT = 0;
 
   /**
-	 * The number of structural features of the '<em>Label</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Label</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int LABEL_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.WinFormControlTypeImpl <em>Win Form Control Type</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.WinFormControlTypeImpl <em>Win Form Control Type</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.WinFormControlTypeImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getWinFormControlType()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.WinFormControlTypeImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getWinFormControlType()
+   * @generated
+   */
   int WIN_FORM_CONTROL_TYPE = 5;
 
   /**
-	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int WIN_FORM_CONTROL_TYPE__CONTROL_TYPE = 0;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int WIN_FORM_CONTROL_TYPE__NAME = 1;
 
   /**
-	 * The number of structural features of the '<em>Win Form Control Type</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Win Form Control Type</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int WIN_FORM_CONTROL_TYPE_FEATURE_COUNT = 2;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.TrackBarImpl <em>Track Bar</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.TrackBarImpl <em>Track Bar</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.TrackBarImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTrackBar()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.TrackBarImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTrackBar()
+   * @generated
+   */
   int TRACK_BAR = 6;
 
   /**
-	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__CONTROL_TYPE = WIN_FORM_CONTROL_TYPE__CONTROL_TYPE;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__NAME = WIN_FORM_CONTROL_TYPE__NAME;
 
   /**
-	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Data Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__DATA_TYPE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Default Tick</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Default Tick</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__DEFAULT_TICK = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
 
   /**
-	 * The feature id for the '<em><b>Increment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Increment</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__INCREMENT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 2;
 
   /**
-	 * The feature id for the '<em><b>Denominator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Denominator</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__DENOMINATOR = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 3;
 
   /**
-	 * The feature id for the '<em><b>Minimum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Minimum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__MINIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 4;
 
   /**
-	 * The feature id for the '<em><b>Maximum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Maximum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__MAXIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 5;
 
   /**
-	 * The feature id for the '<em><b>String Values</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>String Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR__STRING_VALUES = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 6;
 
   /**
-	 * The number of structural features of the '<em>Track Bar</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Track Bar</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TRACK_BAR_FEATURE_COUNT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 7;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.SpinnerImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getSpinner()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.SpinnerImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getSpinner()
+   * @generated
+   */
   int SPINNER = 7;
 
   /**
-	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SPINNER__CONTROL_TYPE = WIN_FORM_CONTROL_TYPE__CONTROL_TYPE;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SPINNER__NAME = WIN_FORM_CONTROL_TYPE__NAME;
 
   /**
-	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Default Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SPINNER__DEFAULT_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Minimum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Minimum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SPINNER__MINIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
 
   /**
-	 * The feature id for the '<em><b>Maximum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Maximum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SPINNER__MAXIMUM_VALUE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 2;
 
   /**
-	 * The number of structural features of the '<em>Spinner</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Spinner</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int SPINNER_FEATURE_COUNT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 3;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.RadioButtonGroupImpl <em>Radio Button Group</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.RadioButtonGroupImpl <em>Radio Button Group</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.RadioButtonGroupImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButtonGroup()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.RadioButtonGroupImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButtonGroup()
+   * @generated
+   */
   int RADIO_BUTTON_GROUP = 8;
 
   /**
-	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int RADIO_BUTTON_GROUP__CONTROL_TYPE = WIN_FORM_CONTROL_TYPE__CONTROL_TYPE;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int RADIO_BUTTON_GROUP__NAME = WIN_FORM_CONTROL_TYPE__NAME;
 
   /**
-	 * The feature id for the '<em><b>Buttons</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Buttons</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int RADIO_BUTTON_GROUP__BUTTONS = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Data Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int RADIO_BUTTON_GROUP__DATA_TYPE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
 
   /**
-	 * The number of structural features of the '<em>Radio Button Group</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Radio Button Group</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int RADIO_BUTTON_GROUP_FEATURE_COUNT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 2;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.RadioButtonImpl <em>Radio Button</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.RadioButtonImpl <em>Radio Button</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.RadioButtonImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButton()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.RadioButtonImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButton()
+   * @generated
+   */
   int RADIO_BUTTON = 9;
 
   /**
-	 * The feature id for the '<em><b>Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int RADIO_BUTTON__TEXT = 0;
 
   /**
-	 * The number of structural features of the '<em>Radio Button</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Radio Button</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int RADIO_BUTTON_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.CheckBoxImpl <em>Check Box</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.CheckBoxImpl <em>Check Box</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.CheckBoxImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getCheckBox()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.CheckBoxImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getCheckBox()
+   * @generated
+   */
   int CHECK_BOX = 10;
 
   /**
-	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CHECK_BOX__CONTROL_TYPE = WIN_FORM_CONTROL_TYPE__CONTROL_TYPE;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CHECK_BOX__NAME = WIN_FORM_CONTROL_TYPE__NAME;
 
   /**
-	 * The number of structural features of the '<em>Check Box</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Check Box</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int CHECK_BOX_FEATURE_COUNT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.TextBoxImpl <em>Text Box</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.TextBoxImpl <em>Text Box</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.TextBoxImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTextBox()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.TextBoxImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTextBox()
+   * @generated
+   */
   int TEXT_BOX = 11;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TEXT_BOX__NAME = 0;
 
   /**
-	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Data Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TEXT_BOX__DATA_TYPE = 1;
 
   /**
-	 * The feature id for the '<em><b>Min Text Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Min Text Length</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TEXT_BOX__MIN_TEXT_LENGTH = 2;
 
   /**
-	 * The feature id for the '<em><b>Max Text Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Max Text Length</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TEXT_BOX__MAX_TEXT_LENGTH = 3;
 
   /**
-	 * The number of structural features of the '<em>Text Box</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Text Box</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int TEXT_BOX_FEATURE_COUNT = 4;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.ComboBoxImpl <em>Combo Box</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.ComboBoxImpl <em>Combo Box</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.ComboBoxImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBox()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.ComboBoxImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBox()
+   * @generated
+   */
   int COMBO_BOX = 12;
 
   /**
-	 * The feature id for the '<em><b>Control Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Control Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int COMBO_BOX__CONTROL_TYPE = WIN_FORM_CONTROL_TYPE__CONTROL_TYPE;
 
   /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int COMBO_BOX__NAME = WIN_FORM_CONTROL_TYPE__NAME;
 
   /**
-	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Items</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int COMBO_BOX__ITEMS = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 0;
 
   /**
-	 * The feature id for the '<em><b>Data Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Data Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int COMBO_BOX__DATA_TYPE = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 1;
 
   /**
-	 * The number of structural features of the '<em>Combo Box</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Combo Box</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int COMBO_BOX_FEATURE_COUNT = WIN_FORM_CONTROL_TYPE_FEATURE_COUNT + 2;
 
   /**
-	 * The meta object id for the '{@link org.xtext.entityDsl.impl.ComboBoxItemImpl <em>Combo Box Item</em>}' class.
-	 * <!-- begin-user-doc -->
+   * The meta object id for the '{@link org.xtext.entityDsl.impl.ComboBoxItemImpl <em>Combo Box Item</em>}' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.xtext.entityDsl.impl.ComboBoxItemImpl
-	 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBoxItem()
-	 * @generated
-	 */
+   * @see org.xtext.entityDsl.impl.ComboBoxItemImpl
+   * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBoxItem()
+   * @generated
+   */
   int COMBO_BOX_ITEM = 13;
 
   /**
-	 * The feature id for the '<em><b>Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int COMBO_BOX_ITEM__TEXT = 0;
 
   /**
-	 * The number of structural features of the '<em>Combo Box Item</em>' class.
-	 * <!-- begin-user-doc -->
+   * The number of structural features of the '<em>Combo Box Item</em>' class.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+   * @generated
+   * @ordered
+   */
   int COMBO_BOX_ITEM_FEATURE_COUNT = 1;
 
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.Domainmodel <em>Domainmodel</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.Domainmodel <em>Domainmodel</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Domainmodel</em>'.
-	 * @see org.xtext.entityDsl.Domainmodel
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Domainmodel</em>'.
+   * @see org.xtext.entityDsl.Domainmodel
+   * @generated
+   */
   EClass getDomainmodel();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Domainmodel#getApplicationName <em>Application Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Domainmodel#getApplicationName <em>Application Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Application Name</em>'.
-	 * @see org.xtext.entityDsl.Domainmodel#getApplicationName()
-	 * @see #getDomainmodel()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Application Name</em>'.
+   * @see org.xtext.entityDsl.Domainmodel#getApplicationName()
+   * @see #getDomainmodel()
+   * @generated
+   */
   EAttribute getDomainmodel_ApplicationName();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.Domainmodel#getElements <em>Elements</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.Domainmodel#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Elements</em>'.
-	 * @see org.xtext.entityDsl.Domainmodel#getElements()
-	 * @see #getDomainmodel()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see org.xtext.entityDsl.Domainmodel#getElements()
+   * @see #getDomainmodel()
+   * @generated
+   */
   EReference getDomainmodel_Elements();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.Entity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.Entity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity</em>'.
-	 * @see org.xtext.entityDsl.Entity
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Entity</em>'.
+   * @see org.xtext.entityDsl.Entity
+   * @generated
+   */
   EClass getEntity();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Entity#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Entity#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.xtext.entityDsl.Entity#getName()
-	 * @see #getEntity()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.entityDsl.Entity#getName()
+   * @see #getEntity()
+   * @generated
+   */
   EAttribute getEntity_Name();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.Entity#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.Entity#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see org.xtext.entityDsl.Entity#getAttributes()
-	 * @see #getEntity()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see org.xtext.entityDsl.Entity#getAttributes()
+   * @see #getEntity()
+   * @generated
+   */
   EReference getEntity_Attributes();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.Attribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.Attribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute</em>'.
-	 * @see org.xtext.entityDsl.Attribute
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Attribute</em>'.
+   * @see org.xtext.entityDsl.Attribute
+   * @generated
+   */
   EClass getAttribute();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Attribute#getRequired <em>Required</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Attribute#getRequired <em>Required</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Required</em>'.
-	 * @see org.xtext.entityDsl.Attribute#getRequired()
-	 * @see #getAttribute()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Required</em>'.
+   * @see org.xtext.entityDsl.Attribute#getRequired()
+   * @see #getAttribute()
+   * @generated
+   */
   EAttribute getAttribute_Required();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Attribute#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Attribute#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.xtext.entityDsl.Attribute#getName()
-	 * @see #getAttribute()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.entityDsl.Attribute#getName()
+   * @see #getAttribute()
+   * @generated
+   */
   EAttribute getAttribute_Name();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.Attribute#getInputType <em>Input Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.Attribute#getInputType <em>Input Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Input Type</em>'.
-	 * @see org.xtext.entityDsl.Attribute#getInputType()
-	 * @see #getAttribute()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Input Type</em>'.
+   * @see org.xtext.entityDsl.Attribute#getInputType()
+   * @see #getAttribute()
+   * @generated
+   */
   EReference getAttribute_InputType();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.Attribute#getLabelText <em>Label Text</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.Attribute#getLabelText <em>Label Text</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Label Text</em>'.
-	 * @see org.xtext.entityDsl.Attribute#getLabelText()
-	 * @see #getAttribute()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Label Text</em>'.
+   * @see org.xtext.entityDsl.Attribute#getLabelText()
+   * @see #getAttribute()
+   * @generated
+   */
   EReference getAttribute_LabelText();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.DataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Type</em>'.
-	 * @see org.xtext.entityDsl.DataType
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Data Type</em>'.
+   * @see org.xtext.entityDsl.DataType
+   * @generated
+   */
   EClass getDataType();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.DataType#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.DataType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see org.xtext.entityDsl.DataType#getType()
-	 * @see #getDataType()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.entityDsl.DataType#getType()
+   * @see #getDataType()
+   * @generated
+   */
   EAttribute getDataType_Type();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.Label <em>Label</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.Label <em>Label</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Label</em>'.
-	 * @see org.xtext.entityDsl.Label
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Label</em>'.
+   * @see org.xtext.entityDsl.Label
+   * @generated
+   */
   EClass getLabel();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Label#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Label#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Text</em>'.
-	 * @see org.xtext.entityDsl.Label#getText()
-	 * @see #getLabel()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see org.xtext.entityDsl.Label#getText()
+   * @see #getLabel()
+   * @generated
+   */
   EAttribute getLabel_Text();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.WinFormControlType <em>Win Form Control Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.WinFormControlType <em>Win Form Control Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Win Form Control Type</em>'.
-	 * @see org.xtext.entityDsl.WinFormControlType
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Win Form Control Type</em>'.
+   * @see org.xtext.entityDsl.WinFormControlType
+   * @generated
+   */
   EClass getWinFormControlType();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.WinFormControlType#getControlType <em>Control Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.WinFormControlType#getControlType <em>Control Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Control Type</em>'.
-	 * @see org.xtext.entityDsl.WinFormControlType#getControlType()
-	 * @see #getWinFormControlType()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Control Type</em>'.
+   * @see org.xtext.entityDsl.WinFormControlType#getControlType()
+   * @see #getWinFormControlType()
+   * @generated
+   */
   EReference getWinFormControlType_ControlType();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.WinFormControlType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.WinFormControlType#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.xtext.entityDsl.WinFormControlType#getName()
-	 * @see #getWinFormControlType()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.entityDsl.WinFormControlType#getName()
+   * @see #getWinFormControlType()
+   * @generated
+   */
   EAttribute getWinFormControlType_Name();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.TrackBar <em>Track Bar</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.TrackBar <em>Track Bar</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Track Bar</em>'.
-	 * @see org.xtext.entityDsl.TrackBar
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Track Bar</em>'.
+   * @see org.xtext.entityDsl.TrackBar
+   * @generated
+   */
   EClass getTrackBar();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.TrackBar#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.TrackBar#getDataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data Type</em>'.
-	 * @see org.xtext.entityDsl.TrackBar#getDataType()
-	 * @see #getTrackBar()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Data Type</em>'.
+   * @see org.xtext.entityDsl.TrackBar#getDataType()
+   * @see #getTrackBar()
+   * @generated
+   */
   EReference getTrackBar_DataType();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getDefaultTick <em>Default Tick</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getDefaultTick <em>Default Tick</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default Tick</em>'.
-	 * @see org.xtext.entityDsl.TrackBar#getDefaultTick()
-	 * @see #getTrackBar()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Default Tick</em>'.
+   * @see org.xtext.entityDsl.TrackBar#getDefaultTick()
+   * @see #getTrackBar()
+   * @generated
+   */
   EAttribute getTrackBar_DefaultTick();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getIncrement <em>Increment</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getIncrement <em>Increment</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Increment</em>'.
-	 * @see org.xtext.entityDsl.TrackBar#getIncrement()
-	 * @see #getTrackBar()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Increment</em>'.
+   * @see org.xtext.entityDsl.TrackBar#getIncrement()
+   * @see #getTrackBar()
+   * @generated
+   */
   EAttribute getTrackBar_Increment();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getDenominator <em>Denominator</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getDenominator <em>Denominator</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Denominator</em>'.
-	 * @see org.xtext.entityDsl.TrackBar#getDenominator()
-	 * @see #getTrackBar()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Denominator</em>'.
+   * @see org.xtext.entityDsl.TrackBar#getDenominator()
+   * @see #getTrackBar()
+   * @generated
+   */
   EAttribute getTrackBar_Denominator();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getMinimumValue <em>Minimum Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getMinimumValue <em>Minimum Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Minimum Value</em>'.
-	 * @see org.xtext.entityDsl.TrackBar#getMinimumValue()
-	 * @see #getTrackBar()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Minimum Value</em>'.
+   * @see org.xtext.entityDsl.TrackBar#getMinimumValue()
+   * @see #getTrackBar()
+   * @generated
+   */
   EAttribute getTrackBar_MinimumValue();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getMaximumValue <em>Maximum Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TrackBar#getMaximumValue <em>Maximum Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maximum Value</em>'.
-	 * @see org.xtext.entityDsl.TrackBar#getMaximumValue()
-	 * @see #getTrackBar()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Maximum Value</em>'.
+   * @see org.xtext.entityDsl.TrackBar#getMaximumValue()
+   * @see #getTrackBar()
+   * @generated
+   */
   EAttribute getTrackBar_MaximumValue();
 
   /**
-	 * Returns the meta object for the attribute list '{@link org.xtext.entityDsl.TrackBar#getStringValues <em>String Values</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute list '{@link org.xtext.entityDsl.TrackBar#getStringValues <em>String Values</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>String Values</em>'.
-	 * @see org.xtext.entityDsl.TrackBar#getStringValues()
-	 * @see #getTrackBar()
-	 * @generated
-	 */
+   * @return the meta object for the attribute list '<em>String Values</em>'.
+   * @see org.xtext.entityDsl.TrackBar#getStringValues()
+   * @see #getTrackBar()
+   * @generated
+   */
   EAttribute getTrackBar_StringValues();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.Spinner <em>Spinner</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.Spinner <em>Spinner</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Spinner</em>'.
-	 * @see org.xtext.entityDsl.Spinner
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Spinner</em>'.
+   * @see org.xtext.entityDsl.Spinner
+   * @generated
+   */
   EClass getSpinner();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getDefaultValue <em>Default Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getDefaultValue <em>Default Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default Value</em>'.
-	 * @see org.xtext.entityDsl.Spinner#getDefaultValue()
-	 * @see #getSpinner()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Default Value</em>'.
+   * @see org.xtext.entityDsl.Spinner#getDefaultValue()
+   * @see #getSpinner()
+   * @generated
+   */
   EAttribute getSpinner_DefaultValue();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getMinimumValue <em>Minimum Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getMinimumValue <em>Minimum Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Minimum Value</em>'.
-	 * @see org.xtext.entityDsl.Spinner#getMinimumValue()
-	 * @see #getSpinner()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Minimum Value</em>'.
+   * @see org.xtext.entityDsl.Spinner#getMinimumValue()
+   * @see #getSpinner()
+   * @generated
+   */
   EAttribute getSpinner_MinimumValue();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getMaximumValue <em>Maximum Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.Spinner#getMaximumValue <em>Maximum Value</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maximum Value</em>'.
-	 * @see org.xtext.entityDsl.Spinner#getMaximumValue()
-	 * @see #getSpinner()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Maximum Value</em>'.
+   * @see org.xtext.entityDsl.Spinner#getMaximumValue()
+   * @see #getSpinner()
+   * @generated
+   */
   EAttribute getSpinner_MaximumValue();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.RadioButtonGroup <em>Radio Button Group</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.RadioButtonGroup <em>Radio Button Group</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Radio Button Group</em>'.
-	 * @see org.xtext.entityDsl.RadioButtonGroup
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Radio Button Group</em>'.
+   * @see org.xtext.entityDsl.RadioButtonGroup
+   * @generated
+   */
   EClass getRadioButtonGroup();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.RadioButtonGroup#getButtons <em>Buttons</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.RadioButtonGroup#getButtons <em>Buttons</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Buttons</em>'.
-	 * @see org.xtext.entityDsl.RadioButtonGroup#getButtons()
-	 * @see #getRadioButtonGroup()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Buttons</em>'.
+   * @see org.xtext.entityDsl.RadioButtonGroup#getButtons()
+   * @see #getRadioButtonGroup()
+   * @generated
+   */
   EReference getRadioButtonGroup_Buttons();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.RadioButtonGroup#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.RadioButtonGroup#getDataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data Type</em>'.
-	 * @see org.xtext.entityDsl.RadioButtonGroup#getDataType()
-	 * @see #getRadioButtonGroup()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Data Type</em>'.
+   * @see org.xtext.entityDsl.RadioButtonGroup#getDataType()
+   * @see #getRadioButtonGroup()
+   * @generated
+   */
   EReference getRadioButtonGroup_DataType();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.RadioButton <em>Radio Button</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.RadioButton <em>Radio Button</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Radio Button</em>'.
-	 * @see org.xtext.entityDsl.RadioButton
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Radio Button</em>'.
+   * @see org.xtext.entityDsl.RadioButton
+   * @generated
+   */
   EClass getRadioButton();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.RadioButton#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.RadioButton#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Text</em>'.
-	 * @see org.xtext.entityDsl.RadioButton#getText()
-	 * @see #getRadioButton()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see org.xtext.entityDsl.RadioButton#getText()
+   * @see #getRadioButton()
+   * @generated
+   */
   EAttribute getRadioButton_Text();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.CheckBox <em>Check Box</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.CheckBox <em>Check Box</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Check Box</em>'.
-	 * @see org.xtext.entityDsl.CheckBox
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Check Box</em>'.
+   * @see org.xtext.entityDsl.CheckBox
+   * @generated
+   */
   EClass getCheckBox();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.TextBox <em>Text Box</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.TextBox <em>Text Box</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Text Box</em>'.
-	 * @see org.xtext.entityDsl.TextBox
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Text Box</em>'.
+   * @see org.xtext.entityDsl.TextBox
+   * @generated
+   */
   EClass getTextBox();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TextBox#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TextBox#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.xtext.entityDsl.TextBox#getName()
-	 * @see #getTextBox()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.entityDsl.TextBox#getName()
+   * @see #getTextBox()
+   * @generated
+   */
   EAttribute getTextBox_Name();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.TextBox#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.TextBox#getDataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data Type</em>'.
-	 * @see org.xtext.entityDsl.TextBox#getDataType()
-	 * @see #getTextBox()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Data Type</em>'.
+   * @see org.xtext.entityDsl.TextBox#getDataType()
+   * @see #getTextBox()
+   * @generated
+   */
   EReference getTextBox_DataType();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TextBox#getMinTextLength <em>Min Text Length</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TextBox#getMinTextLength <em>Min Text Length</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Text Length</em>'.
-	 * @see org.xtext.entityDsl.TextBox#getMinTextLength()
-	 * @see #getTextBox()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Min Text Length</em>'.
+   * @see org.xtext.entityDsl.TextBox#getMinTextLength()
+   * @see #getTextBox()
+   * @generated
+   */
   EAttribute getTextBox_MinTextLength();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TextBox#getMaxTextLength <em>Max Text Length</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.TextBox#getMaxTextLength <em>Max Text Length</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Text Length</em>'.
-	 * @see org.xtext.entityDsl.TextBox#getMaxTextLength()
-	 * @see #getTextBox()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Max Text Length</em>'.
+   * @see org.xtext.entityDsl.TextBox#getMaxTextLength()
+   * @see #getTextBox()
+   * @generated
+   */
   EAttribute getTextBox_MaxTextLength();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.ComboBox <em>Combo Box</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.ComboBox <em>Combo Box</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Combo Box</em>'.
-	 * @see org.xtext.entityDsl.ComboBox
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Combo Box</em>'.
+   * @see org.xtext.entityDsl.ComboBox
+   * @generated
+   */
   EClass getComboBox();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.ComboBox#getItems <em>Items</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference list '{@link org.xtext.entityDsl.ComboBox#getItems <em>Items</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Items</em>'.
-	 * @see org.xtext.entityDsl.ComboBox#getItems()
-	 * @see #getComboBox()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference list '<em>Items</em>'.
+   * @see org.xtext.entityDsl.ComboBox#getItems()
+   * @see #getComboBox()
+   * @generated
+   */
   EReference getComboBox_Items();
 
   /**
-	 * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.ComboBox#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the containment reference '{@link org.xtext.entityDsl.ComboBox#getDataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data Type</em>'.
-	 * @see org.xtext.entityDsl.ComboBox#getDataType()
-	 * @see #getComboBox()
-	 * @generated
-	 */
+   * @return the meta object for the containment reference '<em>Data Type</em>'.
+   * @see org.xtext.entityDsl.ComboBox#getDataType()
+   * @see #getComboBox()
+   * @generated
+   */
   EReference getComboBox_DataType();
 
   /**
-	 * Returns the meta object for class '{@link org.xtext.entityDsl.ComboBoxItem <em>Combo Box Item</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for class '{@link org.xtext.entityDsl.ComboBoxItem <em>Combo Box Item</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Combo Box Item</em>'.
-	 * @see org.xtext.entityDsl.ComboBoxItem
-	 * @generated
-	 */
+   * @return the meta object for class '<em>Combo Box Item</em>'.
+   * @see org.xtext.entityDsl.ComboBoxItem
+   * @generated
+   */
   EClass getComboBoxItem();
 
   /**
-	 * Returns the meta object for the attribute '{@link org.xtext.entityDsl.ComboBoxItem#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the meta object for the attribute '{@link org.xtext.entityDsl.ComboBoxItem#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Text</em>'.
-	 * @see org.xtext.entityDsl.ComboBoxItem#getText()
-	 * @see #getComboBoxItem()
-	 * @generated
-	 */
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see org.xtext.entityDsl.ComboBoxItem#getText()
+   * @see #getComboBoxItem()
+   * @generated
+   */
   EAttribute getComboBoxItem_Text();
 
   /**
-	 * Returns the factory that creates the instances of the model.
-	 * <!-- begin-user-doc -->
+   * Returns the factory that creates the instances of the model.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the factory that creates the instances of the model.
-	 * @generated
-	 */
+   * @return the factory that creates the instances of the model.
+   * @generated
+   */
   EntityDslFactory getEntityDslFactory();
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * Defines literals for the meta objects that represent
    * <ul>
    *   <li>each class,</li>
@@ -1213,404 +1213,404 @@ public interface EntityDslPackage extends EPackage
    *   <li>and each data type</li>
    * </ul>
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   interface Literals
   {
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.DomainmodelImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDomainmodel()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.DomainmodelImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDomainmodel()
+     * @generated
+     */
     EClass DOMAINMODEL = eINSTANCE.getDomainmodel();
 
     /**
-		 * The meta object literal for the '<em><b>Application Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Application Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute DOMAINMODEL__APPLICATION_NAME = eINSTANCE.getDomainmodel_ApplicationName();
 
     /**
-		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference DOMAINMODEL__ELEMENTS = eINSTANCE.getDomainmodel_Elements();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.EntityImpl <em>Entity</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.EntityImpl <em>Entity</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.EntityImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getEntity()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.EntityImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getEntity()
+     * @generated
+     */
     EClass ENTITY = eINSTANCE.getEntity();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference ENTITY__ATTRIBUTES = eINSTANCE.getEntity_Attributes();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.AttributeImpl <em>Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.AttributeImpl <em>Attribute</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.AttributeImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getAttribute()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.AttributeImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getAttribute()
+     * @generated
+     */
     EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
     /**
-		 * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute ATTRIBUTE__REQUIRED = eINSTANCE.getAttribute_Required();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Input Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Input Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference ATTRIBUTE__INPUT_TYPE = eINSTANCE.getAttribute_InputType();
 
     /**
-		 * The meta object literal for the '<em><b>Label Text</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Label Text</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference ATTRIBUTE__LABEL_TEXT = eINSTANCE.getAttribute_LabelText();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.DataTypeImpl <em>Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.DataTypeImpl <em>Data Type</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.DataTypeImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDataType()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.DataTypeImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getDataType()
+     * @generated
+     */
     EClass DATA_TYPE = eINSTANCE.getDataType();
 
     /**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute DATA_TYPE__TYPE = eINSTANCE.getDataType_Type();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.LabelImpl <em>Label</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.LabelImpl <em>Label</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.LabelImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getLabel()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.LabelImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getLabel()
+     * @generated
+     */
     EClass LABEL = eINSTANCE.getLabel();
 
     /**
-		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute LABEL__TEXT = eINSTANCE.getLabel_Text();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.WinFormControlTypeImpl <em>Win Form Control Type</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.WinFormControlTypeImpl <em>Win Form Control Type</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.WinFormControlTypeImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getWinFormControlType()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.WinFormControlTypeImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getWinFormControlType()
+     * @generated
+     */
     EClass WIN_FORM_CONTROL_TYPE = eINSTANCE.getWinFormControlType();
 
     /**
-		 * The meta object literal for the '<em><b>Control Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Control Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference WIN_FORM_CONTROL_TYPE__CONTROL_TYPE = eINSTANCE.getWinFormControlType_ControlType();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute WIN_FORM_CONTROL_TYPE__NAME = eINSTANCE.getWinFormControlType_Name();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.TrackBarImpl <em>Track Bar</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.TrackBarImpl <em>Track Bar</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.TrackBarImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTrackBar()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.TrackBarImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTrackBar()
+     * @generated
+     */
     EClass TRACK_BAR = eINSTANCE.getTrackBar();
 
     /**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference TRACK_BAR__DATA_TYPE = eINSTANCE.getTrackBar_DataType();
 
     /**
-		 * The meta object literal for the '<em><b>Default Tick</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Default Tick</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TRACK_BAR__DEFAULT_TICK = eINSTANCE.getTrackBar_DefaultTick();
 
     /**
-		 * The meta object literal for the '<em><b>Increment</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Increment</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TRACK_BAR__INCREMENT = eINSTANCE.getTrackBar_Increment();
 
     /**
-		 * The meta object literal for the '<em><b>Denominator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Denominator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TRACK_BAR__DENOMINATOR = eINSTANCE.getTrackBar_Denominator();
 
     /**
-		 * The meta object literal for the '<em><b>Minimum Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Minimum Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TRACK_BAR__MINIMUM_VALUE = eINSTANCE.getTrackBar_MinimumValue();
 
     /**
-		 * The meta object literal for the '<em><b>Maximum Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Maximum Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TRACK_BAR__MAXIMUM_VALUE = eINSTANCE.getTrackBar_MaximumValue();
 
     /**
-		 * The meta object literal for the '<em><b>String Values</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>String Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TRACK_BAR__STRING_VALUES = eINSTANCE.getTrackBar_StringValues();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.SpinnerImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getSpinner()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.SpinnerImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getSpinner()
+     * @generated
+     */
     EClass SPINNER = eINSTANCE.getSpinner();
 
     /**
-		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute SPINNER__DEFAULT_VALUE = eINSTANCE.getSpinner_DefaultValue();
 
     /**
-		 * The meta object literal for the '<em><b>Minimum Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Minimum Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute SPINNER__MINIMUM_VALUE = eINSTANCE.getSpinner_MinimumValue();
 
     /**
-		 * The meta object literal for the '<em><b>Maximum Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Maximum Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute SPINNER__MAXIMUM_VALUE = eINSTANCE.getSpinner_MaximumValue();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.RadioButtonGroupImpl <em>Radio Button Group</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.RadioButtonGroupImpl <em>Radio Button Group</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.RadioButtonGroupImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButtonGroup()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.RadioButtonGroupImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButtonGroup()
+     * @generated
+     */
     EClass RADIO_BUTTON_GROUP = eINSTANCE.getRadioButtonGroup();
 
     /**
-		 * The meta object literal for the '<em><b>Buttons</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Buttons</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference RADIO_BUTTON_GROUP__BUTTONS = eINSTANCE.getRadioButtonGroup_Buttons();
 
     /**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference RADIO_BUTTON_GROUP__DATA_TYPE = eINSTANCE.getRadioButtonGroup_DataType();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.RadioButtonImpl <em>Radio Button</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.RadioButtonImpl <em>Radio Button</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.RadioButtonImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButton()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.RadioButtonImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getRadioButton()
+     * @generated
+     */
     EClass RADIO_BUTTON = eINSTANCE.getRadioButton();
 
     /**
-		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute RADIO_BUTTON__TEXT = eINSTANCE.getRadioButton_Text();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.CheckBoxImpl <em>Check Box</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.CheckBoxImpl <em>Check Box</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.CheckBoxImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getCheckBox()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.CheckBoxImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getCheckBox()
+     * @generated
+     */
     EClass CHECK_BOX = eINSTANCE.getCheckBox();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.TextBoxImpl <em>Text Box</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.TextBoxImpl <em>Text Box</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.TextBoxImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTextBox()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.TextBoxImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getTextBox()
+     * @generated
+     */
     EClass TEXT_BOX = eINSTANCE.getTextBox();
 
     /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TEXT_BOX__NAME = eINSTANCE.getTextBox_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference TEXT_BOX__DATA_TYPE = eINSTANCE.getTextBox_DataType();
 
     /**
-		 * The meta object literal for the '<em><b>Min Text Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Min Text Length</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TEXT_BOX__MIN_TEXT_LENGTH = eINSTANCE.getTextBox_MinTextLength();
 
     /**
-		 * The meta object literal for the '<em><b>Max Text Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Max Text Length</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute TEXT_BOX__MAX_TEXT_LENGTH = eINSTANCE.getTextBox_MaxTextLength();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.ComboBoxImpl <em>Combo Box</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.ComboBoxImpl <em>Combo Box</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.ComboBoxImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBox()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.ComboBoxImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBox()
+     * @generated
+     */
     EClass COMBO_BOX = eINSTANCE.getComboBox();
 
     /**
-		 * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference COMBO_BOX__ITEMS = eINSTANCE.getComboBox_Items();
 
     /**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Data Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EReference COMBO_BOX__DATA_TYPE = eINSTANCE.getComboBox_DataType();
 
     /**
-		 * The meta object literal for the '{@link org.xtext.entityDsl.impl.ComboBoxItemImpl <em>Combo Box Item</em>}' class.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '{@link org.xtext.entityDsl.impl.ComboBoxItemImpl <em>Combo Box Item</em>}' class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @see org.xtext.entityDsl.impl.ComboBoxItemImpl
-		 * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBoxItem()
-		 * @generated
-		 */
+     * @see org.xtext.entityDsl.impl.ComboBoxItemImpl
+     * @see org.xtext.entityDsl.impl.EntityDslPackageImpl#getComboBoxItem()
+     * @generated
+     */
     EClass COMBO_BOX_ITEM = eINSTANCE.getComboBoxItem();
 
     /**
-		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-		 * @generated
-		 */
+     * @generated
+     */
     EAttribute COMBO_BOX_ITEM__TEXT = eINSTANCE.getComboBoxItem_Text();
 
   }

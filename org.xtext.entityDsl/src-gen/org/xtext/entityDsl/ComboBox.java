@@ -25,45 +25,45 @@ import org.eclipse.emf.common.util.EList;
 public interface ComboBox extends WinFormControlType
 {
   /**
-	 * Returns the value of the '<em><b>Items</b></em>' containment reference list.
-	 * The list contents are of type {@link org.xtext.entityDsl.ComboBoxItem}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Items</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.entityDsl.ComboBoxItem}.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Items</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Items</em>' containment reference list.
-	 * @see org.xtext.entityDsl.EntityDslPackage#getComboBox_Items()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Items</em>' containment reference list.
+   * @see org.xtext.entityDsl.EntityDslPackage#getComboBox_Items()
+   * @model containment="true"
+   * @generated
+   */
   EList<ComboBoxItem> getItems();
 
   /**
-	 * Returns the value of the '<em><b>Data Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Data Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Data Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Type</em>' containment reference.
-	 * @see #setDataType(DataType)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getComboBox_DataType()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Data Type</em>' containment reference.
+   * @see #setDataType(DataType)
+   * @see org.xtext.entityDsl.EntityDslPackage#getComboBox_DataType()
+   * @model containment="true"
+   * @generated
+   */
   DataType getDataType();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.ComboBox#getDataType <em>Data Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.ComboBox#getDataType <em>Data Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Type</em>' containment reference.
-	 * @see #getDataType()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Data Type</em>' containment reference.
+   * @see #getDataType()
+   * @generated
+   */
   void setDataType(DataType value);
 
 } // ComboBox

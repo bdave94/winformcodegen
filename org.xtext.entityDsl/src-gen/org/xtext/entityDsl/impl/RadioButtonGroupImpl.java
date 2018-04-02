@@ -40,194 +40,202 @@ import org.xtext.entityDsl.RadioButtonGroup;
 public class RadioButtonGroupImpl extends WinFormControlTypeImpl implements RadioButtonGroup
 {
   /**
-	 * The cached value of the '{@link #getButtons() <em>Buttons</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getButtons() <em>Buttons</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getButtons()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getButtons()
+   * @generated
+   * @ordered
+   */
   protected EList<RadioButton> buttons;
 
   /**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDataType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDataType()
+   * @generated
+   * @ordered
+   */
   protected DataType dataType;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected RadioButtonGroupImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return EntityDslPackage.Literals.RADIO_BUTTON_GROUP;
-	}
+    return EntityDslPackage.Literals.RADIO_BUTTON_GROUP;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<RadioButton> getButtons()
   {
-		if (buttons == null) {
-			buttons = new EObjectContainmentEList<RadioButton>(RadioButton.class, this, EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS);
-		}
-		return buttons;
-	}
+    if (buttons == null)
+    {
+      buttons = new EObjectContainmentEList<RadioButton>(RadioButton.class, this, EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS);
+    }
+    return buttons;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public DataType getDataType()
   {
-		return dataType;
-	}
+    return dataType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetDataType(DataType newDataType, NotificationChain msgs)
   {
-		DataType oldDataType = dataType;
-		dataType = newDataType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, oldDataType, newDataType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    DataType oldDataType = dataType;
+    dataType = newDataType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, oldDataType, newDataType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDataType(DataType newDataType)
   {
-		if (newDataType != dataType) {
-			NotificationChain msgs = null;
-			if (dataType != null)
-				msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, null, msgs);
-			if (newDataType != null)
-				msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, null, msgs);
-			msgs = basicSetDataType(newDataType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, newDataType, newDataType));
-	}
+    if (newDataType != dataType)
+    {
+      NotificationChain msgs = null;
+      if (dataType != null)
+        msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, null, msgs);
+      if (newDataType != null)
+        msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, null, msgs);
+      msgs = basicSetDataType(newDataType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE, newDataType, newDataType));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
-				return ((InternalEList<?>)getButtons()).basicRemove(otherEnd, msgs);
-			case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
-				return basicSetDataType(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
+        return ((InternalEList<?>)getButtons()).basicRemove(otherEnd, msgs);
+      case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
+        return basicSetDataType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
-				return getButtons();
-			case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
-				return getDataType();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
+        return getButtons();
+      case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
+        return getDataType();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
-				getButtons().clear();
-				getButtons().addAll((Collection<? extends RadioButton>)newValue);
-				return;
-			case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
-				setDataType((DataType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
+        getButtons().clear();
+        getButtons().addAll((Collection<? extends RadioButton>)newValue);
+        return;
+      case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
+        setDataType((DataType)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
-				getButtons().clear();
-				return;
-			case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
-				setDataType((DataType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
+        getButtons().clear();
+        return;
+      case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
+        setDataType((DataType)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
-				return buttons != null && !buttons.isEmpty();
-			case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
-				return dataType != null;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.RADIO_BUTTON_GROUP__BUTTONS:
+        return buttons != null && !buttons.isEmpty();
+      case EntityDslPackage.RADIO_BUTTON_GROUP__DATA_TYPE:
+        return dataType != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //RadioButtonGroupImpl

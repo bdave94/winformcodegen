@@ -27,45 +27,45 @@ import org.eclipse.emf.ecore.EObject;
 public interface Domainmodel extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Application Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Application Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Application Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Application Name</em>' attribute.
-	 * @see #setApplicationName(String)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getDomainmodel_ApplicationName()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Application Name</em>' attribute.
+   * @see #setApplicationName(String)
+   * @see org.xtext.entityDsl.EntityDslPackage#getDomainmodel_ApplicationName()
+   * @model
+   * @generated
+   */
   String getApplicationName();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Domainmodel#getApplicationName <em>Application Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Domainmodel#getApplicationName <em>Application Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Application Name</em>' attribute.
-	 * @see #getApplicationName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Application Name</em>' attribute.
+   * @see #getApplicationName()
+   * @generated
+   */
   void setApplicationName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-	 * The list contents are of type {@link org.xtext.entityDsl.Entity}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.entityDsl.Entity}.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elements</em>' containment reference list.
-	 * @see org.xtext.entityDsl.EntityDslPackage#getDomainmodel_Elements()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see org.xtext.entityDsl.EntityDslPackage#getDomainmodel_Elements()
+   * @model containment="true"
+   * @generated
+   */
   EList<Entity> getElements();
 
 } // Domainmodel

@@ -40,194 +40,202 @@ import org.xtext.entityDsl.EntityDslPackage;
 public class ComboBoxImpl extends WinFormControlTypeImpl implements ComboBox
 {
   /**
-	 * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getItems()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getItems()
+   * @generated
+   * @ordered
+   */
   protected EList<ComboBoxItem> items;
 
   /**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDataType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDataType()
+   * @generated
+   * @ordered
+   */
   protected DataType dataType;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ComboBoxImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return EntityDslPackage.Literals.COMBO_BOX;
-	}
+    return EntityDslPackage.Literals.COMBO_BOX;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<ComboBoxItem> getItems()
   {
-		if (items == null) {
-			items = new EObjectContainmentEList<ComboBoxItem>(ComboBoxItem.class, this, EntityDslPackage.COMBO_BOX__ITEMS);
-		}
-		return items;
-	}
+    if (items == null)
+    {
+      items = new EObjectContainmentEList<ComboBoxItem>(ComboBoxItem.class, this, EntityDslPackage.COMBO_BOX__ITEMS);
+    }
+    return items;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public DataType getDataType()
   {
-		return dataType;
-	}
+    return dataType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetDataType(DataType newDataType, NotificationChain msgs)
   {
-		DataType oldDataType = dataType;
-		dataType = newDataType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__DATA_TYPE, oldDataType, newDataType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    DataType oldDataType = dataType;
+    dataType = newDataType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__DATA_TYPE, oldDataType, newDataType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDataType(DataType newDataType)
   {
-		if (newDataType != dataType) {
-			NotificationChain msgs = null;
-			if (dataType != null)
-				msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__DATA_TYPE, null, msgs);
-			if (newDataType != null)
-				msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__DATA_TYPE, null, msgs);
-			msgs = basicSetDataType(newDataType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__DATA_TYPE, newDataType, newDataType));
-	}
+    if (newDataType != dataType)
+    {
+      NotificationChain msgs = null;
+      if (dataType != null)
+        msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__DATA_TYPE, null, msgs);
+      if (newDataType != null)
+        msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.COMBO_BOX__DATA_TYPE, null, msgs);
+      msgs = basicSetDataType(newDataType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.COMBO_BOX__DATA_TYPE, newDataType, newDataType));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EntityDslPackage.COMBO_BOX__ITEMS:
-				return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
-			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
-				return basicSetDataType(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.COMBO_BOX__ITEMS:
+        return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
+      case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+        return basicSetDataType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EntityDslPackage.COMBO_BOX__ITEMS:
-				return getItems();
-			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
-				return getDataType();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.COMBO_BOX__ITEMS:
+        return getItems();
+      case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+        return getDataType();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EntityDslPackage.COMBO_BOX__ITEMS:
-				getItems().clear();
-				getItems().addAll((Collection<? extends ComboBoxItem>)newValue);
-				return;
-			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
-				setDataType((DataType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.COMBO_BOX__ITEMS:
+        getItems().clear();
+        getItems().addAll((Collection<? extends ComboBoxItem>)newValue);
+        return;
+      case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+        setDataType((DataType)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.COMBO_BOX__ITEMS:
-				getItems().clear();
-				return;
-			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
-				setDataType((DataType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.COMBO_BOX__ITEMS:
+        getItems().clear();
+        return;
+      case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+        setDataType((DataType)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.COMBO_BOX__ITEMS:
-				return items != null && !items.isEmpty();
-			case EntityDslPackage.COMBO_BOX__DATA_TYPE:
-				return dataType != null;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.COMBO_BOX__ITEMS:
+        return items != null && !items.isEmpty();
+      case EntityDslPackage.COMBO_BOX__DATA_TYPE:
+        return dataType != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //ComboBoxImpl

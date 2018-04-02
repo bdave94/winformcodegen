@@ -27,107 +27,107 @@ import org.eclipse.emf.ecore.EObject;
 public interface Attribute extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Required</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required</em>' attribute.
-	 * @see #setRequired(String)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_Required()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Required</em>' attribute.
+   * @see #setRequired(String)
+   * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_Required()
+   * @model
+   * @generated
+   */
   String getRequired();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getRequired <em>Required</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getRequired <em>Required</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required</em>' attribute.
-	 * @see #getRequired()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Required</em>' attribute.
+   * @see #getRequired()
+   * @generated
+   */
   void setRequired(String value);
 
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Input Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Input Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Input Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input Type</em>' containment reference.
-	 * @see #setInputType(WinFormControlType)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_InputType()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Input Type</em>' containment reference.
+   * @see #setInputType(WinFormControlType)
+   * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_InputType()
+   * @model containment="true"
+   * @generated
+   */
   WinFormControlType getInputType();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getInputType <em>Input Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getInputType <em>Input Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Input Type</em>' containment reference.
-	 * @see #getInputType()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Input Type</em>' containment reference.
+   * @see #getInputType()
+   * @generated
+   */
   void setInputType(WinFormControlType value);
 
   /**
-	 * Returns the value of the '<em><b>Label Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Label Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Label Text</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Label Text</em>' containment reference.
-	 * @see #setLabelText(Label)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_LabelText()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Label Text</em>' containment reference.
+   * @see #setLabelText(Label)
+   * @see org.xtext.entityDsl.EntityDslPackage#getAttribute_LabelText()
+   * @model containment="true"
+   * @generated
+   */
   Label getLabelText();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getLabelText <em>Label Text</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Attribute#getLabelText <em>Label Text</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label Text</em>' containment reference.
-	 * @see #getLabelText()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Label Text</em>' containment reference.
+   * @see #getLabelText()
+   * @generated
+   */
   void setLabelText(Label value);
 
 } // Attribute

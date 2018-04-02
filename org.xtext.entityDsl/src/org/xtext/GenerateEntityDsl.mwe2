@@ -21,6 +21,7 @@ Workflow {
 				eclipsePluginTest = {
 					enabled = true
 				}
+				
 				createEclipseMetaData = true
 			}
 			code = {
@@ -35,6 +36,9 @@ Workflow {
 
 			serializer = {
 				generateStub = false
+			}
+			formatter={
+    			generateStub=true
 			}
 			validator = {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"

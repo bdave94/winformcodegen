@@ -30,175 +30,175 @@ import org.eclipse.emf.common.util.EList;
 public interface TrackBar extends WinFormControlType
 {
   /**
-	 * Returns the value of the '<em><b>Data Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Data Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Data Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Type</em>' containment reference.
-	 * @see #setDataType(DataType)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_DataType()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Data Type</em>' containment reference.
+   * @see #setDataType(DataType)
+   * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_DataType()
+   * @model containment="true"
+   * @generated
+   */
   DataType getDataType();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getDataType <em>Data Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getDataType <em>Data Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Type</em>' containment reference.
-	 * @see #getDataType()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Data Type</em>' containment reference.
+   * @see #getDataType()
+   * @generated
+   */
   void setDataType(DataType value);
 
   /**
-	 * Returns the value of the '<em><b>Default Tick</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Default Tick</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Default Tick</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Tick</em>' attribute.
-	 * @see #setDefaultTick(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_DefaultTick()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Default Tick</em>' attribute.
+   * @see #setDefaultTick(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_DefaultTick()
+   * @model
+   * @generated
+   */
   int getDefaultTick();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getDefaultTick <em>Default Tick</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getDefaultTick <em>Default Tick</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Tick</em>' attribute.
-	 * @see #getDefaultTick()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Default Tick</em>' attribute.
+   * @see #getDefaultTick()
+   * @generated
+   */
   void setDefaultTick(int value);
 
   /**
-	 * Returns the value of the '<em><b>Increment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Increment</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Increment</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Increment</em>' attribute.
-	 * @see #setIncrement(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_Increment()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Increment</em>' attribute.
+   * @see #setIncrement(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_Increment()
+   * @model
+   * @generated
+   */
   int getIncrement();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getIncrement <em>Increment</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getIncrement <em>Increment</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Increment</em>' attribute.
-	 * @see #getIncrement()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Increment</em>' attribute.
+   * @see #getIncrement()
+   * @generated
+   */
   void setIncrement(int value);
 
   /**
-	 * Returns the value of the '<em><b>Denominator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Denominator</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Denominator</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Denominator</em>' attribute.
-	 * @see #setDenominator(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_Denominator()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Denominator</em>' attribute.
+   * @see #setDenominator(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_Denominator()
+   * @model
+   * @generated
+   */
   int getDenominator();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getDenominator <em>Denominator</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getDenominator <em>Denominator</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Denominator</em>' attribute.
-	 * @see #getDenominator()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Denominator</em>' attribute.
+   * @see #getDenominator()
+   * @generated
+   */
   void setDenominator(int value);
 
   /**
-	 * Returns the value of the '<em><b>Minimum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Minimum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Minimum Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Minimum Value</em>' attribute.
-	 * @see #setMinimumValue(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_MinimumValue()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Minimum Value</em>' attribute.
+   * @see #setMinimumValue(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_MinimumValue()
+   * @model
+   * @generated
+   */
   int getMinimumValue();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getMinimumValue <em>Minimum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getMinimumValue <em>Minimum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Minimum Value</em>' attribute.
-	 * @see #getMinimumValue()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Minimum Value</em>' attribute.
+   * @see #getMinimumValue()
+   * @generated
+   */
   void setMinimumValue(int value);
 
   /**
-	 * Returns the value of the '<em><b>Maximum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Maximum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Maximum Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maximum Value</em>' attribute.
-	 * @see #setMaximumValue(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_MaximumValue()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Maximum Value</em>' attribute.
+   * @see #setMaximumValue(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_MaximumValue()
+   * @model
+   * @generated
+   */
   int getMaximumValue();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getMaximumValue <em>Maximum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.TrackBar#getMaximumValue <em>Maximum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Maximum Value</em>' attribute.
-	 * @see #getMaximumValue()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Maximum Value</em>' attribute.
+   * @see #getMaximumValue()
+   * @generated
+   */
   void setMaximumValue(int value);
 
   /**
-	 * Returns the value of the '<em><b>String Values</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>String Values</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>String Values</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>String Values</em>' attribute list.
-	 * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_StringValues()
-	 * @model unique="false"
-	 * @generated
-	 */
+   * @return the value of the '<em>String Values</em>' attribute list.
+   * @see org.xtext.entityDsl.EntityDslPackage#getTrackBar_StringValues()
+   * @model unique="false"
+   * @generated
+   */
   EList<String> getStringValues();
 
 } // TrackBar

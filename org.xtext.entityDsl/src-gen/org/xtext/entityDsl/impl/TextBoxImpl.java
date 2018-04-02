@@ -35,337 +35,344 @@ import org.xtext.entityDsl.TextBox;
 public class TextBoxImpl extends MinimalEObjectImpl.Container implements TextBox
 {
   /**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDataType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDataType()
+   * @generated
+   * @ordered
+   */
   protected DataType dataType;
 
   /**
-	 * The default value of the '{@link #getMinTextLength() <em>Min Text Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getMinTextLength() <em>Min Text Length</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMinTextLength()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMinTextLength()
+   * @generated
+   * @ordered
+   */
   protected static final int MIN_TEXT_LENGTH_EDEFAULT = 0;
 
   /**
-	 * The cached value of the '{@link #getMinTextLength() <em>Min Text Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getMinTextLength() <em>Min Text Length</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMinTextLength()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMinTextLength()
+   * @generated
+   * @ordered
+   */
   protected int minTextLength = MIN_TEXT_LENGTH_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getMaxTextLength() <em>Max Text Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getMaxTextLength() <em>Max Text Length</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMaxTextLength()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMaxTextLength()
+   * @generated
+   * @ordered
+   */
   protected static final int MAX_TEXT_LENGTH_EDEFAULT = 0;
 
   /**
-	 * The cached value of the '{@link #getMaxTextLength() <em>Max Text Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getMaxTextLength() <em>Max Text Length</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMaxTextLength()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMaxTextLength()
+   * @generated
+   * @ordered
+   */
   protected int maxTextLength = MAX_TEXT_LENGTH_EDEFAULT;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected TextBoxImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return EntityDslPackage.Literals.TEXT_BOX;
-	}
+    return EntityDslPackage.Literals.TEXT_BOX;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getName()
   {
-		return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setName(String newName)
   {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__NAME, oldName, name));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public DataType getDataType()
   {
-		return dataType;
-	}
+    return dataType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetDataType(DataType newDataType, NotificationChain msgs)
   {
-		DataType oldDataType = dataType;
-		dataType = newDataType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__DATA_TYPE, oldDataType, newDataType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    DataType oldDataType = dataType;
+    dataType = newDataType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__DATA_TYPE, oldDataType, newDataType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setDataType(DataType newDataType)
   {
-		if (newDataType != dataType) {
-			NotificationChain msgs = null;
-			if (dataType != null)
-				msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__DATA_TYPE, null, msgs);
-			if (newDataType != null)
-				msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__DATA_TYPE, null, msgs);
-			msgs = basicSetDataType(newDataType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__DATA_TYPE, newDataType, newDataType));
-	}
+    if (newDataType != dataType)
+    {
+      NotificationChain msgs = null;
+      if (dataType != null)
+        msgs = ((InternalEObject)dataType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__DATA_TYPE, null, msgs);
+      if (newDataType != null)
+        msgs = ((InternalEObject)newDataType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.TEXT_BOX__DATA_TYPE, null, msgs);
+      msgs = basicSetDataType(newDataType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__DATA_TYPE, newDataType, newDataType));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getMinTextLength()
   {
-		return minTextLength;
-	}
+    return minTextLength;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setMinTextLength(int newMinTextLength)
   {
-		int oldMinTextLength = minTextLength;
-		minTextLength = newMinTextLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH, oldMinTextLength, minTextLength));
-	}
+    int oldMinTextLength = minTextLength;
+    minTextLength = newMinTextLength;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH, oldMinTextLength, minTextLength));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getMaxTextLength()
   {
-		return maxTextLength;
-	}
+    return maxTextLength;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setMaxTextLength(int newMaxTextLength)
   {
-		int oldMaxTextLength = maxTextLength;
-		maxTextLength = newMaxTextLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH, oldMaxTextLength, maxTextLength));
-	}
+    int oldMaxTextLength = maxTextLength;
+    maxTextLength = newMaxTextLength;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH, oldMaxTextLength, maxTextLength));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
-				return basicSetDataType(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+        return basicSetDataType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EntityDslPackage.TEXT_BOX__NAME:
-				return getName();
-			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
-				return getDataType();
-			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
-				return getMinTextLength();
-			case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
-				return getMaxTextLength();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TEXT_BOX__NAME:
+        return getName();
+      case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+        return getDataType();
+      case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
+        return getMinTextLength();
+      case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
+        return getMaxTextLength();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EntityDslPackage.TEXT_BOX__NAME:
-				setName((String)newValue);
-				return;
-			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
-				setDataType((DataType)newValue);
-				return;
-			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
-				setMinTextLength((Integer)newValue);
-				return;
-			case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
-				setMaxTextLength((Integer)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TEXT_BOX__NAME:
+        setName((String)newValue);
+        return;
+      case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+        setDataType((DataType)newValue);
+        return;
+      case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
+        setMinTextLength((Integer)newValue);
+        return;
+      case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
+        setMaxTextLength((Integer)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.TEXT_BOX__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
-				setDataType((DataType)null);
-				return;
-			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
-				setMinTextLength(MIN_TEXT_LENGTH_EDEFAULT);
-				return;
-			case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
-				setMaxTextLength(MAX_TEXT_LENGTH_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TEXT_BOX__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+        setDataType((DataType)null);
+        return;
+      case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
+        setMinTextLength(MIN_TEXT_LENGTH_EDEFAULT);
+        return;
+      case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
+        setMaxTextLength(MAX_TEXT_LENGTH_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.TEXT_BOX__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EntityDslPackage.TEXT_BOX__DATA_TYPE:
-				return dataType != null;
-			case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
-				return minTextLength != MIN_TEXT_LENGTH_EDEFAULT;
-			case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
-				return maxTextLength != MAX_TEXT_LENGTH_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.TEXT_BOX__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EntityDslPackage.TEXT_BOX__DATA_TYPE:
+        return dataType != null;
+      case EntityDslPackage.TEXT_BOX__MIN_TEXT_LENGTH:
+        return minTextLength != MIN_TEXT_LENGTH_EDEFAULT;
+      case EntityDslPackage.TEXT_BOX__MAX_TEXT_LENGTH:
+        return maxTextLength != MAX_TEXT_LENGTH_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", minTextLength: ");
-		result.append(minTextLength);
-		result.append(", maxTextLength: ");
-		result.append(maxTextLength);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", minTextLength: ");
+    result.append(minTextLength);
+    result.append(", maxTextLength: ");
+    result.append(maxTextLength);
+    result.append(')');
+    return result.toString();
+  }
 
 } //TextBoxImpl

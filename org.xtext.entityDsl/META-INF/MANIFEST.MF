@@ -25,5 +25,6 @@ Export-Package: org.xtext.parser.antlr.internal,
  org.xtext.entityDsl.impl,
  org.xtext.entityDsl.util,
  org.xtext.scoping,
- org.xtext
+ org.xtext,
+ org.xtext.formatting2
 Import-Package: org.apache.log4j

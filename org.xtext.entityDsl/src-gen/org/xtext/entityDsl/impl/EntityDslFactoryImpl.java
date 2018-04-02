@@ -22,238 +22,242 @@ import org.xtext.entityDsl.*;
 public class EntityDslFactoryImpl extends EFactoryImpl implements EntityDslFactory
 {
   /**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static EntityDslFactory init()
   {
-		try {
-			EntityDslFactory theEntityDslFactory = (EntityDslFactory)EPackage.Registry.INSTANCE.getEFactory(EntityDslPackage.eNS_URI);
-			if (theEntityDslFactory != null) {
-				return theEntityDslFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new EntityDslFactoryImpl();
-	}
+    try
+    {
+      EntityDslFactory theEntityDslFactory = (EntityDslFactory)EPackage.Registry.INSTANCE.getEFactory(EntityDslPackage.eNS_URI);
+      if (theEntityDslFactory != null)
+      {
+        return theEntityDslFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new EntityDslFactoryImpl();
+  }
 
   /**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EntityDslFactoryImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EObject create(EClass eClass)
   {
-		switch (eClass.getClassifierID()) {
-			case EntityDslPackage.DOMAINMODEL: return createDomainmodel();
-			case EntityDslPackage.ENTITY: return createEntity();
-			case EntityDslPackage.ATTRIBUTE: return createAttribute();
-			case EntityDslPackage.DATA_TYPE: return createDataType();
-			case EntityDslPackage.LABEL: return createLabel();
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE: return createWinFormControlType();
-			case EntityDslPackage.TRACK_BAR: return createTrackBar();
-			case EntityDslPackage.SPINNER: return createSpinner();
-			case EntityDslPackage.RADIO_BUTTON_GROUP: return createRadioButtonGroup();
-			case EntityDslPackage.RADIO_BUTTON: return createRadioButton();
-			case EntityDslPackage.CHECK_BOX: return createCheckBox();
-			case EntityDslPackage.TEXT_BOX: return createTextBox();
-			case EntityDslPackage.COMBO_BOX: return createComboBox();
-			case EntityDslPackage.COMBO_BOX_ITEM: return createComboBoxItem();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eClass.getClassifierID())
+    {
+      case EntityDslPackage.DOMAINMODEL: return createDomainmodel();
+      case EntityDslPackage.ENTITY: return createEntity();
+      case EntityDslPackage.ATTRIBUTE: return createAttribute();
+      case EntityDslPackage.DATA_TYPE: return createDataType();
+      case EntityDslPackage.LABEL: return createLabel();
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE: return createWinFormControlType();
+      case EntityDslPackage.TRACK_BAR: return createTrackBar();
+      case EntityDslPackage.SPINNER: return createSpinner();
+      case EntityDslPackage.RADIO_BUTTON_GROUP: return createRadioButtonGroup();
+      case EntityDslPackage.RADIO_BUTTON: return createRadioButton();
+      case EntityDslPackage.CHECK_BOX: return createCheckBox();
+      case EntityDslPackage.TEXT_BOX: return createTextBox();
+      case EntityDslPackage.COMBO_BOX: return createComboBox();
+      case EntityDslPackage.COMBO_BOX_ITEM: return createComboBoxItem();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Domainmodel createDomainmodel()
   {
-		DomainmodelImpl domainmodel = new DomainmodelImpl();
-		return domainmodel;
-	}
+    DomainmodelImpl domainmodel = new DomainmodelImpl();
+    return domainmodel;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Entity createEntity()
   {
-		EntityImpl entity = new EntityImpl();
-		return entity;
-	}
+    EntityImpl entity = new EntityImpl();
+    return entity;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Attribute createAttribute()
   {
-		AttributeImpl attribute = new AttributeImpl();
-		return attribute;
-	}
+    AttributeImpl attribute = new AttributeImpl();
+    return attribute;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public DataType createDataType()
   {
-		DataTypeImpl dataType = new DataTypeImpl();
-		return dataType;
-	}
+    DataTypeImpl dataType = new DataTypeImpl();
+    return dataType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Label createLabel()
   {
-		LabelImpl label = new LabelImpl();
-		return label;
-	}
+    LabelImpl label = new LabelImpl();
+    return label;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public WinFormControlType createWinFormControlType()
   {
-		WinFormControlTypeImpl winFormControlType = new WinFormControlTypeImpl();
-		return winFormControlType;
-	}
+    WinFormControlTypeImpl winFormControlType = new WinFormControlTypeImpl();
+    return winFormControlType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public TrackBar createTrackBar()
   {
-		TrackBarImpl trackBar = new TrackBarImpl();
-		return trackBar;
-	}
+    TrackBarImpl trackBar = new TrackBarImpl();
+    return trackBar;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Spinner createSpinner()
   {
-		SpinnerImpl spinner = new SpinnerImpl();
-		return spinner;
-	}
+    SpinnerImpl spinner = new SpinnerImpl();
+    return spinner;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public RadioButtonGroup createRadioButtonGroup()
   {
-		RadioButtonGroupImpl radioButtonGroup = new RadioButtonGroupImpl();
-		return radioButtonGroup;
-	}
+    RadioButtonGroupImpl radioButtonGroup = new RadioButtonGroupImpl();
+    return radioButtonGroup;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public RadioButton createRadioButton()
   {
-		RadioButtonImpl radioButton = new RadioButtonImpl();
-		return radioButton;
-	}
+    RadioButtonImpl radioButton = new RadioButtonImpl();
+    return radioButton;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public CheckBox createCheckBox()
   {
-		CheckBoxImpl checkBox = new CheckBoxImpl();
-		return checkBox;
-	}
+    CheckBoxImpl checkBox = new CheckBoxImpl();
+    return checkBox;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public TextBox createTextBox()
   {
-		TextBoxImpl textBox = new TextBoxImpl();
-		return textBox;
-	}
+    TextBoxImpl textBox = new TextBoxImpl();
+    return textBox;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public ComboBox createComboBox()
   {
-		ComboBoxImpl comboBox = new ComboBoxImpl();
-		return comboBox;
-	}
+    ComboBoxImpl comboBox = new ComboBoxImpl();
+    return comboBox;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public ComboBoxItem createComboBoxItem()
   {
-		ComboBoxItemImpl comboBoxItem = new ComboBoxItemImpl();
-		return comboBoxItem;
-	}
+    ComboBoxItemImpl comboBoxItem = new ComboBoxItemImpl();
+    return comboBoxItem;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EntityDslPackage getEntityDslPackage()
   {
-		return (EntityDslPackage)getEPackage();
-	}
+    return (EntityDslPackage)getEPackage();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+   * @deprecated
+   * @generated
+   */
   @Deprecated
   public static EntityDslPackage getPackage()
   {
-		return EntityDslPackage.eINSTANCE;
-	}
+    return EntityDslPackage.eINSTANCE;
+  }
 
 } //EntityDslFactoryImpl

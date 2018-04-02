@@ -25,55 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface WinFormControlType extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Control Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Control Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Control Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Control Type</em>' containment reference.
-	 * @see #setControlType(TextBox)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getWinFormControlType_ControlType()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Control Type</em>' containment reference.
+   * @see #setControlType(TextBox)
+   * @see org.xtext.entityDsl.EntityDslPackage#getWinFormControlType_ControlType()
+   * @model containment="true"
+   * @generated
+   */
   TextBox getControlType();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.WinFormControlType#getControlType <em>Control Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.WinFormControlType#getControlType <em>Control Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Control Type</em>' containment reference.
-	 * @see #getControlType()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Control Type</em>' containment reference.
+   * @see #getControlType()
+   * @generated
+   */
   void setControlType(TextBox value);
 
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getWinFormControlType_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.entityDsl.EntityDslPackage#getWinFormControlType_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.WinFormControlType#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.WinFormControlType#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
 } // WinFormControlType

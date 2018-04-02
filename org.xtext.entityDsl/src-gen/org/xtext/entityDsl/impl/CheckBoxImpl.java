@@ -18,24 +18,24 @@ import org.xtext.entityDsl.EntityDslPackage;
 public class CheckBoxImpl extends WinFormControlTypeImpl implements CheckBox
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected CheckBoxImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return EntityDslPackage.Literals.CHECK_BOX;
-	}
+    return EntityDslPackage.Literals.CHECK_BOX;
+  }
 
 } //CheckBoxImpl

@@ -33,227 +33,234 @@ import org.xtext.entityDsl.WinFormControlType;
 public class WinFormControlTypeImpl extends MinimalEObjectImpl.Container implements WinFormControlType
 {
   /**
-	 * The cached value of the '{@link #getControlType() <em>Control Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getControlType() <em>Control Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getControlType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getControlType()
+   * @generated
+   * @ordered
+   */
   protected TextBox controlType;
 
   /**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected WinFormControlTypeImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return EntityDslPackage.Literals.WIN_FORM_CONTROL_TYPE;
-	}
+    return EntityDslPackage.Literals.WIN_FORM_CONTROL_TYPE;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public TextBox getControlType()
   {
-		return controlType;
-	}
+    return controlType;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetControlType(TextBox newControlType, NotificationChain msgs)
   {
-		TextBox oldControlType = controlType;
-		controlType = newControlType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, oldControlType, newControlType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    TextBox oldControlType = controlType;
+    controlType = newControlType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, oldControlType, newControlType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setControlType(TextBox newControlType)
   {
-		if (newControlType != controlType) {
-			NotificationChain msgs = null;
-			if (controlType != null)
-				msgs = ((InternalEObject)controlType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, null, msgs);
-			if (newControlType != null)
-				msgs = ((InternalEObject)newControlType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, null, msgs);
-			msgs = basicSetControlType(newControlType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, newControlType, newControlType));
-	}
+    if (newControlType != controlType)
+    {
+      NotificationChain msgs = null;
+      if (controlType != null)
+        msgs = ((InternalEObject)controlType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, null, msgs);
+      if (newControlType != null)
+        msgs = ((InternalEObject)newControlType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, null, msgs);
+      msgs = basicSetControlType(newControlType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE, newControlType, newControlType));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getName()
   {
-		return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setName(String newName)
   {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME, oldName, name));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
-				return basicSetControlType(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
+        return basicSetControlType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
-				return getControlType();
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
-				return getName();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
+        return getControlType();
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
+        return getName();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
-				setControlType((TextBox)newValue);
-				return;
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
-				setName((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
+        setControlType((TextBox)newValue);
+        return;
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
+        setName((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
-				setControlType((TextBox)null);
-				return;
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
+        setControlType((TextBox)null);
+        return;
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
-				return controlType != null;
-			case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__CONTROL_TYPE:
+        return controlType != null;
+      case EntityDslPackage.WIN_FORM_CONTROL_TYPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
 
 } //WinFormControlTypeImpl

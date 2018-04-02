@@ -25,81 +25,81 @@ package org.xtext.entityDsl;
 public interface Spinner extends WinFormControlType
 {
   /**
-	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Default Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Default Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Value</em>' attribute.
-	 * @see #setDefaultValue(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getSpinner_DefaultValue()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Default Value</em>' attribute.
+   * @see #setDefaultValue(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getSpinner_DefaultValue()
+   * @model
+   * @generated
+   */
   int getDefaultValue();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Spinner#getDefaultValue <em>Default Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Spinner#getDefaultValue <em>Default Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Value</em>' attribute.
-	 * @see #getDefaultValue()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Default Value</em>' attribute.
+   * @see #getDefaultValue()
+   * @generated
+   */
   void setDefaultValue(int value);
 
   /**
-	 * Returns the value of the '<em><b>Minimum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Minimum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Minimum Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Minimum Value</em>' attribute.
-	 * @see #setMinimumValue(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getSpinner_MinimumValue()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Minimum Value</em>' attribute.
+   * @see #setMinimumValue(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getSpinner_MinimumValue()
+   * @model
+   * @generated
+   */
   int getMinimumValue();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Spinner#getMinimumValue <em>Minimum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Spinner#getMinimumValue <em>Minimum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Minimum Value</em>' attribute.
-	 * @see #getMinimumValue()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Minimum Value</em>' attribute.
+   * @see #getMinimumValue()
+   * @generated
+   */
   void setMinimumValue(int value);
 
   /**
-	 * Returns the value of the '<em><b>Maximum Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Maximum Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Maximum Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maximum Value</em>' attribute.
-	 * @see #setMaximumValue(int)
-	 * @see org.xtext.entityDsl.EntityDslPackage#getSpinner_MaximumValue()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Maximum Value</em>' attribute.
+   * @see #setMaximumValue(int)
+   * @see org.xtext.entityDsl.EntityDslPackage#getSpinner_MaximumValue()
+   * @model
+   * @generated
+   */
   int getMaximumValue();
 
   /**
-	 * Sets the value of the '{@link org.xtext.entityDsl.Spinner#getMaximumValue <em>Maximum Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.xtext.entityDsl.Spinner#getMaximumValue <em>Maximum Value</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Maximum Value</em>' attribute.
-	 * @see #getMaximumValue()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Maximum Value</em>' attribute.
+   * @see #getMaximumValue()
+   * @generated
+   */
   void setMaximumValue(int value);
 
 } // Spinner
